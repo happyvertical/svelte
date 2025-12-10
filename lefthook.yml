@@ -1,0 +1,53 @@
+# Lefthook Git Hooks Configuration
+# https://lefthook.dev/configuration/
+
+# Auto-fix formatting and linting issues before commit
+pre-commit:
+  skip:
+    - ref: main
+      env:
+        - CI
+  commands:
+    format:
+      glob: "*.{ts,js,tsx,jsx,svelte}"
+      run: npx biome check --write --unsafe {staged_files}
+      stage_fixed: true
+      fail_text: |
+        ❌ Formatting/linting failed!
+
+        Could not fix issues in staged files. Please check the error above and fix manually.
+
+# Check formatting before push
+pre-push:
+  commands:
+    format-check:
+      run: npx biome ci --diagnostic-level=error .
+      fail_text: |
+        ❌ Format check failed!
+
+        Your code has formatting issues. Run `npm run format` to fix them.
+
+# Validate commit messages using commitlint
+commit-msg:
+  skip:
+    - ref: main
+      env:
+        - CI
+  commands:
+    commitlint:
+      run: npx commitlint --edit {1}
+      fail_text: |
+        ❌ Commit message validation failed!
+
+        Your commit message doesn't follow the Conventional Commits specification.
+
+        Format: <type>(<scope>): <subject>
+
+        Valid types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+
+        Examples:
+          feat: add new Button variant
+          fix: resolve Card styling issue
+          docs: update component documentation
+
+        For more info: https://www.conventionalcommits.org/

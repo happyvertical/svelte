@@ -79,8 +79,11 @@ jobs:
           BEFORE_VERSION=$(node -p "require('./package.json').version")
           echo "Version before release: $BEFORE_VERSION"
 
-          # Generate changeset from conventional commits
-          npx @changesets/cli@latest version --conventional-commits || true
+          # Auto-generate changeset from conventional commits
+          pnpm run changeset:auto
+
+          # Version packages
+          pnpm run changeset:version
 
           AFTER_VERSION=$(node -p "require('./package.json').version")
           echo "Version after versioning: $AFTER_VERSION"
@@ -95,7 +98,7 @@ jobs:
             pnpm run build
 
             # Publish to GitHub Packages
-            pnpm publish --no-git-checks
+            pnpm run changeset:publish
 
             git tag -f "v$AFTER_VERSION"
             git push -f origin "v$AFTER_VERSION"

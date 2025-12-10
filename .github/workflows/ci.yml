@@ -56,8 +56,17 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Lint
+        run: pnpm run lint
+
       - name: Run tests
         run: pnpm test
 
       - name: Svelte check
         run: pnpm run check || true
+
+      - name: Format check
+        run: pnpm run format-check
