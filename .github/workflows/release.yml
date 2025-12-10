@@ -1,0 +1,114 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
+  packages: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: Version and Publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Generate token from GitHub App
+        id: generate_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.HAVE_RELEASE_APP_ID }}
+          private_key: ${{ secrets.HAVE_RELEASE_APP_PRIVATE_KEY }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ steps.generate_token.outputs.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://npm.pkg.github.com'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run Changesets release
+        id: changesets_release
+        env:
+          CI: true
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🚀 Running Changesets release..."
+
+          BEFORE_VERSION=$(node -p "require('./package.json').version")
+          echo "Version before release: $BEFORE_VERSION"
+
+          # Generate changeset from conventional commits
+          npx @changesets/cli@latest version --conventional-commits || true
+
+          AFTER_VERSION=$(node -p "require('./package.json').version")
+          echo "Version after versioning: $AFTER_VERSION"
+
+          if [ "$BEFORE_VERSION" != "$AFTER_VERSION" ]; then
+            echo "📦 Version changed from $BEFORE_VERSION to $AFTER_VERSION"
+
+            git add .
+            git commit -m "chore(release): v$AFTER_VERSION [skip ci]"
+
+            # Build before publish
+            pnpm run build
+
+            # Publish to GitHub Packages
+            pnpm publish --no-git-checks
+
+            git tag -f "v$AFTER_VERSION"
+            git push -f origin "v$AFTER_VERSION"
+            git push origin main
+
+            gh release create "v$AFTER_VERSION" \
+              --title "v$AFTER_VERSION" \
+              --generate-notes \
+              --latest
+
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "✅ Published version: v$AFTER_VERSION"
+          else
+            echo "ℹ️  No version changes - no release needed"
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
