@@ -171,9 +171,12 @@ const selectedFullDate = $derived(
 const isFirst = $derived(selectedDayIndex === 0);
 const isLast = $derived(selectedDayIndex === dayForecasts.length - 1);
 
-// Drag-to-scroll for hourly grid
+// Drag-to-scroll state (shared between tabs and hourly grid)
+// biome-ignore lint/style/useConst: bind:this requires let, not const
+let tabsEl = $state<HTMLElement | null>(null);
 // biome-ignore lint/style/useConst: bind:this requires let, not const
 let hourlyGridEl = $state<HTMLElement | null>(null);
+let activeScrollEl = $state<HTMLElement | null>(null);
 let isDragging = $state(false);
 let startX = $state(0);
 let scrollLeft = $state(0);
@@ -181,63 +184,123 @@ let scrollLeft = $state(0);
 // Document-level mouseup listener to handle drag release outside the element
 $effect(() => {
   function handleDocumentMouseUp() {
-    if (isDragging) {
+    if (isDragging && activeScrollEl) {
       isDragging = false;
-      if (hourlyGridEl) hourlyGridEl.style.cursor = 'grab';
+      activeScrollEl.style.cursor = 'grab';
+      activeScrollEl = null;
     }
   }
   document.addEventListener('mouseup', handleDocumentMouseUp);
   return () => document.removeEventListener('mouseup', handleDocumentMouseUp);
 });
 
-function handleMouseDown(e: MouseEvent) {
-  if (!hourlyGridEl) return;
+// Generic scroll handlers that work with any scrollable element
+function handleScrollMouseDown(e: MouseEvent, el: HTMLElement | null) {
+  if (!el) return;
   isDragging = true;
-  hourlyGridEl.style.cursor = 'grabbing';
-  startX = e.pageX - hourlyGridEl.offsetLeft;
-  scrollLeft = hourlyGridEl.scrollLeft;
+  activeScrollEl = el;
+  el.style.cursor = 'grabbing';
+  startX = e.pageX - el.offsetLeft;
+  scrollLeft = el.scrollLeft;
 }
 
-function handleMouseMove(e: MouseEvent) {
-  if (!isDragging || !hourlyGridEl) return;
+function handleScrollMouseMove(e: MouseEvent, el: HTMLElement | null) {
+  if (!isDragging || !el || activeScrollEl !== el) return;
   e.preventDefault();
-  const x = e.pageX - hourlyGridEl.offsetLeft;
+  const x = e.pageX - el.offsetLeft;
   const walk = (x - startX) * 1.5;
-  hourlyGridEl.scrollLeft = scrollLeft - walk;
+  el.scrollLeft = scrollLeft - walk;
 }
 
-function handleMouseUp() {
+function handleScrollMouseUp(el: HTMLElement | null) {
+  if (!el || activeScrollEl !== el) return;
   isDragging = false;
-  if (hourlyGridEl) hourlyGridEl.style.cursor = 'grab';
+  el.style.cursor = 'grab';
+  activeScrollEl = null;
 }
 
-function handleMouseLeave() {
+function handleScrollMouseLeave(el: HTMLElement | null) {
+  if (!el || activeScrollEl !== el) return;
   isDragging = false;
-  if (hourlyGridEl) hourlyGridEl.style.cursor = 'grab';
+  el.style.cursor = 'grab';
+  activeScrollEl = null;
 }
 
-// Keyboard navigation for accessibility
-function handleKeyDown(e: KeyboardEvent) {
-  if (!hourlyGridEl) return;
+function handleScrollKeyDown(e: KeyboardEvent, el: HTMLElement | null) {
+  if (!el) return;
   const scrollAmount = 100;
   if (e.key === 'ArrowLeft') {
     e.preventDefault();
-    hourlyGridEl.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    el.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   } else if (e.key === 'ArrowRight') {
     e.preventDefault();
-    hourlyGridEl.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   }
+}
+
+// Legacy handlers for hourly grid (for backwards compatibility)
+function handleMouseDown(e: MouseEvent) {
+  handleScrollMouseDown(e, hourlyGridEl);
+}
+
+function handleMouseMove(e: MouseEvent) {
+  handleScrollMouseMove(e, hourlyGridEl);
+}
+
+function handleMouseUp() {
+  handleScrollMouseUp(hourlyGridEl);
+}
+
+function handleMouseLeave() {
+  handleScrollMouseLeave(hourlyGridEl);
+}
+
+function handleKeyDown(e: KeyboardEvent) {
+  handleScrollKeyDown(e, hourlyGridEl);
+}
+
+// Tabs scroll handlers
+function handleTabsMouseDown(e: MouseEvent) {
+  handleScrollMouseDown(e, tabsEl);
+}
+
+function handleTabsMouseMove(e: MouseEvent) {
+  handleScrollMouseMove(e, tabsEl);
+}
+
+function handleTabsMouseUp() {
+  handleScrollMouseUp(tabsEl);
+}
+
+function handleTabsMouseLeave() {
+  handleScrollMouseLeave(tabsEl);
+}
+
+function handleTabsKeyDown(e: KeyboardEvent) {
+  handleScrollKeyDown(e, tabsEl);
 }
 </script>
 
 <div class="weather-widget">
-  <div class="tabs">
+  <div
+    class="tabs"
+    bind:this={tabsEl}
+    onmousedown={handleTabsMouseDown}
+    onmousemove={handleTabsMouseMove}
+    onmouseup={handleTabsMouseUp}
+    onmouseleave={handleTabsMouseLeave}
+    onkeydown={handleTabsKeyDown}
+    role="tablist"
+    tabindex="0"
+    aria-label="Daily forecast, use arrow keys to scroll"
+  >
     {#each dayForecasts as day, index}
       <button
         class="tab"
         class:active={selectedDayIndex === index}
         onclick={() => handleTabClick(index)}
         aria-expanded={selectedDayIndex === index}
+        role="tab"
       >
         <span class="tab-date">{day.date}</span>
         <span class="tab-icon">{day.icon}</span>
@@ -320,11 +383,27 @@ function handleKeyDown(e: KeyboardEvent) {
     border-bottom: none !important;
   }
 
-  /* Tabs Container */
+  /* Tabs Container - Scrollable carousel */
   .tabs {
     display: flex;
     gap: 0;
-    overflow: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .tabs:active {
+    cursor: grabbing;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
   }
 
   /* Individual Tab */
@@ -341,6 +420,7 @@ function handleKeyDown(e: KeyboardEvent) {
     border-radius: var(--widget-radius) var(--widget-radius) 0 0;
     cursor: pointer;
     transition: all 0.2s ease;
+    scroll-snap-align: start;
   }
 
   .tab:focus,
