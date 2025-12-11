@@ -5,12 +5,12 @@ import { chromium } from '@playwright/test';
   const page = await browser.newPage();
 
   // Capture console messages
-  page.on('console', msg => {
+  page.on('console', (msg) => {
     console.log(`[BROWSER CONSOLE ${msg.type()}]:`, msg.text());
   });
 
   // Capture page errors
-  page.on('pageerror', err => {
+  page.on('pageerror', (err) => {
     console.error('[BROWSER ERROR]:', err.message);
   });
 
@@ -20,7 +20,10 @@ import { chromium } from '@playwright/test';
   await page.waitForTimeout(2000);
 
   // Take screenshot
-  await page.screenshot({ path: '/tmp/test-app-screenshot.png', fullPage: true });
+  await page.screenshot({
+    path: '/tmp/test-app-screenshot.png',
+    fullPage: true,
+  });
   console.log('Screenshot saved to /tmp/test-app-screenshot.png');
 
   // Get page content

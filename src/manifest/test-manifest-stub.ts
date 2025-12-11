@@ -8,10 +8,10 @@
 import type { SmartObjectManifest } from '@happyvertical/smrt-core/scanner';
 
 export const testManifest: SmartObjectManifest = {
-  "version": "1.0.0",
-  "timestamp": 1763175784063,
-  "objects": {},
-  "packageName": "@happyvertical/smrt-svelte"
+  version: '1.0.0',
+  timestamp: 1763175784063,
+  objects: {},
+  packageName: '@happyvertical/smrt-svelte',
 } as const;
 
 export default testManifest;

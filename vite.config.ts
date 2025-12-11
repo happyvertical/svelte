@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
+import { resolve } from 'node:path';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
 export default defineConfig(({ mode }) => {
   if (mode === 'test') {
@@ -10,15 +10,15 @@ export default defineConfig(({ mode }) => {
       plugins: [
         svelte({
           compilerOptions: {
-            runes: true
-          }
-        })
+            runes: true,
+          },
+        }),
       ],
       resolve: {
         alias: {
-          '@': resolve(__dirname, 'src')
-        }
-      }
+          '@': resolve(__dirname, 'src'),
+        },
+      },
     };
   }
 
@@ -27,24 +27,30 @@ export default defineConfig(({ mode }) => {
     plugins: [
       svelte({
         compilerOptions: {
-          runes: true
-        }
-      })
+          runes: true,
+        },
+      }),
     ],
     build: {
       lib: {
         entry: resolve(__dirname, 'src/lib/index.ts'),
         name: 'SmrtSvelte',
-        fileName: 'index'
+        fileName: 'index',
       },
       rollupOptions: {
-        external: ['svelte', 'svelte/internal', 'svelte/store', 'svelte/transition', 'svelte/animate'],
+        external: [
+          'svelte',
+          'svelte/internal',
+          'svelte/store',
+          'svelte/transition',
+          'svelte/animate',
+        ],
         output: {
           globals: {
-            svelte: 'svelte'
-          }
-        }
-      }
-    }
+            svelte: 'svelte',
+          },
+        },
+      },
+    },
   };
 });

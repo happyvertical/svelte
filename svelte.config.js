@@ -4,8 +4,8 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
   preprocess: vitePreprocess(),
   compilerOptions: {
-    runes: undefined // Let components opt-in to runes mode individually
-  }
+    runes: undefined, // Let components opt-in to runes mode individually
+  },
 };
 
 export default config;
