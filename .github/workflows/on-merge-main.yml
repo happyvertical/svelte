@@ -1,8 +1,9 @@
-name: Release
+name: On Merge to Main
 
 on:
   push:
     branches: [main]
+
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
@@ -13,10 +14,44 @@ permissions:
   pull-requests: write
 
 jobs:
-  release:
-    name: Version and Publish
+  test:
+    name: Test
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://npm.pkg.github.com'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Run tests
+        run: pnpm test
+
+  release:
+    name: Version and Publish
+    needs: [test]
+    if: always() && needs.test.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Generate token from GitHub App
@@ -32,32 +67,20 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.generate_token.outputs.token }}
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          registry-url: 'https://npm.pkg.github.com'
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
 
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          node-version: '24'
+          registry-url: 'https://npm.pkg.github.com'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -65,6 +88,23 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Validate version constraints
+        run: |
+          echo "Checking version constraints..."
+
+          current_version=$(node -p "require('./package.json').version")
+          echo "Current version: $current_version"
+
+          major_version=$(echo "$current_version" | cut -d. -f1)
+
+          if [ "$major_version" -ge 1 ]; then
+            echo "ERROR: Package is at version 1.0.0 or higher ($current_version)"
+            echo "Manual review required for versions >= 1.0.0"
+            exit 1
+          fi
+
+          echo "Version is 0.x.x - safe to proceed with automated releases"
 
       - name: Run Changesets release
         id: changesets_release
@@ -74,7 +114,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "🚀 Running Changesets release..."
+          echo "Running Changesets release..."
 
           BEFORE_VERSION=$(node -p "require('./package.json').version")
           echo "Version before release: $BEFORE_VERSION"
@@ -89,7 +129,7 @@ jobs:
           echo "Version after versioning: $AFTER_VERSION"
 
           if [ "$BEFORE_VERSION" != "$AFTER_VERSION" ]; then
-            echo "📦 Version changed from $BEFORE_VERSION to $AFTER_VERSION"
+            echo "Version changed from $BEFORE_VERSION to $AFTER_VERSION"
 
             git add .
             git commit -m "chore(release): v$AFTER_VERSION [skip ci]"
@@ -110,8 +150,8 @@ jobs:
               --latest
 
             echo "published=true" >> "$GITHUB_OUTPUT"
-            echo "✅ Published version: v$AFTER_VERSION"
+            echo "Published version: v$AFTER_VERSION"
           else
-            echo "ℹ️  No version changes - no release needed"
+            echo "No version changes - no release needed"
             echo "published=false" >> "$GITHUB_OUTPUT"
           fi
