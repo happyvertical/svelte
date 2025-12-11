@@ -1,12 +1,6 @@
 <script lang="ts">
+import type { Reference } from '../../types';
 import Card from '../ui/Card.svelte';
-
-export interface Reference {
-  title: string;
-  url: string;
-  type?: 'agenda' | 'minutes' | 'video' | 'document' | 'external';
-  description?: string;
-}
 
 interface Props {
   references: Reference[];

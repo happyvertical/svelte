@@ -1,9 +1,7 @@
 <script lang="ts">
 import type { Snippet } from 'svelte';
 import type { HTMLButtonAttributes } from 'svelte/elements';
-
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
-type ButtonSize = 'sm' | 'md' | 'lg';
+import type { ButtonSize, ButtonVariant } from '../../types';
 
 interface Props extends Omit<HTMLButtonAttributes, 'class'> {
   variant?: ButtonVariant;
@@ -23,7 +21,7 @@ const {
   ...rest
 }: Props = $props();
 
-const _isLink = $derived(!!href);
+const isLink = $derived(!!href);
 </script>
 
 {#if isLink}
@@ -34,7 +32,6 @@ const _isLink = $derived(!!href);
     aria-disabled={disabled}
     role="button"
     tabindex={disabled ? -1 : 0}
-    {...rest}
   >
     {@render children?.()}
   </a>

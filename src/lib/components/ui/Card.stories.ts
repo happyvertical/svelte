@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
+import type { CardProps } from '../../types';
 import Card from './Card.svelte';
 
-const meta = {
+const meta: Meta<CardProps> = {
   title: 'UI/Card',
   component: Card,
   tags: ['autodocs'],
@@ -18,10 +19,10 @@ const meta = {
       control: 'boolean',
     },
   },
-} satisfies Meta<Card>;
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<CardProps>;
 
 export const Default: Story = {
   args: {

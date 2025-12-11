@@ -4,23 +4,7 @@
  * Editorial-style weather forecast with tab navigation
  */
 
-export interface HourlyForecast {
-  time: string;
-  hour: number;
-  icon: string;
-  temperature: number;
-  feelsLike: number;
-}
-
-export interface DayForecast {
-  id: string;
-  dayName: string;
-  date: string;
-  icon: string;
-  high: number;
-  low: number;
-  hourlyData: HourlyForecast[];
-}
+import type { DayForecast, HourlyForecast } from '../../types';
 
 interface ForecastPeriod {
   name: string;

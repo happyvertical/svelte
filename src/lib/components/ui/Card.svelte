@@ -1,9 +1,7 @@
 <script lang="ts">
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-
-type CardVariant = 'default' | 'outlined' | 'elevated';
-type CardPadding = 'none' | 'sm' | 'md' | 'lg';
+import type { CardPadding, CardVariant } from '../../types';
 
 interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'class'> {
   variant?: CardVariant;

@@ -1,15 +1,7 @@
 <script lang="ts">
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-
-type BadgeVariant =
-  | 'default'
-  | 'primary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'info';
-type BadgeSize = 'sm' | 'md';
+import type { BadgeSize, BadgeVariant } from '../../types';
 
 interface Props extends Omit<HTMLAttributes<HTMLSpanElement>, 'class'> {
   variant?: BadgeVariant;
