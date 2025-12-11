@@ -1,5 +1,36 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.1
+
+### Patch Changes
+
+- ### Features
+
+  - add carousel/swipe behavior to day tabs (weather)
+  - add CI/CD workflows and changeset configuration
+  - initial extraction from smrt monorepo
+
+  ### Bug Fixes
+
+  - resolve svelte-check errors for pnpm 10 compatibility
+  - extract types to separate file for pnpm 10 compatibility
+  - remove pnpm version to use packageManager field (ci)
+
+  ### Other Changes
+
+  - chore: update pnpm to v10 (deps)
+  - chore: update lefthook to v2 (deps)
+  - chore: update actions/setup-node action to v6 (deps)
+  - chore: update actions/checkout action to v6 (deps)
+  - chore: update all dependencies (deps)
+  - chore: update @sveltejs/vite-plugin-svelte to v6 (deps)
+  - chore: use sdk preset for renovate config (deps)
+  - chore: align CI/CD workflows with SMRT pattern (ci)
+  - chore: @happyvertical/svelte@0.18.0 (release)
+  - chore: add changeset for weather carousel feature
+  - chore: add renovate.json (deps)
+  - chore: add dev tooling for CI/CD parity with SMRT
+
 ## 0.18.0
 
 ### Minor Changes
