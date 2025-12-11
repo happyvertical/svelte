@@ -1,9 +1,7 @@
 <script lang="ts">
 import type { Snippet } from 'svelte';
 import type { HTMLButtonAttributes } from 'svelte/elements';
-
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
-type ButtonSize = 'sm' | 'md' | 'lg';
+import type { ButtonSize, ButtonVariant } from '../../types';
 
 interface Props extends Omit<HTMLButtonAttributes, 'class'> {
   variant?: ButtonVariant;

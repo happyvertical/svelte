@@ -1,21 +1,5 @@
 <script lang="ts">
-export interface ForecastPeriod {
-  name: string;
-  conditions: string;
-  temperature: number;
-  windSpeed: number;
-  windDirection: number;
-  humidity: number;
-  precipProbability: number;
-}
-
-export interface ForecastDay {
-  day: string;
-  icon: string;
-  high: number;
-  low: number;
-  periods: ForecastPeriod[];
-}
+import type { ForecastDay, ForecastPeriod } from '../../types';
 
 interface Props {
   forecast?: ForecastDay[] | null;
