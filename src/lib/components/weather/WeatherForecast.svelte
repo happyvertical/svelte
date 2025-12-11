@@ -12,18 +12,18 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'short' });
 const todayIndex = forecast?.findIndex((f) => f.day === today) ?? 0;
 
 let expandedDay = $state<number | null>(todayIndex >= 0 ? todayIndex : 0);
-let _activeTab = $state<'day' | 'night' | 'chart'>('day');
+let activeTab = $state<'day' | 'night' | 'chart'>('day');
 
-function _toggleDay(index: number) {
+function toggleDay(index: number) {
   if (expandedDay === index) {
     expandedDay = null;
   } else {
     expandedDay = index;
-    _activeTab = 'day'; // Reset to day tab when opening a new day
+    activeTab = 'day'; // Reset to day tab when opening a new day
   }
 }
 
-function _getDayPeriod(periods: ForecastPeriod[]): ForecastPeriod | null {
+function getDayPeriod(periods: ForecastPeriod[]): ForecastPeriod | null {
   return (
     periods.find((p) => !p.name.toLowerCase().includes('night')) ||
     periods[0] ||
@@ -31,16 +31,16 @@ function _getDayPeriod(periods: ForecastPeriod[]): ForecastPeriod | null {
   );
 }
 
-function _getNightPeriod(periods: ForecastPeriod[]): ForecastPeriod | null {
+function getNightPeriod(periods: ForecastPeriod[]): ForecastPeriod | null {
   return periods.find((p) => p.name.toLowerCase().includes('night')) || null;
 }
 
-function _getWindDirection(degrees: number): string {
+function getWindDirection(degrees: number): string {
   const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
   return directions[Math.round(degrees / 45) % 8];
 }
 
-function _getTemperatureChartPath(periods: ForecastPeriod[]): {
+function getTemperatureChartPath(periods: ForecastPeriod[]): {
   path: string;
   points: { x: number; y: number; temp: number; label: string }[];
   minTemp: number;

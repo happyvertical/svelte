@@ -6,7 +6,7 @@ interface Props {
 const { content }: Props = $props();
 
 // Simple markdown renderer
-const _rendered = $derived(renderMarkdown(content));
+const rendered = $derived(renderMarkdown(content));
 
 function renderMarkdown(markdown: string): string {
   return markdown

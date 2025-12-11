@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
+import type { ButtonProps } from '../../types';
 import Button from './Button.svelte';
 
-const meta = {
+const meta: Meta<ButtonProps> = {
   title: 'UI/Button',
   component: Button,
   tags: ['autodocs'],
@@ -21,10 +22,10 @@ const meta = {
       control: 'text',
     },
   },
-} satisfies Meta<Button>;
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<ButtonProps>;
 
 export const Primary: Story = {
   args: {

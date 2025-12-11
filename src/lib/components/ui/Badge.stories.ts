@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
+import type { BadgeProps } from '../../types';
 import Badge from './Badge.svelte';
 
-const meta = {
+const meta: Meta<BadgeProps> = {
   title: 'UI/Badge',
   component: Badge,
   tags: ['autodocs'],
@@ -15,10 +16,10 @@ const meta = {
       options: ['sm', 'md'],
     },
   },
-} satisfies Meta<Badge>;
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<BadgeProps>;
 
 export const Default: Story = {
   args: {

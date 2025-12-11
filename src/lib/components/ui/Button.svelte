@@ -21,7 +21,7 @@ const {
   ...rest
 }: Props = $props();
 
-const _isLink = $derived(!!href);
+const isLink = $derived(!!href);
 </script>
 
 {#if isLink}
@@ -32,7 +32,6 @@ const _isLink = $derived(!!href);
     aria-disabled={disabled}
     role="button"
     tabindex={disabled ? -1 : 0}
-    {...rest}
   >
     {@render children?.()}
   </a>
