@@ -646,6 +646,18 @@ function handleTabsKeyDown(e: KeyboardEvent) {
 
   /* Responsive */
   @media (max-width: 640px) {
+    .weather-widget {
+      padding: 0;
+      /* Break out of Container padding */
+      margin-left: calc(-1 * var(--spacing-md, 16px));
+      margin-right: calc(-1 * var(--spacing-md, 16px));
+    }
+
+    .tabs-wrapper {
+      padding: 8px 0 0 8px;
+      margin-top: -8px;
+    }
+
     .tab {
       padding: 10px 12px;
     }
@@ -658,19 +670,26 @@ function handleTabsKeyDown(e: KeyboardEvent) {
       font-size: 12px;
     }
 
+    .panel {
+      border-radius: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
     .panel-header {
       flex-direction: column;
       gap: 4px;
-      padding: 12px 16px;
+      padding: 12px 12px;
     }
 
     .hourly-grid {
       padding: 12px 0;
+      padding-left: 10px;
+      scroll-padding-left: 10px;
     }
 
-    .hourly-grid::before,
     .hourly-grid::after {
-      width: 16px;
+      width: 10px;
     }
 
     .hour-card {
