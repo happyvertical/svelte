@@ -1,5 +1,24 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.2
+
+### Patch Changes
+
+- ### Features
+
+  - add mdsvex documentation site with component browser
+
+  ### Bug Fixes
+
+  - add @sveltejs/kit to tsconfig types for $app/stores resolution
+  - restore SvelteKit tsconfig extends (CI runs sync first)
+  - remove SvelteKit tsconfig extends for CI compatibility
+
+  ### Other Changes
+
+  - ci: add svelte-kit sync step for SvelteKit type generation
+  - chore: add .svelte-kit and build to gitignore
+
 ## 0.18.1
 
 ### Patch Changes
