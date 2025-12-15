@@ -5,7 +5,7 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "tsBuildInfoFile": "./dist/.tsbuildinfo",
-    "types": ["node"],
+    "types": ["node", "@sveltejs/kit"],
     "lib": ["ES2023", "DOM"],
     "target": "ES2022",
     "module": "ESNext",
