@@ -1,0 +1,78 @@
+<script lang="ts">
+import Button from '$lib/components/ui/Button.svelte';
+</script>
+
+# Getting Started
+
+Welcome to the **@happyvertical/svelte** component library documentation. This library provides a collection of Svelte 5 components for building applications in the HappyVertical ecosystem.
+
+## Installation
+
+```bash
+npm install @happyvertical/svelte
+# or
+pnpm add @happyvertical/svelte
+```
+
+## Quick Example
+
+<div class="example">
+  <div class="example-preview">
+    <Button variant="primary">Click me</Button>
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="ghost">Ghost</Button>
+  </div>
+</div>
+
+```svelte
+<script>
+  import { Button } from '@happyvertical/svelte';
+</script>
+
+<Button variant="primary">Click me</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="ghost">Ghost</Button>
+```
+
+## Features
+
+- **Svelte 5 Ready**: Built with Svelte 5 runes and snippets
+- **TypeScript**: Full type support out of the box
+- **CSS Variables**: Customizable via design tokens
+- **Accessible**: ARIA attributes and keyboard navigation
+
+## Component Categories
+
+### UI Components
+Core interface elements like buttons, cards, and badges.
+
+### Content Components
+Components for displaying articles and content.
+
+### Layout Components
+Structural components for page layouts.
+
+### Council Components
+Specialized components for council/government content.
+
+### Weather Components
+Weather display and forecast components.
+
+## Usage with Svelte 5
+
+All components use Svelte 5's runes syntax. Here's how to use them:
+
+```svelte
+<script lang="ts">
+  import { Button, Card, Badge } from '@happyvertical/svelte';
+
+  let count = $state(0);
+</script>
+
+<Card>
+  {#snippet children()}
+    <p>Count: {count}</p>
+    <Button onclick={() => count++}>Increment</Button>
+  {/snippet}
+</Card>
+```

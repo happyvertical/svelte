@@ -1,0 +1,108 @@
+<script lang="ts">
+import Pagination from '$lib/components/ui/Pagination.svelte';
+</script>
+
+# Pagination
+
+A navigation component for paginated content with smart page number display.
+
+## Import
+
+```typescript
+import { Pagination } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Pagination currentPage={1} totalPages={10} baseUrl="/articles" />
+  </div>
+</div>
+
+```svelte
+<Pagination currentPage={1} totalPages={10} baseUrl="/articles" />
+```
+
+## Different Page States
+
+<div class="example">
+  <div class="example-preview" style="flex-direction: column; width: 100%; gap: 2rem;">
+    <div>
+      <p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #666;">First page:</p>
+      <Pagination currentPage={1} totalPages={10} baseUrl="/articles" />
+    </div>
+    <div>
+      <p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #666;">Middle page:</p>
+      <Pagination currentPage={5} totalPages={10} baseUrl="/articles" />
+    </div>
+    <div>
+      <p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #666;">Last page:</p>
+      <Pagination currentPage={10} totalPages={10} baseUrl="/articles" />
+    </div>
+  </div>
+</div>
+
+```svelte
+<!-- First page - Prev disabled -->
+<Pagination currentPage={1} totalPages={10} />
+
+<!-- Middle page - Shows ellipsis -->
+<Pagination currentPage={5} totalPages={10} />
+
+<!-- Last page - Next disabled -->
+<Pagination currentPage={10} totalPages={10} />
+```
+
+## Few Pages
+
+When there are few pages, all page numbers are shown without ellipsis.
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Pagination currentPage={2} totalPages={5} baseUrl="/articles" />
+  </div>
+</div>
+
+```svelte
+<Pagination currentPage={2} totalPages={5} baseUrl="/articles" />
+```
+
+## Single Page
+
+The component hides itself when there's only one page.
+
+```svelte
+<!-- This renders nothing -->
+<Pagination currentPage={1} totalPages={1} baseUrl="/articles" />
+```
+
+## Features
+
+- **Smart ellipsis**: Shows ellipsis (`...`) when there are many pages
+- **Always shows first and last**: First and last page numbers are always visible
+- **Context around current**: Shows pages around the current page
+- **Accessible**: Uses proper ARIA attributes and roles
+- **Responsive**: Adjusts sizing on mobile devices
+
+## URL Generation
+
+The `baseUrl` prop determines how page URLs are generated:
+- Page 1: `{baseUrl}` (no suffix)
+- Page 2+: `{baseUrl}/page/{pageNumber}`
+
+```svelte
+<!-- baseUrl="/articles" generates: -->
+<!-- Page 1: /articles -->
+<!-- Page 2: /articles/page/2 -->
+<!-- Page 3: /articles/page/3 -->
+<Pagination currentPage={1} totalPages={10} baseUrl="/articles" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `currentPage` | `number` | required | Current active page (1-indexed) |
+| `totalPages` | `number` | required | Total number of pages |
+| `baseUrl` | `string` | `'/articles'` | Base URL for page links |

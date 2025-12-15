@@ -1,0 +1,104 @@
+<script lang="ts">
+import Badge from '$lib/components/ui/Badge.svelte';
+</script>
+
+# Badge
+
+A small label component for displaying status, categories, or metadata.
+
+## Import
+
+```typescript
+import { Badge } from '@happyvertical/svelte';
+```
+
+## Variants
+
+The Badge component supports six variants for different semantic meanings.
+
+<div class="example">
+  <div class="example-preview">
+    <Badge variant="default">Default</Badge>
+    <Badge variant="primary">Primary</Badge>
+    <Badge variant="success">Success</Badge>
+    <Badge variant="warning">Warning</Badge>
+    <Badge variant="error">Error</Badge>
+    <Badge variant="info">Info</Badge>
+  </div>
+</div>
+
+```svelte
+<Badge variant="default">Default</Badge>
+<Badge variant="primary">Primary</Badge>
+<Badge variant="success">Success</Badge>
+<Badge variant="warning">Warning</Badge>
+<Badge variant="error">Error</Badge>
+<Badge variant="info">Info</Badge>
+```
+
+## Sizes
+
+Two sizes are available: `sm` and `md` (default).
+
+<div class="example">
+  <div class="example-preview">
+    <Badge variant="primary" size="sm">Small</Badge>
+    <Badge variant="primary" size="md">Medium</Badge>
+  </div>
+</div>
+
+```svelte
+<Badge variant="primary" size="sm">Small</Badge>
+<Badge variant="primary" size="md">Medium</Badge>
+```
+
+## Use Cases
+
+Badges work well for:
+
+<div class="example">
+  <div class="example-preview">
+    <Badge variant="success">Published</Badge>
+    <Badge variant="warning">Draft</Badge>
+    <Badge variant="error">Archived</Badge>
+  </div>
+</div>
+
+```svelte
+<!-- Article status -->
+<Badge variant="success">Published</Badge>
+<Badge variant="warning">Draft</Badge>
+<Badge variant="error">Archived</Badge>
+```
+
+<div class="example">
+  <div class="example-preview">
+    <Badge variant="default">News</Badge>
+    <Badge variant="default">Sports</Badge>
+    <Badge variant="default">Opinion</Badge>
+  </div>
+</div>
+
+```svelte
+<!-- Categories/Tags -->
+<Badge variant="default">News</Badge>
+<Badge variant="default">Sports</Badge>
+<Badge variant="default">Opinion</Badge>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'default' \| 'primary' \| 'success' \| 'warning' \| 'error' \| 'info'` | `'default'` | Color variant |
+| `size` | `'sm' \| 'md'` | `'md'` | Badge size |
+| `children` | `Snippet` | - | Badge content |
+
+## TypeScript
+
+```typescript
+import type { BadgeVariant, BadgeSize } from '@happyvertical/svelte';
+
+// BadgeVariant = 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info'
+// BadgeSize = 'sm' | 'md'
+```

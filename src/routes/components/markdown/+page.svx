@@ -1,0 +1,105 @@
+<script lang="ts">
+import Markdown from '$lib/components/content/Markdown.svelte';
+
+const sampleMarkdown = `# Welcome to Our Town
+
+This is a **simple markdown renderer** that supports basic formatting.
+
+## Features
+
+- Headers (h1, h2, h3)
+- **Bold text**
+- *Italic text*
+- Unordered lists
+
+Check out our *latest news* for more updates.`;
+</script>
+
+# Markdown
+
+A simple markdown renderer component for displaying formatted text content.
+
+## Import
+
+```typescript
+import { Markdown } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%; background: white; padding: 1rem; border-radius: 0.5rem;">
+    <Markdown content={sampleMarkdown} />
+  </div>
+</div>
+
+```svelte
+<script>
+  const content = `# Welcome to Our Town
+
+This is a **simple markdown renderer** that supports basic formatting.
+
+## Features
+
+- Headers (h1, h2, h3)
+- **Bold text**
+- *Italic text*
+- Unordered lists
+`;
+</script>
+
+<Markdown {content} />
+```
+
+## Supported Syntax
+
+The component supports a subset of Markdown:
+
+| Syntax | Output |
+|--------|--------|
+| `# Heading 1` | `<h1>` |
+| `## Heading 2` | `<h2>` |
+| `### Heading 3` | `<h3>` |
+| `**bold**` | `<strong>` |
+| `*italic*` | `<em>` |
+| `- list item` | `<li>` in `<ul>` |
+| Double newlines | Paragraph breaks |
+
+## Styling
+
+The component applies consistent typography styles using CSS variables from your design tokens:
+
+- Font sizes follow the type scale
+- Line heights are optimized for readability
+- Margins create visual hierarchy
+- Colors use your text color tokens
+
+## Use Cases
+
+The Markdown component is ideal for:
+
+- Article body content
+- About pages
+- Help/documentation text
+- User-generated content (with sanitization)
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `content` | `string` | required | Markdown string to render |
+
+## Security Note
+
+This component uses `{@html}` to render content. If displaying user-generated content, ensure it's sanitized to prevent XSS attacks.
+
+```svelte
+<script>
+  import DOMPurify from 'dompurify';
+
+  // Sanitize user content before rendering
+  const safeContent = DOMPurify.sanitize(userContent);
+</script>
+
+<Markdown content={safeContent} />
+```

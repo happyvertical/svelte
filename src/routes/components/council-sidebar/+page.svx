@@ -1,0 +1,99 @@
+<script lang="ts">
+import CouncilSidebar from '$lib/components/council/CouncilSidebar.svelte';
+
+const sampleMembers = [
+  { name: 'John Smith', position: 'Mayor' },
+  { name: 'Jane Doe', position: 'Deputy Mayor' },
+  { name: 'Bob Wilson', position: 'Councillor', ward: 'Ward 1' },
+  { name: 'Alice Brown', position: 'Councillor', ward: 'Ward 2' },
+  { name: 'Charlie Davis', position: 'Councillor', ward: 'Ward 3' }
+];
+</script>
+
+# CouncilSidebar
+
+A sidebar component displaying council/government members with automatic position-based sorting.
+
+## Import
+
+```typescript
+import { CouncilSidebar } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%; max-width: 300px;">
+    <CouncilSidebar councilName="Town of Bentley Council" members={sampleMembers} />
+  </div>
+</div>
+
+```svelte
+<script>
+  const members = [
+    { name: 'John Smith', position: 'Mayor' },
+    { name: 'Jane Doe', position: 'Deputy Mayor' },
+    { name: 'Bob Wilson', position: 'Councillor', ward: 'Ward 1' },
+    { name: 'Alice Brown', position: 'Councillor', ward: 'Ward 2' }
+  ];
+</script>
+
+<CouncilSidebar councilName="Town Council" {members} />
+```
+
+## Empty State
+
+<div class="example">
+  <div class="example-preview" style="width: 100%; max-width: 300px;">
+    <CouncilSidebar councilName="Town Council" members={[]} />
+  </div>
+</div>
+
+```svelte
+<CouncilSidebar councilName="Town Council" members={[]} />
+```
+
+## Automatic Sorting
+
+Members are automatically sorted by position hierarchy:
+
+1. **Mayor / Reeve** (first)
+2. **Deputy Mayor / Deputy Reeve**
+3. **Other positions** (councillors, etc.)
+
+```svelte
+<!-- These will be sorted automatically: Mayor first -->
+<CouncilSidebar
+  councilName="Council"
+  members={[
+    { name: 'Alice', position: 'Councillor' },
+    { name: 'Bob', position: 'Mayor' },
+    { name: 'Carol', position: 'Deputy Mayor' }
+  ]}
+/>
+```
+
+## Member Interface
+
+```typescript
+interface CouncilMember {
+  name: string;
+  position?: string;  // Mayor, Deputy Mayor, Councillor, etc.
+  ward?: string;      // Ward 1, Ward 2, etc.
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `councilName` | `string` | required | Name of the council |
+| `members` | `CouncilMember[]` | `[]` | Array of council members |
+
+## Features
+
+- **Auto sorting**: Mayor/Reeve always first, Deputy second
+- **Position display**: Shows position in primary color
+- **Ward display**: Shows ward in secondary text
+- **Card wrapper**: Uses Card component for consistent styling
+- **Empty handling**: Shows message when no members provided

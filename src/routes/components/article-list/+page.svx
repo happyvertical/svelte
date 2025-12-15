@@ -1,0 +1,132 @@
+<script lang="ts">
+import ArticleList from '$lib/components/content/ArticleList.svelte';
+
+const sampleArticles = [
+  {
+    id: '1',
+    slug: 'council-approves-budget',
+    title: 'Town Council Approves 2024 Budget',
+    description: 'The town council unanimously approved the annual budget.',
+    publish_date: '2024-01-15',
+    author: 'Jane Smith',
+    tags: 'Budget,Council'
+  },
+  {
+    id: '2',
+    slug: 'new-park-opening',
+    title: 'New Community Park Opening This Spring',
+    description: 'Construction on the new park is nearly complete.',
+    publish_date: '2024-01-12',
+    author: 'John Doe',
+    tags: 'Parks,Community'
+  },
+  {
+    id: '3',
+    slug: 'road-construction-update',
+    title: 'Highway 12 Construction Update',
+    description: 'Road work expected to continue through March.',
+    publish_date: '2024-01-10',
+    author: 'Jane Smith',
+    tags: 'Infrastructure'
+  }
+];
+</script>
+
+# ArticleList
+
+A grid layout component for displaying multiple article cards.
+
+## Import
+
+```typescript
+import { ArticleList } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <ArticleList articles={sampleArticles} />
+  </div>
+</div>
+
+```svelte
+<script>
+  const articles = [
+    { id: '1', slug: 'article-1', title: 'First Article', ... },
+    { id: '2', slug: 'article-2', title: 'Second Article', ... },
+    { id: '3', slug: 'article-3', title: 'Third Article', ... }
+  ];
+</script>
+
+<ArticleList {articles} />
+```
+
+## Fixed Columns
+
+By default, columns auto-fit based on available space. You can set a fixed number.
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <ArticleList articles={sampleArticles} columns={2} />
+  </div>
+</div>
+
+```svelte
+<ArticleList {articles} columns={2} />
+```
+
+## Display Options
+
+Control what's shown in each article card.
+
+```svelte
+<ArticleList
+  {articles}
+  showExcerpt={true}
+  showDate={true}
+  showAuthor={false}
+  showTags={true}
+/>
+```
+
+## Empty State
+
+Shows a message when there are no articles.
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <ArticleList articles={[]} />
+  </div>
+</div>
+
+```svelte
+<ArticleList articles={[]} />
+```
+
+## Custom Empty Message
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <ArticleList articles={[]} emptyMessage="No news articles found for this category." />
+  </div>
+</div>
+
+```svelte
+<ArticleList
+  articles={[]}
+  emptyMessage="No news articles found for this category."
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `articles` | `Article[]` | required | Array of article objects |
+| `columns` | `number \| 'auto'` | `'auto'` | Number of columns or auto-fit |
+| `showExcerpt` | `boolean` | `true` | Show article descriptions |
+| `showDate` | `boolean` | `true` | Show publish dates |
+| `showAuthor` | `boolean` | `true` | Show author names |
+| `showTags` | `boolean` | `false` | Show article tags |
+| `emptyMessage` | `string` | `'No articles published yet...'` | Message when no articles |

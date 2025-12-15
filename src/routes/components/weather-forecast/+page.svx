@@ -1,0 +1,113 @@
+<script lang="ts">
+import WeatherForecast from '$lib/components/weather/WeatherForecast.svelte';
+import sampleWeather from '$lib/data/sample-weather.json';
+</script>
+
+# WeatherForecast
+
+An interactive weather forecast component with expandable daily details, tabs for day/night periods, and temperature charts.
+
+## Import
+
+```typescript
+import { WeatherForecast } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%; overflow-x: auto;">
+    <WeatherForecast forecast={sampleWeather} />
+  </div>
+</div>
+
+```svelte
+<script>
+  const forecast = [
+    {
+      day: 'Mon',
+      icon: '☀️',
+      high: 22,
+      low: 14,
+      periods: [
+        {
+          name: 'Afternoon (14:00)',
+          conditions: 'sunny',
+          temperature: 22,
+          windSpeed: 15,
+          windDirection: 180,
+          humidity: 45,
+          precipProbability: 0
+        }
+      ]
+    }
+  ];
+</script>
+
+<WeatherForecast {forecast} />
+```
+
+## Features
+
+### Day Summary
+Click any day to expand its details:
+- Weather icon
+- High/low temperatures
+- Day name abbreviation
+
+### Expanded View Tabs
+- **Day**: Daytime period details
+- **Night**: Nighttime period details
+- **Chart**: Temperature trend visualization
+
+### Period Details
+- Current conditions
+- Temperature in Celsius
+- Wind speed and direction
+- Humidity percentage
+
+## Data Structure
+
+```typescript
+interface ForecastPeriod {
+  name: string;           // "Afternoon (14:00)"
+  conditions: string;     // "sunny", "cloudy", etc.
+  temperature: number;    // Celsius
+  windSpeed: number;      // km/h
+  windDirection: number;  // Degrees (0-360)
+  humidity: number;       // Percentage
+  precipProbability: number;
+}
+
+interface ForecastDay {
+  day: string;            // "Mon", "Tue", etc.
+  icon: string;           // Emoji: ☀️, ☁️, 🌧️, etc.
+  high: number;           // Daily high (Celsius)
+  low: number;            // Daily low (Celsius)
+  periods: ForecastPeriod[];
+}
+```
+
+## Interaction
+
+- **Click day**: Toggle expand/collapse
+- **Tab switching**: View different period details
+- **Horizontal scroll**: Navigate between days on mobile
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `forecast` | `ForecastDay[] \| null` | - | Array of daily forecast data |
+
+## TypeScript
+
+```typescript
+import type { ForecastDay, ForecastPeriod } from '@happyvertical/svelte';
+```
+
+## Responsive Behavior
+
+- Desktop: Days displayed horizontally with large icons
+- Mobile: Scrollable horizontal layout with smaller icons
+- Expanded view adapts to available width

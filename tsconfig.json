@@ -1,10 +1,11 @@
 {
+  "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
     "composite": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "tsBuildInfoFile": "./dist/.tsbuildinfo",
-    "types": ["node"],
+    "types": ["node", "@sveltejs/kit"],
     "lib": ["ES2023", "DOM"],
     "target": "ES2022",
     "module": "ESNext",
@@ -16,7 +17,11 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": [

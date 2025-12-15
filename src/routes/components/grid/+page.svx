@@ -1,0 +1,117 @@
+<script lang="ts">
+import Grid from '$lib/components/layout/Grid.svelte';
+import Card from '$lib/components/ui/Card.svelte';
+</script>
+
+# Grid
+
+A responsive CSS grid layout component with configurable columns and gap sizes.
+
+## Import
+
+```typescript
+import { Grid } from '@happyvertical/svelte';
+```
+
+## Auto-fit Columns
+
+By default, the grid automatically fits columns with a minimum width of 300px.
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Grid>
+      <Card><div style="padding: 1rem;">Item 1</div></Card>
+      <Card><div style="padding: 1rem;">Item 2</div></Card>
+      <Card><div style="padding: 1rem;">Item 3</div></Card>
+      <Card><div style="padding: 1rem;">Item 4</div></Card>
+    </Grid>
+  </div>
+</div>
+
+```svelte
+<Grid>
+  <Card>Item 1</Card>
+  <Card>Item 2</Card>
+  <Card>Item 3</Card>
+  <Card>Item 4</Card>
+</Grid>
+```
+
+## Fixed Columns
+
+Set a specific number of columns.
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Grid columns={3}>
+      <Card><div style="padding: 1rem;">1</div></Card>
+      <Card><div style="padding: 1rem;">2</div></Card>
+      <Card><div style="padding: 1rem;">3</div></Card>
+      <Card><div style="padding: 1rem;">4</div></Card>
+      <Card><div style="padding: 1rem;">5</div></Card>
+      <Card><div style="padding: 1rem;">6</div></Card>
+    </Grid>
+  </div>
+</div>
+
+```svelte
+<Grid columns={3}>
+  <Card>1</Card>
+  <Card>2</Card>
+  <Card>3</Card>
+  <Card>4</Card>
+  <Card>5</Card>
+  <Card>6</Card>
+</Grid>
+```
+
+## Gap Sizes
+
+Control spacing between grid items.
+
+<div class="example">
+  <div class="example-preview" style="flex-direction: column; width: 100%; gap: 2rem;">
+    <div>
+      <p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #666;">gap="sm"</p>
+      <Grid columns={4} gap="sm">
+        <Card><div style="padding: 0.5rem; text-align: center;">1</div></Card>
+        <Card><div style="padding: 0.5rem; text-align: center;">2</div></Card>
+        <Card><div style="padding: 0.5rem; text-align: center;">3</div></Card>
+        <Card><div style="padding: 0.5rem; text-align: center;">4</div></Card>
+      </Grid>
+    </div>
+    <div>
+      <p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #666;">gap="lg"</p>
+      <Grid columns={4} gap="lg">
+        <Card><div style="padding: 0.5rem; text-align: center;">1</div></Card>
+        <Card><div style="padding: 0.5rem; text-align: center;">2</div></Card>
+        <Card><div style="padding: 0.5rem; text-align: center;">3</div></Card>
+        <Card><div style="padding: 0.5rem; text-align: center;">4</div></Card>
+      </Grid>
+    </div>
+  </div>
+</div>
+
+```svelte
+<Grid gap="sm">...</Grid>
+<Grid gap="md">...</Grid>  <!-- default -->
+<Grid gap="lg">...</Grid>
+<Grid gap="xl">...</Grid>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `columns` | `number \| 'auto'` | `'auto'` | Number of columns or auto-fit |
+| `gap` | `'sm' \| 'md' \| 'lg' \| 'xl'` | `'md'` | Gap between items |
+| `children` | `Snippet` | - | Grid items |
+
+## Gap Values
+
+| Value | CSS Variable |
+|-------|--------------|
+| `sm` | `--spacing-md` (1rem) |
+| `md` | `--spacing-lg` (1.5rem) |
+| `lg` | `--spacing-xl` (2rem) |
+| `xl` | `--spacing-2xl` (3rem) |

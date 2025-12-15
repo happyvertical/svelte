@@ -1,0 +1,130 @@
+<script lang="ts">
+import ArticleReferences from '$lib/components/council/ArticleReferences.svelte';
+
+const sampleReferences = [
+  {
+    title: 'Council Meeting Agenda',
+    url: '/docs/agenda-2024-01-15.pdf',
+    type: 'agenda',
+    description: 'January 15, 2024 Regular Meeting'
+  },
+  {
+    title: 'Meeting Minutes',
+    url: '/docs/minutes-2024-01-15.pdf',
+    type: 'minutes',
+    description: 'Approved minutes from the meeting'
+  },
+  {
+    title: 'Watch Recording',
+    url: 'https://youtube.com/watch?v=example',
+    type: 'video',
+    description: 'Full meeting video on YouTube'
+  },
+  {
+    title: 'Budget Proposal Document',
+    url: '/docs/budget-2024.pdf',
+    type: 'document'
+  }
+];
+</script>
+
+# ArticleReferences
+
+A card component for displaying reference links related to an article, with icons for different document types.
+
+## Import
+
+```typescript
+import { ArticleReferences } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%; max-width: 500px;">
+    <ArticleReferences references={sampleReferences} />
+  </div>
+</div>
+
+```svelte
+<script>
+  const references = [
+    {
+      title: 'Council Meeting Agenda',
+      url: '/docs/agenda.pdf',
+      type: 'agenda',
+      description: 'January 15, 2024 Meeting'
+    },
+    {
+      title: 'Meeting Minutes',
+      url: '/docs/minutes.pdf',
+      type: 'minutes'
+    }
+  ];
+</script>
+
+<ArticleReferences {references} />
+```
+
+## Custom Title
+
+<div class="example">
+  <div class="example-preview" style="width: 100%; max-width: 500px;">
+    <ArticleReferences references={sampleReferences.slice(0, 2)} title="Source Documents" />
+  </div>
+</div>
+
+```svelte
+<ArticleReferences {references} title="Source Documents" />
+```
+
+## Reference Types
+
+The component displays different icons based on the `type` field:
+
+| Type | Icon | Description |
+|------|------|-------------|
+| `agenda` | 📋 | Meeting agendas |
+| `minutes` | 📝 | Meeting minutes |
+| `video` | 🎬 | Video recordings |
+| `document` | 📄 | General documents |
+| `external` | 🔗 | External links |
+| (none) | 📎 | Default/unspecified |
+
+## File Type Badges
+
+PDF and Word documents automatically show a badge:
+
+<div class="example">
+  <div class="example-preview" style="width: 100%; max-width: 500px;">
+    <ArticleReferences references={[
+      { title: 'Budget Report', url: '/report.pdf', type: 'document' },
+      { title: 'Meeting Notes', url: '/notes.docx', type: 'document' }
+    ]} />
+  </div>
+</div>
+
+## Reference Interface
+
+```typescript
+interface Reference {
+  title: string;
+  url: string;
+  type?: 'agenda' | 'minutes' | 'video' | 'document' | 'external';
+  description?: string;
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `references` | `Reference[]` | required | Array of reference objects |
+| `title` | `string` | `'References'` | Section title |
+
+## Features
+
+- **External links**: Opens in new tab with `rel="noopener noreferrer"`
+- **Hover effects**: Visual feedback on link hover
+- **File badges**: Shows PDF/Word badge based on file extension
+- **Empty state**: Renders nothing when references array is empty

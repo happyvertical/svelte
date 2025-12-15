@@ -1,0 +1,117 @@
+<script lang="ts">
+import WeatherHeader from '$lib/components/weather/WeatherHeader.svelte';
+import sampleWeather from '$lib/data/sample-weather.json';
+</script>
+
+# WeatherHeader
+
+An editorial-style weather widget with tab navigation and hourly forecast display.
+
+## Import
+
+```typescript
+import { WeatherHeader } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%; background: #f5f5f5; padding: 0; border-radius: 0.5rem; overflow: hidden;">
+    <WeatherHeader forecast={sampleWeather} />
+  </div>
+</div>
+
+```svelte
+<script>
+  const forecast = [
+    {
+      day: 'Mon',
+      icon: '☀️',
+      high: 22,
+      low: 14,
+      periods: [...]
+    }
+  ];
+</script>
+
+<WeatherHeader {forecast} />
+```
+
+## Features
+
+### Tab-based Navigation
+- Horizontal scrollable day tabs
+- Date and weather icon per day
+- High/low temperature display
+- Active tab highlighting with smooth transitions
+
+### Hourly Forecast Panel
+- Full date display
+- Scrollable hourly cards
+- Per-hour: time, icon, temperature, "feels like"
+- Collapse button to dismiss
+
+### Drag to Scroll
+Both tabs and hourly grid support:
+- Mouse drag scrolling
+- Touch swiping
+- Keyboard navigation (arrow keys)
+
+## Mock Data
+
+If no forecast is provided, the component displays mock data for demonstration:
+
+```svelte
+<!-- Shows 10 days of mock data -->
+<WeatherHeader />
+```
+
+## Data Structure
+
+Same as WeatherForecast, but with enhanced hourly data:
+
+```typescript
+interface HourlyForecast {
+  time: string;        // "14:00"
+  hour: number;        // 14
+  icon: string;        // Weather emoji
+  temperature: number; // Celsius
+  feelsLike: number;   // "Feels like" temperature
+}
+
+interface DayForecast {
+  id: string;
+  dayName: string;     // "Mon"
+  date: string;        // "Jan 15"
+  icon: string;
+  high: number;
+  low: number;
+  hourlyData: HourlyForecast[];
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `forecast` | `ForecastDay[] \| null` | - | Forecast data (shows mock if null) |
+
+## Design
+
+The component uses a warm, editorial color palette:
+- Warm white backgrounds
+- Subtle shadows and borders
+- Clean typography
+- Newspaper-inspired aesthetics
+
+## Responsive Behavior
+
+- **Desktop**: Full-width tabs, larger hourly cards
+- **Mobile (640px)**: Compact tabs, smaller cards
+- **Touch**: Horizontal swipe scrolling
+
+## TypeScript
+
+```typescript
+import type { DayForecast, HourlyForecast } from '@happyvertical/svelte';
+```
