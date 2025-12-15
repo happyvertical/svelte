@@ -1,0 +1,136 @@
+<script lang="ts">
+import Button from '$lib/components/ui/Button.svelte';
+
+let clickCount = $state(0);
+</script>
+
+# Button
+
+A versatile button component that supports multiple variants, sizes, and can render as either a button or a link.
+
+## Import
+
+```typescript
+import { Button } from '@happyvertical/svelte';
+// or
+import Button from '@happyvertical/svelte/Button';
+```
+
+## Variants
+
+The Button component supports four variants: `primary`, `secondary`, `ghost`, and `danger`.
+
+<div class="example">
+  <div class="example-preview">
+    <Button variant="primary">Primary</Button>
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="ghost">Ghost</Button>
+    <Button variant="danger">Danger</Button>
+  </div>
+</div>
+
+```svelte
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="danger">Danger</Button>
+```
+
+## Sizes
+
+Three sizes are available: `sm`, `md` (default), and `lg`.
+
+<div class="example">
+  <div class="example-preview">
+    <Button variant="primary" size="sm">Small</Button>
+    <Button variant="primary" size="md">Medium</Button>
+    <Button variant="primary" size="lg">Large</Button>
+  </div>
+</div>
+
+```svelte
+<Button variant="primary" size="sm">Small</Button>
+<Button variant="primary" size="md">Medium</Button>
+<Button variant="primary" size="lg">Large</Button>
+```
+
+## Interactive Example
+
+Click the button to see it in action:
+
+<div class="example">
+  <div class="example-preview">
+    <Button variant="primary" onclick={() => clickCount++}>
+      Clicked {clickCount} times
+    </Button>
+    <Button variant="secondary" onclick={() => clickCount = 0}>
+      Reset
+    </Button>
+  </div>
+</div>
+
+```svelte
+<script lang="ts">
+  let clickCount = $state(0);
+</script>
+
+<Button variant="primary" onclick={() => clickCount++}>
+  Clicked {clickCount} times
+</Button>
+<Button variant="secondary" onclick={() => clickCount = 0}>
+  Reset
+</Button>
+```
+
+## As Link
+
+Use the `href` prop to render as an anchor element:
+
+<div class="example">
+  <div class="example-preview">
+    <Button variant="primary" href="/">Go Home</Button>
+    <Button variant="secondary" href="https://github.com/happyvertical/svelte">GitHub</Button>
+  </div>
+</div>
+
+```svelte
+<Button variant="primary" href="/">Go Home</Button>
+<Button variant="secondary" href="https://github.com/happyvertical/svelte">
+  GitHub
+</Button>
+```
+
+## Disabled State
+
+<div class="example">
+  <div class="example-preview">
+    <Button variant="primary" disabled>Disabled Primary</Button>
+    <Button variant="secondary" disabled>Disabled Secondary</Button>
+  </div>
+</div>
+
+```svelte
+<Button variant="primary" disabled>Disabled Primary</Button>
+<Button variant="secondary" disabled>Disabled Secondary</Button>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary' \| 'ghost' \| 'danger'` | `'primary'` | Visual style variant |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Button size |
+| `href` | `string` | `undefined` | If provided, renders as anchor element |
+| `disabled` | `boolean` | `false` | Disables the button |
+| `type` | `'button' \| 'submit' \| 'reset'` | `'button'` | Button type attribute |
+| `onclick` | `function` | `undefined` | Click handler |
+| `children` | `Snippet` | - | Button content |
+
+## TypeScript
+
+```typescript
+import type { ButtonVariant, ButtonSize } from '@happyvertical/svelte';
+
+// ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger'
+// ButtonSize = 'sm' | 'md' | 'lg'
+```

@@ -1,0 +1,99 @@
+<script lang="ts">
+import Header from '$lib/components/layout/Header.svelte';
+</script>
+
+# Header
+
+A site header component with slots for logo and navigation.
+
+## Import
+
+```typescript
+import { Header } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Header>
+      {#snippet logo()}
+        <h1>Town News</h1>
+      {/snippet}
+      {#snippet nav()}
+        <a href="#">Home</a>
+        <a href="#">Articles</a>
+        <a href="#">About</a>
+      {/snippet}
+    </Header>
+  </div>
+</div>
+
+```svelte
+<Header>
+  {#snippet logo()}
+    <h1>Town News</h1>
+  {/snippet}
+  {#snippet nav()}
+    <a href="/">Home</a>
+    <a href="/articles">Articles</a>
+    <a href="/about">About</a>
+  {/snippet}
+</Header>
+```
+
+## Logo Only
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Header>
+      {#snippet logo()}
+        <h1>Site Name</h1>
+      {/snippet}
+    </Header>
+  </div>
+</div>
+
+```svelte
+<Header>
+  {#snippet logo()}
+    <h1>Site Name</h1>
+  {/snippet}
+</Header>
+```
+
+## Features
+
+- **Primary background**: Uses `--color-primary-main` for brand consistency
+- **Inverse text**: White text on colored background
+- **Responsive layout**: Stacks vertically on mobile, horizontal on desktop
+- **Built-in Container**: Content is automatically contained
+- **Link styling**: Navigation links have hover effects
+
+## Responsive Behavior
+
+- **Mobile**: Logo and nav stack vertically
+- **Desktop (768px+)**: Logo and nav side-by-side
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `logo` | `Snippet` | - | Logo/site title content |
+| `nav` | `Snippet` | - | Navigation links |
+
+## Styling Notes
+
+The header automatically styles elements inside the snippets:
+
+```svelte
+<!-- h1 in logo slot: large, semibold, no margin -->
+{#snippet logo()}
+  <h1>Site Name</h1>
+{/snippet}
+
+<!-- Links in nav slot: white, medium weight, hover underline -->
+{#snippet nav()}
+  <a href="/">Link</a>
+{/snippet}
+```

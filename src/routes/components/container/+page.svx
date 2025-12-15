@@ -1,0 +1,96 @@
+<script lang="ts">
+import Container from '$lib/components/layout/Container.svelte';
+</script>
+
+# Container
+
+A layout component that centers content and applies consistent horizontal padding with configurable max-width.
+
+## Import
+
+```typescript
+import { Container } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%; background: #f5f5f5; padding: 0;">
+    <Container>
+      <div style="background: #e3f2fd; padding: 1rem; text-align: center;">
+        Content inside a container (max-width: lg)
+      </div>
+    </Container>
+  </div>
+</div>
+
+```svelte
+<Container>
+  <p>Your content here</p>
+</Container>
+```
+
+## Max Width Options
+
+Control the maximum width of the container with the `maxWidth` prop.
+
+<div class="example">
+  <div class="example-preview" style="flex-direction: column; width: 100%; background: #f5f5f5; padding: 1rem 0; gap: 0.5rem;">
+    <Container maxWidth="sm">
+      <div style="background: #e3f2fd; padding: 0.5rem; text-align: center; font-size: 0.875rem;">
+        sm (640px)
+      </div>
+    </Container>
+    <Container maxWidth="md">
+      <div style="background: #e3f2fd; padding: 0.5rem; text-align: center; font-size: 0.875rem;">
+        md (768px)
+      </div>
+    </Container>
+    <Container maxWidth="lg">
+      <div style="background: #e3f2fd; padding: 0.5rem; text-align: center; font-size: 0.875rem;">
+        lg (1024px) - default
+      </div>
+    </Container>
+    <Container maxWidth="xl">
+      <div style="background: #e3f2fd; padding: 0.5rem; text-align: center; font-size: 0.875rem;">
+        xl (1280px)
+      </div>
+    </Container>
+    <Container maxWidth="full">
+      <div style="background: #e3f2fd; padding: 0.5rem; text-align: center; font-size: 0.875rem;">
+        full (100%)
+      </div>
+    </Container>
+  </div>
+</div>
+
+```svelte
+<Container maxWidth="sm">640px max</Container>
+<Container maxWidth="md">768px max</Container>
+<Container maxWidth="lg">1024px max (default)</Container>
+<Container maxWidth="xl">1280px max</Container>
+<Container maxWidth="full">Full width</Container>
+```
+
+## Responsive Padding
+
+The container automatically adjusts horizontal padding based on screen size:
+- Mobile: `--spacing-md` (1rem)
+- Desktop (640px+): `--spacing-lg` (1.5rem)
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `maxWidth` | `'sm' \| 'md' \| 'lg' \| 'xl' \| 'full'` | `'lg'` | Maximum container width |
+| `children` | `Snippet` | - | Container content |
+
+## Max Width Values
+
+| Value | Pixels |
+|-------|--------|
+| `sm` | 640px |
+| `md` | 768px |
+| `lg` | 1024px |
+| `xl` | 1280px |
+| `full` | 100% |

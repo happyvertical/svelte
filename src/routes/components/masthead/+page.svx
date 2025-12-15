@@ -1,0 +1,85 @@
+<script lang="ts">
+import Masthead from '$lib/components/layout/Masthead.svelte';
+</script>
+
+# Masthead
+
+A newspaper-style subheader component displaying date, location, and navigation links.
+
+## Import
+
+```typescript
+import { Masthead } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Masthead location="Bentley, Alberta" />
+  </div>
+</div>
+
+```svelte
+<Masthead location="Bentley, Alberta" />
+```
+
+## With Navigation
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Masthead location="Bentley, Alberta">
+      {#snippet nav()}
+        <a href="#">News</a>
+        <a href="#">Events</a>
+        <a href="#">Council</a>
+      {/snippet}
+    </Masthead>
+  </div>
+</div>
+
+```svelte
+<Masthead location="Bentley, Alberta">
+  {#snippet nav()}
+    <a href="/news">News</a>
+    <a href="/events">Events</a>
+    <a href="/council">Council</a>
+  {/snippet}
+</Masthead>
+```
+
+## Custom Date
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Masthead date="January 15, 2024" location="Bentley, Alberta" />
+  </div>
+</div>
+
+```svelte
+<Masthead date="January 15, 2024" location="Bentley, Alberta" />
+```
+
+## Layout
+
+The masthead uses a three-column grid:
+- **Left**: Date (italicized)
+- **Center**: Location (uppercase, small caps style)
+- **Right**: Navigation links
+
+On mobile, all items center and stack vertically.
+
+## Features
+
+- **Auto date**: Shows today's date in "Weekday, Month Day, Year" format
+- **Newspaper style**: Evokes traditional print layout
+- **Responsive**: Adapts to mobile screens
+- **Contained**: Uses Container component internally
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `date` | `string` | Current date | Date string to display |
+| `location` | `string` | `''` | Location/city name |
+| `nav` | `Snippet` | - | Navigation links |

@@ -1,0 +1,117 @@
+<script lang="ts">
+import ArticleCard from '$lib/components/content/ArticleCard.svelte';
+
+const sampleArticle = {
+  id: '1',
+  slug: 'council-approves-budget',
+  title: 'Town Council Approves 2024 Budget',
+  description: 'The town council unanimously approved the annual budget at last night\'s meeting, allocating funds for infrastructure improvements and community programs.',
+  publish_date: '2024-01-15',
+  author: 'Jane Smith',
+  tags: 'Budget,Council,Infrastructure'
+};
+</script>
+
+# ArticleCard
+
+A card component for displaying article previews with title, excerpt, date, author, and tags.
+
+## Import
+
+```typescript
+import { ArticleCard } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="max-width: 500px; width: 100%;">
+    <ArticleCard article={sampleArticle} />
+  </div>
+</div>
+
+```svelte
+<script>
+  const article = {
+    id: '1',
+    slug: 'council-approves-budget',
+    title: 'Town Council Approves 2024 Budget',
+    description: 'The town council unanimously approved the annual budget...',
+    publish_date: '2024-01-15',
+    author: 'Jane Smith',
+    tags: 'Budget,Council,Infrastructure'
+  };
+</script>
+
+<ArticleCard {article} />
+```
+
+## Display Options
+
+Control what information is shown with boolean props.
+
+<div class="example">
+  <div class="example-preview" style="flex-direction: column; max-width: 500px; width: 100%; gap: 1rem;">
+    <ArticleCard article={sampleArticle} showExcerpt={false} />
+  </div>
+</div>
+
+```svelte
+<!-- Hide excerpt -->
+<ArticleCard {article} showExcerpt={false} />
+
+<!-- Hide date -->
+<ArticleCard {article} showDate={false} />
+
+<!-- Hide author -->
+<ArticleCard {article} showAuthor={false} />
+
+<!-- Show tags -->
+<ArticleCard {article} showTags={true} />
+```
+
+## With Tags
+
+<div class="example">
+  <div class="example-preview" style="max-width: 500px; width: 100%;">
+    <ArticleCard article={sampleArticle} showTags={true} />
+  </div>
+</div>
+
+```svelte
+<ArticleCard {article} showTags={true} />
+```
+
+## Article Interface
+
+The component expects an article object with the following shape:
+
+```typescript
+interface Article {
+  id: string;
+  slug: string;
+  title: string;
+  description: string | null;
+  publish_date: string | null;  // ISO date string
+  author: string | null;
+  tags: string;  // Comma-separated or JSON array
+}
+```
+
+## Features
+
+- **Clickable card**: Entire card links to `/articles/{slug}`
+- **Hover effects**: Card elevates on hover
+- **Date formatting**: Displays dates in "Month Day, Year" format
+- **Tag parsing**: Handles comma-separated strings or JSON arrays
+- **Responsive**: Adapts to container width
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `article` | `Article` | required | Article data object |
+| `showExcerpt` | `boolean` | `true` | Show article description |
+| `showDate` | `boolean` | `true` | Show publish date |
+| `showAuthor` | `boolean` | `true` | Show author name |
+| `showTags` | `boolean` | `false` | Show article tags |

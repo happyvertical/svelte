@@ -1,0 +1,176 @@
+<script lang="ts">
+import Card from '$lib/components/ui/Card.svelte';
+import Button from '$lib/components/ui/Button.svelte';
+</script>
+
+# Card
+
+A flexible container component with support for headers, footers, and multiple visual variants.
+
+## Import
+
+```typescript
+import { Card } from '@happyvertical/svelte';
+```
+
+## Variants
+
+The Card component supports three variants: `default`, `outlined`, and `elevated`.
+
+<div class="example">
+  <div class="example-preview" style="flex-direction: column; align-items: stretch; max-width: 400px;">
+    <Card variant="default">
+      {#snippet children()}
+        <p style="margin: 0;">Default card with subtle border</p>
+      {/snippet}
+    </Card>
+    <Card variant="outlined">
+      {#snippet children()}
+        <p style="margin: 0;">Outlined card with stronger border</p>
+      {/snippet}
+    </Card>
+    <Card variant="elevated">
+      {#snippet children()}
+        <p style="margin: 0;">Elevated card with shadow</p>
+      {/snippet}
+    </Card>
+  </div>
+</div>
+
+```svelte
+<Card variant="default">
+  {#snippet children()}
+    <p>Default card with subtle border</p>
+  {/snippet}
+</Card>
+
+<Card variant="outlined">
+  {#snippet children()}
+    <p>Outlined card with stronger border</p>
+  {/snippet}
+</Card>
+
+<Card variant="elevated">
+  {#snippet children()}
+    <p>Elevated card with shadow</p>
+  {/snippet}
+</Card>
+```
+
+## With Header and Footer
+
+Cards can have optional header and footer sections using Svelte 5 snippets.
+
+<div class="example">
+  <div class="example-preview" style="max-width: 400px;">
+    <Card variant="default">
+      {#snippet header()}
+        <h3 style="margin: 0;">Card Title</h3>
+      {/snippet}
+      {#snippet children()}
+        <p style="margin: 0;">This card has a header and footer section for additional content.</p>
+      {/snippet}
+      {#snippet footer()}
+        <div style="display: flex; gap: 0.5rem;">
+          <Button variant="primary" size="sm">Save</Button>
+          <Button variant="ghost" size="sm">Cancel</Button>
+        </div>
+      {/snippet}
+    </Card>
+  </div>
+</div>
+
+```svelte
+<Card variant="default">
+  {#snippet header()}
+    <h3>Card Title</h3>
+  {/snippet}
+  {#snippet children()}
+    <p>This card has a header and footer section.</p>
+  {/snippet}
+  {#snippet footer()}
+    <div style="display: flex; gap: 0.5rem;">
+      <Button variant="primary" size="sm">Save</Button>
+      <Button variant="ghost" size="sm">Cancel</Button>
+    </div>
+  {/snippet}
+</Card>
+```
+
+## Hoverable
+
+Add hover effects with the `hoverable` prop.
+
+<div class="example">
+  <div class="example-preview" style="max-width: 400px;">
+    <Card variant="default" hoverable>
+      {#snippet children()}
+        <p style="margin: 0;">Hover over this card to see the effect</p>
+      {/snippet}
+    </Card>
+  </div>
+</div>
+
+```svelte
+<Card variant="default" hoverable>
+  {#snippet children()}
+    <p>Hover over this card to see the effect</p>
+  {/snippet}
+</Card>
+```
+
+## Padding Sizes
+
+Control content padding with the `padding` prop.
+
+<div class="example">
+  <div class="example-preview" style="flex-direction: column; align-items: stretch; max-width: 400px;">
+    <Card padding="none">
+      {#snippet children()}
+        <p style="margin: 0;">No padding</p>
+      {/snippet}
+    </Card>
+    <Card padding="sm">
+      {#snippet children()}
+        <p style="margin: 0;">Small padding</p>
+      {/snippet}
+    </Card>
+    <Card padding="md">
+      {#snippet children()}
+        <p style="margin: 0;">Medium padding (default)</p>
+      {/snippet}
+    </Card>
+    <Card padding="lg">
+      {#snippet children()}
+        <p style="margin: 0;">Large padding</p>
+      {/snippet}
+    </Card>
+  </div>
+</div>
+
+```svelte
+<Card padding="none">...</Card>
+<Card padding="sm">...</Card>
+<Card padding="md">...</Card>
+<Card padding="lg">...</Card>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'default' \| 'outlined' \| 'elevated'` | `'default'` | Visual style variant |
+| `padding` | `'none' \| 'sm' \| 'md' \| 'lg'` | `'md'` | Content padding size |
+| `hoverable` | `boolean` | `false` | Enable hover effects |
+| `children` | `Snippet` | - | Main card content |
+| `header` | `Snippet` | - | Optional header content |
+| `footer` | `Snippet` | - | Optional footer content |
+
+## TypeScript
+
+```typescript
+import type { CardVariant, CardPadding } from '@happyvertical/svelte';
+
+// CardVariant = 'default' | 'outlined' | 'elevated'
+// CardPadding = 'none' | 'sm' | 'md' | 'lg'
+```

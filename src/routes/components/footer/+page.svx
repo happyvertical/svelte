@@ -1,0 +1,70 @@
+<script lang="ts">
+import Footer from '$lib/components/layout/Footer.svelte';
+</script>
+
+# Footer
+
+A site footer component with automatic copyright year and optional custom links.
+
+## Import
+
+```typescript
+import { Footer } from '@happyvertical/svelte';
+```
+
+## Basic Usage
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Footer />
+  </div>
+</div>
+
+```svelte
+<Footer />
+```
+
+## With Custom Links
+
+<div class="example">
+  <div class="example-preview" style="width: 100%;">
+    <Footer>
+      {#snippet children()}
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      {/snippet}
+    </Footer>
+  </div>
+</div>
+
+```svelte
+<Footer>
+  {#snippet children()}
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/contact">Contact</a>
+  {/snippet}
+</Footer>
+```
+
+## Features
+
+- **Auto copyright year**: Automatically displays the current year
+- **Contained width**: Uses Container component internally
+- **Styled links**: Links use primary color with hover underline
+- **Centered layout**: Content is centered with vertical stacking
+
+## Styling
+
+The footer applies these styles:
+- Light gray background (`--color-neutral-gray100`)
+- Top border for visual separation
+- Generous vertical padding
+- Small, secondary-colored text
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `Snippet` | - | Optional footer links |
