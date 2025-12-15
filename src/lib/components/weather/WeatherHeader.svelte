@@ -267,33 +267,37 @@ function handleTabsKeyDown(e: KeyboardEvent) {
 
 <div class="weather-widget">
   <div
-    class="tabs"
+    class="tabs-wrapper"
     bind:this={tabsEl}
     onmousedown={handleTabsMouseDown}
     onmousemove={handleTabsMouseMove}
     onmouseup={handleTabsMouseUp}
     onmouseleave={handleTabsMouseLeave}
     onkeydown={handleTabsKeyDown}
-    role="tablist"
     tabindex="0"
-    aria-label="Daily forecast, use arrow keys to scroll"
   >
-    {#each dayForecasts as day, index}
-      <button
-        class="tab"
-        class:active={selectedDayIndex === index}
-        onclick={() => handleTabClick(index)}
-        aria-expanded={selectedDayIndex === index}
-        role="tab"
-      >
-        <span class="tab-date">{day.date}</span>
-        <span class="tab-icon">{day.icon}</span>
-        <span class="tab-temps">
-          <span class="high">{day.high}°</span>
-          <span class="low">{day.low}°</span>
-        </span>
-      </button>
-    {/each}
+    <div
+      class="tabs"
+      role="tablist"
+      aria-label="Daily forecast, use arrow keys to scroll"
+    >
+      {#each dayForecasts as day, index}
+        <button
+          class="tab"
+          class:active={selectedDayIndex === index}
+          onclick={() => handleTabClick(index)}
+          aria-expanded={selectedDayIndex === index}
+          role="tab"
+        >
+          <span class="tab-date">{day.date}</span>
+          <span class="tab-icon">{day.icon}</span>
+          <span class="tab-temps">
+            <span class="high">{day.high}°</span>
+            <span class="low">{day.low}°</span>
+          </span>
+        </button>
+      {/each}
+    </div>
   </div>
 
   {#if selectedDay}
@@ -367,17 +371,28 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     border-bottom: none !important;
   }
 
-  /* Tabs Container - Scrollable carousel */
-  .tabs {
-    display: flex;
-    gap: 0;
+  /* Tabs Wrapper - handles scrolling with padding for shadow */
+  .tabs-wrapper {
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: visible;
     scrollbar-width: none;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
     overscroll-behavior-x: contain;
+    /* Padding for shadow, negative margin to compensate layout */
+    padding: 12px 12px 0 12px;
+    margin: -12px -12px 0 -12px;
+  }
+
+  .tabs-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Tabs Container - flex layout only, no overflow */
+  .tabs {
+    display: flex;
+    gap: 0;
+    scroll-snap-type: x proximity;
     cursor: grab;
     user-select: none;
   }
@@ -422,8 +437,8 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     z-index: 10;
     border-radius: var(--widget-radius) var(--widget-radius) 0 0;
     box-shadow:
-      0 -4px 16px rgba(0, 0, 0, 0.12),
-      0 -1px 4px rgba(0, 0, 0, 0.08);
+      0 -2px 8px rgba(0, 0, 0, 0.1),
+      0 -1px 3px rgba(0, 0, 0, 0.06);
   }
 
   /* Connector element to hide seam between tab and panel */
@@ -479,7 +494,7 @@ function handleTabsKeyDown(e: KeyboardEvent) {
       0 1px 4px rgba(0, 0, 0, 0.06);
     position: relative;
     z-index: 1;
-    margin-top: 2px;
+    margin-top: -1px;
     margin-bottom: 20px;
     animation: panelIn 0.25s ease;
   }
@@ -543,12 +558,14 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     display: flex;
     gap: 10px;
     padding: 20px 0 56px;
+    padding-left: 14px;
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x proximity;
+    scroll-padding-left: 14px;
     overscroll-behavior-x: contain;
     cursor: grab;
     user-select: none;
@@ -562,8 +579,7 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     display: none;
   }
 
-  /* Spacers for consistent left/right padding in scroll container */
-  .hourly-grid::before,
+  /* Right spacer for scroll container */
   .hourly-grid::after {
     content: '';
     flex-shrink: 0;
