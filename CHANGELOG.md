@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.5
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update TypeScript (#21) (deps)
+
 ## 0.18.4
 
 ### Patch Changes
