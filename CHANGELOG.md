@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.6
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update vite to ^7.3.0 (#22) (deps)
+
 ## 0.18.5
 
 ### Patch Changes
