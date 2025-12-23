@@ -1,10 +1,16 @@
 <script lang="ts">
 /**
- * WeatherHeader Component
- * Editorial-style weather forecast with tab navigation
+ * TownHeader Component
+ * Editorial-style weather forecast with tab navigation and event indicators
  */
 
-import type { DayForecast, HourlyForecast } from '../../types';
+import type {
+  DayEvent,
+  DayEventDetail,
+  DayEventsData,
+  DayForecast,
+  HourlyForecast,
+} from '../../types';
 
 interface ForecastPeriod {
   name: string;
@@ -27,11 +33,43 @@ interface ForecastDay {
 
 interface Props {
   forecast?: ForecastDay[] | null;
+  events?: DayEvent[] | null;
+  detailedEvents?: DayEventsData[] | null;
 }
 
-const { forecast }: Props = $props();
+const { forecast, events, detailedEvents }: Props = $props();
 
 let selectedDayIndex = $state<number | null>(null);
+// biome-ignore lint/style/useConst: $state requires let for reassignment
+let weatherViewTab = $state<'hourly' | 'graph'>('graph');
+
+// Event icon mapping
+function getEventIcon(type: DayEvent['type']): string {
+  switch (type) {
+    case 'game':
+      return '\u{1F3D2}'; // hockey stick and puck
+    case 'meeting':
+      return '\u{1F3DB}'; // classical building
+    case 'event':
+      return '\u{1F4C5}'; // calendar
+    default:
+      return '\u{1F4C5}';
+  }
+}
+
+// Get events for a specific date
+function getEventsForDate(dateOffset: number): DayEvent[] {
+  if (!events || events.length === 0) return [];
+
+  const targetDate = getDateFromOffset(dateOffset);
+  const targetDateStr = formatISODate(targetDate);
+
+  return events.filter((e) => e.date === targetDateStr);
+}
+
+function formatISODate(date: Date): string {
+  return date.toISOString().split('T')[0];
+}
 
 const dayForecasts: DayForecast[] = $derived(
   forecast && forecast.length > 0
@@ -93,18 +131,29 @@ function transformHourlyData(
 
 function getHourlyIcon(conditions: string): string {
   const c = conditions.toLowerCase();
-  if (c.includes('sunny') || c.includes('clear')) return '☀️';
-  if (c.includes('partly cloudy')) return '⛅';
-  if (c.includes('cloud')) return '☁️';
-  if (c.includes('rain')) return '🌧️';
-  if (c.includes('snow')) return '❄️';
-  if (c.includes('thunder')) return '⛈️';
-  return '🌤️';
+  if (c.includes('sunny') || c.includes('clear')) return '\u2600\uFE0F';
+  if (c.includes('partly cloudy')) return '\u26C5';
+  if (c.includes('cloud')) return '\u2601\uFE0F';
+  if (c.includes('rain')) return '\u{1F327}\uFE0F';
+  if (c.includes('snow')) return '\u2744\uFE0F';
+  if (c.includes('thunder')) return '\u26C8\uFE0F';
+  return '\u{1F324}\uFE0F';
 }
 
 function getMockData(): DayForecast[] {
   const today = new Date();
-  const icons = ['☀️', '⛅', '☁️', '🌧️', '⛅', '☀️', '⛈️', '❄️', '🌤️', '☁️'];
+  const icons = [
+    '\u2600\uFE0F',
+    '\u26C5',
+    '\u2601\uFE0F',
+    '\u{1F327}\uFE0F',
+    '\u26C5',
+    '\u2600\uFE0F',
+    '\u26C8\uFE0F',
+    '\u2744\uFE0F',
+    '\u{1F324}\uFE0F',
+    '\u2601\uFE0F',
+  ];
 
   return Array.from({ length: 10 }, (_, index) => {
     const date = new Date(today);
@@ -152,8 +201,115 @@ const selectedFullDate = $derived(
     : '',
 );
 
+// Get detailed events for the selected day
+const selectedDayEvents = $derived.by(() => {
+  if (selectedDayIndex === null || !detailedEvents)
+    return [] as DayEventDetail[];
+
+  const targetDate = getDateFromOffset(selectedDayIndex);
+  const targetDateStr = formatISODate(targetDate);
+
+  const dayData = detailedEvents.find((d) => d.date === targetDateStr);
+  return dayData?.events || [];
+});
+
+// Helper to get event URL
+function getEventUrl(event: DayEventDetail): string {
+  if (event.type === 'game') {
+    return `/sports/hockey/games/${event.slug}/`;
+  }
+  if (event.type === 'meeting' && event.councilSlug) {
+    return `/meetings/${event.councilSlug}/${event.slug}/`;
+  }
+  return '#';
+}
+
+// Handle event click with collapse and fade animation
+function handleEventClick(event: MouseEvent, eventData: DayEventDetail) {
+  event.preventDefault();
+  const url = getEventUrl(eventData);
+  if (url === '#') return;
+
+  // Collapse the panel
+  selectedDayIndex = null;
+
+  // Dispatch event for parent to handle content fade
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(
+      new CustomEvent('townheader:navigate', { detail: { url } }),
+    );
+  }
+
+  // Wait for animations, then navigate
+  setTimeout(() => {
+    window.location.href = url;
+  }, 300);
+}
+
+// Helper to get event icon (for panel display)
+function getDetailedEventIcon(type: DayEventDetail['type']): string {
+  switch (type) {
+    case 'game':
+      return '\u{1F3D2}'; // hockey stick and puck
+    case 'meeting':
+      return '\u{1F3DB}'; // classical building
+    case 'event':
+      return '\u{1F4C5}'; // calendar
+    default:
+      return '\u{1F4C5}';
+  }
+}
+
 const isFirst = $derived(selectedDayIndex === 0);
 const isLast = $derived(selectedDayIndex === dayForecasts.length - 1);
+
+// Chart data for temperature graph view
+function getTemperatureChartPath(hourlyData: HourlyForecast[]): {
+  path: string;
+  points: { x: number; y: number; temp: number; label: string }[];
+} {
+  if (hourlyData.length === 0) return { path: '', points: [] };
+
+  const temps = hourlyData.map((h) => h.temperature);
+  const minTemp = Math.min(...temps);
+  const maxTemp = Math.max(...temps);
+  const range = maxTemp - minTemp || 10;
+
+  const width = 600;
+  const height = 100;
+  const paddingX = 30;
+  const paddingY = 25;
+
+  const points = hourlyData.map((hour, i) => {
+    const x =
+      paddingX +
+      (i / Math.max(hourlyData.length - 1, 1)) * (width - paddingX * 2);
+    const y =
+      paddingY +
+      ((maxTemp - hour.temperature) / range) * (height - paddingY * 2);
+
+    // Format time label (e.g., "09:00" -> "9a", "15:00" -> "3p")
+    const hourNum = hour.hour;
+    const displayHour =
+      hourNum === 0 ? 12 : hourNum > 12 ? hourNum - 12 : hourNum;
+    const ampm = hourNum < 12 ? 'a' : 'p';
+    const label = `${displayHour}${ampm}`;
+
+    return { x, y, temp: hour.temperature, label };
+  });
+
+  const path = points
+    .map((point, i) => `${i === 0 ? 'M' : 'L'} ${point.x} ${point.y}`)
+    .join(' ');
+
+  return { path, points };
+}
+
+const chartData = $derived(
+  selectedDay
+    ? getTemperatureChartPath(selectedDay.hourlyData)
+    : { path: '', points: [] },
+);
 
 // Drag-to-scroll state (shared between tabs and hourly grid)
 // biome-ignore lint/style/useConst: bind:this requires let, not const
@@ -282,6 +438,7 @@ function handleTabsKeyDown(e: KeyboardEvent) {
       aria-label="Daily forecast, use arrow keys to scroll"
     >
       {#each dayForecasts as day, index}
+        {@const dayEvents = getEventsForDate(index).filter(e => e.type !== 'event')}
         <button
           class="tab"
           class:active={selectedDayIndex === index}
@@ -289,7 +446,16 @@ function handleTabsKeyDown(e: KeyboardEvent) {
           aria-expanded={selectedDayIndex === index}
           role="tab"
         >
-          <span class="tab-date">{day.date}</span>
+          <span class="tab-header">
+            <span class="tab-date">{day.date}</span>
+            {#if dayEvents.length > 0}
+              <span class="tab-events">
+                {#each dayEvents as event}
+                  <span class="event-icon" title="{event.count} {event.type}(s)">{getEventIcon(event.type)}</span>
+                {/each}
+              </span>
+            {/if}
+          </span>
           <span class="tab-icon">{day.icon}</span>
           <span class="tab-temps">
             <span class="high">{day.high}°</span>
@@ -302,31 +468,117 @@ function handleTabsKeyDown(e: KeyboardEvent) {
 
   {#if selectedDay}
     <div class="panel" class:first={isFirst} class:last={isLast}>
-      <header class="panel-header">
-        <h3 class="panel-title">Hourly Forecast</h3>
-        <span class="panel-date">{selectedFullDate}</span>
-      </header>
+      <div class="panel-content">
+        <!-- Weather Column -->
+        <div class="weather-column">
+          <header class="panel-header">
+            <div class="panel-tabs">
+              <button
+                class="panel-tab"
+                class:active={weatherViewTab === 'graph'}
+                onclick={() => weatherViewTab = 'graph'}
+              >
+                Graph
+              </button>
+              <button
+                class="panel-tab"
+                class:active={weatherViewTab === 'hourly'}
+                onclick={() => weatherViewTab = 'hourly'}
+              >
+                Hourly
+              </button>
+            </div>
+            <span class="panel-date">{selectedFullDate}</span>
+          </header>
 
-      <div
-        class="hourly-grid"
-        bind:this={hourlyGridEl}
-        onmousedown={handleMouseDown}
-        onmousemove={handleMouseMove}
-        onmouseup={handleMouseUp}
-        onmouseleave={handleMouseLeave}
-        onkeydown={handleKeyDown}
-        role="list"
-        tabindex="0"
-        aria-label="Hourly forecast, use arrow keys to scroll"
-      >
-        {#each selectedDay.hourlyData as hour}
-          <div class="hour-card" role="listitem">
-            <span class="hour-time">{hour.time}</span>
-            <span class="hour-icon">{hour.icon}</span>
-            <span class="hour-temp">{hour.temperature}°</span>
-            <span class="hour-feels">Feels {hour.feelsLike}°</span>
+          {#if weatherViewTab === 'hourly'}
+            <div
+              class="hourly-grid"
+              bind:this={hourlyGridEl}
+              onmousedown={handleMouseDown}
+              onmousemove={handleMouseMove}
+              onmouseup={handleMouseUp}
+              onmouseleave={handleMouseLeave}
+              onkeydown={handleKeyDown}
+              role="list"
+              tabindex="0"
+              aria-label="Hourly forecast, use arrow keys to scroll"
+            >
+              {#each selectedDay.hourlyData as hour}
+                <div class="hour-card" role="listitem">
+                  <span class="hour-time">{hour.time}</span>
+                  <span class="hour-icon">{hour.icon}</span>
+                  <span class="hour-temp">{hour.temperature}°</span>
+                  <span class="hour-feels">Feels {hour.feelsLike}°</span>
+                </div>
+              {/each}
+            </div>
+          {:else}
+            <div class="temperature-chart">
+              <svg viewBox="0 0 600 100" class="chart-svg" aria-label="Temperature graph">
+                <!-- Temperature line -->
+                <path
+                  d={chartData.path}
+                  fill="none"
+                  stroke="var(--color-accent)"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <!-- Data points and labels -->
+                {#each chartData.points as point, i}
+                  <circle
+                    cx={point.x}
+                    cy={point.y}
+                    r="4"
+                    fill="var(--color-accent)"
+                  />
+                  <!-- Temperature labels (show every other for readability) -->
+                  {#if i % 2 === 0 || chartData.points.length <= 8}
+                    <text
+                      x={point.x}
+                      y={point.y - 10}
+                      text-anchor="middle"
+                      class="chart-temp-label"
+                    >
+                      {point.temp}°
+                    </text>
+                  {/if}
+                  <!-- Time labels -->
+                  <text
+                    x={point.x}
+                    y="95"
+                    text-anchor="middle"
+                    class="chart-time-label"
+                  >
+                    {point.label}
+                  </text>
+                {/each}
+              </svg>
+            </div>
+          {/if}
+        </div>
+
+        <!-- Events Column -->
+        {#if selectedDayEvents.length > 0}
+          <div class="events-column">
+            <div class="events-list">
+              {#each selectedDayEvents as event}
+                <a href={getEventUrl(event)} class="event-card" onclick={(e) => handleEventClick(e, event)}>
+                  <span class="event-card-icon">{getDetailedEventIcon(event.type)}</span>
+                  <div class="event-details">
+                    <span class="event-name">{event.name}</span>
+                    <span class="event-meta">
+                      {event.startTime}
+                      {#if event.venue}<span class="event-venue"> · {event.venue}</span>{/if}
+                    </span>
+                  </div>
+                  <span class="event-arrow">→</span>
+                </a>
+              {/each}
+            </div>
           </div>
-        {/each}
+        {/if}
       </div>
 
       <button class="collapse-btn" onclick={handleCollapse} aria-label="Collapse">
@@ -453,6 +705,12 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     z-index: 11;
   }
 
+  .tab-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
   .tab-date {
     font-size: 12px;
     font-weight: 600;
@@ -477,12 +735,22 @@ function handleTabsKeyDown(e: KeyboardEvent) {
   }
 
   .high {
-    font-weight: 600;
-    color: var(--color-ink);
+    color: rgba(120, 50, 48, 0.85);
   }
 
   .low {
-    color: var(--color-ink-muted);
+    color: rgba(48, 72, 110, 0.85);
+  }
+
+  /* Event indicators */
+  .tab-events {
+    display: flex;
+    gap: 2px;
+    font-size: 12px;
+  }
+
+  .event-icon {
+    cursor: default;
   }
 
   /* Panel */
@@ -497,6 +765,21 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     margin-top: -1px;
     margin-bottom: 20px;
     animation: panelIn 0.25s ease;
+  }
+
+  /* Panel Content Layout */
+  .panel-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .weather-column {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .events-column {
+    border-top: 1px solid var(--widget-border);
   }
 
   /* Cover bar at top of panel to hide shadow bleed */
@@ -551,6 +834,52 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     font-size: 15px;
     color: var(--color-ink-light);
     font-style: italic;
+  }
+
+  /* Panel Tabs */
+  .panel-tabs {
+    display: flex;
+    gap: 16px;
+  }
+
+  .panel-tab {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-ink-muted);
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  .panel-tab:hover {
+    color: var(--color-ink-light);
+  }
+
+  .panel-tab.active {
+    color: var(--color-ink);
+  }
+
+  /* Temperature Chart */
+  .temperature-chart {
+    padding: 20px 24px 56px;
+  }
+
+  .chart-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .chart-temp-label {
+    font-size: 11px;
+    font-weight: 600;
+    fill: var(--color-ink);
+  }
+
+  .chart-time-label {
+    font-size: 10px;
+    fill: var(--color-ink-muted);
   }
 
   /* Hourly Grid */
@@ -621,6 +950,74 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     color: var(--color-ink-muted);
   }
 
+  /* Events Section */
+  .events-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px 24px 56px;
+  }
+
+  .event-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--color-warm-gray);
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.15s ease;
+  }
+
+  .event-card:hover {
+    background: #e8e7e5;
+    transform: translateX(2px);
+  }
+
+  .event-card-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .event-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .event-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .event-meta {
+    font-size: 12px;
+    color: var(--color-ink-muted);
+  }
+
+  .event-venue {
+    color: var(--color-ink-light);
+  }
+
+  .event-arrow {
+    font-size: 14px;
+    color: var(--color-ink-muted);
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+
+  .event-card:hover .event-arrow {
+    transform: translateX(2px);
+    color: var(--color-ink-light);
+  }
+
   /* Collapse Button */
   .collapse-btn {
     position: absolute;
@@ -670,6 +1067,10 @@ function handleTabsKeyDown(e: KeyboardEvent) {
       font-size: 12px;
     }
 
+    .tab-events {
+      font-size: 12px;
+    }
+
     .panel {
       border-radius: 0;
       margin-left: 0;
@@ -683,18 +1084,66 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     }
 
     .hourly-grid {
-      padding: 12px 0;
-      padding-left: 10px;
-      scroll-padding-left: 10px;
+      flex-direction: column;
+      overflow-x: visible;
+      padding: 12px 12px 48px;
+      gap: 8px;
     }
 
     .hourly-grid::after {
-      width: 10px;
+      display: none;
     }
 
     .hour-card {
-      min-width: 64px;
+      flex-direction: row;
+      justify-content: space-between;
+      min-width: unset;
+      width: 100%;
+      padding: 10px 14px;
+    }
+
+    .hour-time {
+      order: 1;
+      min-width: 50px;
+    }
+
+    .hour-icon {
+      order: 2;
+    }
+
+    .hour-temp {
+      order: 3;
+      min-width: 45px;
+      text-align: right;
+    }
+
+    .hour-feels {
+      order: 4;
+      min-width: 70px;
+      text-align: right;
+    }
+
+    /* Chart on mobile */
+    .temperature-chart {
+      padding: 12px 12px 48px;
+    }
+
+    /* Events on mobile */
+    .events-list {
+      grid-template-columns: 1fr;
+      padding: 12px 12px 48px;
+    }
+
+    .event-card {
       padding: 10px 12px;
+    }
+
+    .event-name {
+      font-size: 13px;
+    }
+
+    .event-meta {
+      font-size: 11px;
     }
   }
 </style>

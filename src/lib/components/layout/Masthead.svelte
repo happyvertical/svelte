@@ -4,8 +4,11 @@ import Container from './Container.svelte';
 
 interface Props {
   date?: string;
+  dateHref?: string;
   location?: string;
+  locationHref?: string;
   nav?: Snippet;
+  mobileNav?: Snippet;
 }
 
 const {
@@ -15,24 +18,55 @@ const {
     month: 'long',
     day: 'numeric',
   }),
+  dateHref,
   location = '',
+  locationHref = '/',
   nav,
+  mobileNav,
 }: Props = $props();
 </script>
 
 <div class="masthead">
   <Container>
-    <div class="subheader">
+    <!-- Desktop layout -->
+    <div class="subheader desktop">
       <div class="left">
-        <time>{date}</time>
+        {#if location}
+          <a href={locationHref} class="location">{location}</a>
+        {/if}
       </div>
       <div class="center">
-        {#if location}
-          <span class="location">{location}</span>
+        {#if dateHref}
+          <a href={dateHref} class="date-link"><time>{date}</time></a>
+        {:else}
+          <time>{date}</time>
         {/if}
       </div>
       <div class="right">
         {#if nav}
+          <nav class="nav">
+            {@render nav()}
+          </nav>
+        {/if}
+      </div>
+    </div>
+
+    <!-- Mobile layout -->
+    <div class="subheader mobile">
+      <div class="left">
+        <a href={locationHref} class="home-icon" aria-label="Home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>
+            <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="right">
+        {#if mobileNav}
+          <nav class="nav mobile-nav">
+            {@render mobileNav()}
+          </nav>
+        {:else if nav}
           <nav class="nav">
             {@render nav()}
           </nav>
@@ -56,6 +90,14 @@ const {
     font-size: var(--font-size-sm);
   }
 
+  .subheader.desktop {
+    display: grid;
+  }
+
+  .subheader.mobile {
+    display: none;
+  }
+
   .left {
     justify-self: start;
   }
@@ -73,12 +115,31 @@ const {
     font-style: italic;
   }
 
+  .date-link {
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .date-link:hover {
+    color: var(--color-primary-main);
+  }
+
+  .date-link:hover time {
+    color: var(--color-primary-main);
+  }
+
   .location {
     color: var(--color-text-secondary);
     font-weight: var(--font-weight-medium);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: var(--font-size-xs);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .location:hover {
+    color: var(--color-primary-main);
   }
 
   .nav {
@@ -98,23 +159,57 @@ const {
     color: var(--color-primary-main);
   }
 
-  @media (max-width: 768px) {
-    .subheader {
-      grid-template-columns: 1fr;
-      gap: var(--spacing-sm);
-      text-align: center;
+  /* Mobile icon nav */
+  .home-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    padding: var(--spacing-xs);
+    transition: color var(--transition-fast);
+  }
+
+  .home-icon:hover {
+    color: var(--color-primary-main);
+  }
+
+  .home-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mobile-nav {
+    gap: var(--spacing-lg);
+  }
+
+  .mobile-nav :global(a) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xs);
+  }
+
+  .mobile-nav :global(svg) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 640px) {
+    .subheader.desktop {
+      display: none;
     }
 
-    .left,
-    .center,
-    .right {
-      justify-self: center;
+    .subheader.mobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      grid-template-columns: unset;
     }
 
-    .nav {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--spacing-md);
+    .mobile .left,
+    .mobile .right {
+      justify-self: unset;
     }
   }
 </style>
