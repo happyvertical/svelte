@@ -1,5 +1,21 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.8
+
+### Patch Changes
+
+- ### Features
+
+  - add Calendar, DayView, MeetingView with dark mode support (components)
+  - add TownHeader component with weather forecast, events, and navigation animation (town)
+
+  ### Bug Fixes
+
+  - correct usage for selectedDayEvents (town)
+  - use let for weatherViewTab state to allow reassignment (town)
+  - make mobile view edge-to-edge (weather)
+  - improve tab shadow and panel spacing (weather)
+
 ## 0.18.7
 
 ### Patch Changes
