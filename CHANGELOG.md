@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.10
+
+### Patch Changes
+
+- ### Features
+
+  - scroll-sync day navigation and smooth transitions (#27) (town)
+
 ## 0.18.9
 
 ### Patch Changes
