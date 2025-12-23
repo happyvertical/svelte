@@ -40,7 +40,8 @@ interface Props {
 const { forecast, events, detailedEvents }: Props = $props();
 
 let selectedDayIndex = $state<number | null>(null);
-const weatherViewTab = $state<'hourly' | 'graph'>('graph');
+// biome-ignore lint/style/useConst: $state requires let for reassignment
+let weatherViewTab = $state<'hourly' | 'graph'>('graph');
 
 // Event icon mapping
 function getEventIcon(type: DayEvent['type']): string {
