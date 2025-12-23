@@ -11,6 +11,16 @@ interface Props {
   year?: number;
   month?: number; // 0-indexed (0 = January)
   baseUrl?: string;
+  /** Callback when navigating to prev/next month */
+  onMonthNavigate?: (
+    direction: 'prev' | 'next',
+    year: number,
+    month: number,
+  ) => void;
+  /** Callback when a date cell is clicked */
+  onDateSelect?: (date: string, hasEvents: boolean) => void;
+  /** Callback when Today button is clicked */
+  onTodayClick?: () => void;
 }
 
 const {
@@ -18,6 +28,9 @@ const {
   year: initialYear = new Date().getFullYear(),
   month: initialMonth = new Date().getMonth(),
   baseUrl = '/events',
+  onMonthNavigate,
+  onDateSelect,
+  onTodayClick,
 }: Props = $props();
 
 let currentYear = $state(initialYear);
@@ -134,6 +147,7 @@ function prevMonth() {
   } else {
     currentMonth--;
   }
+  onMonthNavigate?.('prev', currentYear, currentMonth);
 }
 
 function nextMonth() {
@@ -143,12 +157,14 @@ function nextMonth() {
   } else {
     currentMonth++;
   }
+  onMonthNavigate?.('next', currentYear, currentMonth);
 }
 
 function goToToday() {
   const today = new Date();
   currentYear = today.getFullYear();
   currentMonth = today.getMonth();
+  onTodayClick?.();
 }
 
 // Generate day URL
@@ -218,12 +234,14 @@ const yearOptions = $derived(() => {
       {#each calendarDays() as { day, month, year, isCurrentMonth, isToday }}
         {@const dayEvents = getEventsForDate(year, month, day)}
         {@const hasEvents = dayEvents.length > 0}
+        {@const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`}
         <a
           href={getDayUrl(year, month, day)}
           class="day-cell"
           class:other-month={!isCurrentMonth}
           class:today={isToday}
           class:has-events={hasEvents}
+          onclick={() => onDateSelect?.(dateStr, hasEvents)}
         >
           <span class="day-number">{day}</span>
           {#if hasEvents}
