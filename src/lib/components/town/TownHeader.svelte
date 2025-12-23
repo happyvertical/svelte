@@ -4,6 +4,7 @@
  * Editorial-style weather forecast with tab navigation and event indicators
  */
 
+import { slide } from 'svelte/transition';
 import type {
   DayEvent,
   DayEventDetail,
@@ -124,9 +125,17 @@ function transformHourlyData(
         icon: getHourlyIcon(period.conditions),
         temperature: period.temperature,
         feelsLike: period.temperature - 2,
+        windSpeed: period.windSpeed,
+        windDirection: period.windDirection,
+        precipProbability: period.precipProbability,
       };
     })
     .filter((item) => (dayIndex === 0 ? item.hour >= currentHour : true));
+}
+
+function getWindDirection(degrees: number): string {
+  const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  return directions[Math.round(degrees / 45) % 8] || 'N';
 }
 
 function getHourlyIcon(conditions: string): string {
@@ -263,59 +272,269 @@ function getDetailedEventIcon(type: DayEventDetail['type']): string {
 const isFirst = $derived(selectedDayIndex === 0);
 const isLast = $derived(selectedDayIndex === dayForecasts.length - 1);
 
+// Extended hourly data combining current day with prev/next day previews
+const extendedHourlyData = $derived.by((): ExtendedHourlyItem[] => {
+  if (selectedDayIndex === null) return [];
+
+  const currentDay = dayForecasts[selectedDayIndex];
+  if (!currentDay) return [];
+
+  const result: ExtendedHourlyItem[] = [];
+
+  // Previous day preview (noon-midnight, 12 hours) - only if not first day
+  if (selectedDayIndex > 0) {
+    const prevDay = dayForecasts[selectedDayIndex - 1];
+    if (prevDay) {
+      const eveningHours = prevDay.hourlyData.filter((h) => h.hour >= 12);
+      for (const h of eveningHours) {
+        result.push({
+          type: 'hour',
+          hour: h.hour,
+          icon: h.icon,
+          temperature: h.temperature,
+          windSpeed: h.windSpeed,
+          windDirection: h.windDirection,
+          precipProbability: h.precipProbability,
+          dayOffset: -1,
+        });
+      }
+      // Add midnight separator after prev day data
+      if (eveningHours.length > 0) {
+        result.push({ type: 'separator', label: 'midnight' });
+      }
+    }
+  }
+
+  // Current day (full data)
+  for (const h of currentDay.hourlyData) {
+    result.push({
+      type: 'hour',
+      hour: h.hour,
+      icon: h.icon,
+      temperature: h.temperature,
+      windSpeed: h.windSpeed,
+      windDirection: h.windDirection,
+      precipProbability: h.precipProbability,
+      dayOffset: 0,
+    });
+  }
+
+  // Next day preview (midnight-noon) - only if not last day
+  // Extend to noon (12 hours) to ensure enough scroll room on desktop
+  if (selectedDayIndex < dayForecasts.length - 1) {
+    const nextDay = dayForecasts[selectedDayIndex + 1];
+    if (nextDay) {
+      const morningHours = nextDay.hourlyData.filter((h) => h.hour < 12);
+      // Add midnight separator before next day data
+      if (morningHours.length > 0) {
+        result.push({ type: 'separator', label: 'midnight' });
+        for (const h of morningHours) {
+          result.push({
+            type: 'hour',
+            hour: h.hour,
+            icon: h.icon,
+            temperature: h.temperature,
+            windSpeed: h.windSpeed,
+            windDirection: h.windDirection,
+            precipProbability: h.precipProbability,
+            dayOffset: 1,
+          });
+        }
+      }
+    }
+  }
+
+  return result;
+});
+
 // Chart data for temperature graph view
-function getTemperatureChartPath(hourlyData: HourlyForecast[]): {
+interface ChartPoint {
+  x: number;
+  y: number;
+  temp: number;
+  label: string;
+  icon: string;
+  wind: string;
+  pop: number;
+  dayOffset: number; // -1 = prev day preview, 0 = current, 1 = next day preview
+}
+
+interface ChartSeparator {
+  x: number;
+  label: string;
+}
+
+// Extended hourly data item (can be hour or separator)
+interface ExtendedHourlyItem {
+  type: 'hour' | 'separator';
+  hour?: number;
+  icon?: string;
+  temperature?: number;
+  windSpeed?: number;
+  windDirection?: number;
+  precipProbability?: number;
+  dayOffset?: number; // -1, 0, or 1
+  label?: string; // for separator
+}
+
+function getTemperatureChartPath(extendedData: ExtendedHourlyItem[]): {
   path: string;
-  points: { x: number; y: number; temp: number; label: string }[];
+  points: ChartPoint[];
+  separators: ChartSeparator[];
+  width: number;
+  minTemp: number;
+  maxTemp: number;
+  prevMidnightX: number | null;
+  nextMidnightX: number | null;
+  currentDayStartX: number;
 } {
-  if (hourlyData.length === 0) return { path: '', points: [] };
+  if (extendedData.length === 0)
+    return {
+      path: '',
+      points: [],
+      separators: [],
+      width: 600,
+      minTemp: 0,
+      maxTemp: 30,
+      prevMidnightX: null,
+      nextMidnightX: null,
+      currentDayStartX: 0,
+    };
 
-  const temps = hourlyData.map((h) => h.temperature);
-  const minTemp = Math.min(...temps);
-  const maxTemp = Math.max(...temps);
-  const range = maxTemp - minTemp || 10;
+  // Get only hour items for temperature calculations
+  const hourItems = extendedData.filter((item) => item.type === 'hour');
+  const temps = hourItems.map((h) => h.temperature!);
+  const dataMin = Math.min(...temps);
+  const dataMax = Math.max(...temps);
 
-  const width = 600;
-  const height = 100;
+  // Fixed 30-degree range, centered on the data's midpoint
+  const dataMid = (dataMin + dataMax) / 2;
+  const fixedRange = 30;
+  const minTemp = Math.round(dataMid - fixedRange / 2);
+  const maxTemp = minTemp + fixedRange;
+
+  // Fixed width per item for horizontal scrolling
+  const pointSpacing = 50;
+  const separatorSpacing = 30; // Separators take less space
   const paddingX = 30;
-  const paddingY = 25;
 
-  const points = hourlyData.map((hour, i) => {
-    const x =
-      paddingX +
-      (i / Math.max(hourlyData.length - 1, 1)) * (width - paddingX * 2);
-    const y =
-      paddingY +
-      ((maxTemp - hour.temperature) / range) * (height - paddingY * 2);
+  // Calculate total width
+  let totalWidth = paddingX * 2;
+  for (let i = 0; i < extendedData.length; i++) {
+    if (i > 0) {
+      totalWidth +=
+        extendedData[i].type === 'separator' ? separatorSpacing : pointSpacing;
+    }
+  }
 
-    // Format time label (e.g., "09:00" -> "9a", "15:00" -> "3p")
-    const hourNum = hour.hour;
-    const displayHour =
-      hourNum === 0 ? 12 : hourNum > 12 ? hourNum - 12 : hourNum;
-    const ampm = hourNum < 12 ? 'a' : 'p';
-    const label = `${displayHour}${ampm}`;
+  const height = 160;
+  const chartTop = 50;
+  const chartBottom = 110;
 
-    return { x, y, temp: hour.temperature, label };
-  });
+  const points: ChartPoint[] = [];
+  const separators: ChartSeparator[] = [];
+  let prevMidnightX: number | null = null;
+  let nextMidnightX: number | null = null;
+  let currentDayStartX = paddingX;
 
+  let currentX = paddingX;
+  let isFirstCurrentDayPoint = true;
+
+  for (let i = 0; i < extendedData.length; i++) {
+    const item = extendedData[i];
+
+    if (item.type === 'separator') {
+      // Track separator positions for scroll detection
+      separators.push({ x: currentX, label: item.label || 'midnight' });
+
+      // Determine if this is prev or next midnight
+      const prevItem = extendedData[i - 1];
+      if (prevItem && prevItem.dayOffset === -1) {
+        prevMidnightX = currentX;
+      } else if (prevItem && prevItem.dayOffset === 0) {
+        nextMidnightX = currentX;
+      }
+
+      currentX += separatorSpacing;
+    } else {
+      // Hour item
+      const hour = item;
+      const normalizedTemp = (maxTemp - hour.temperature!) / fixedRange;
+      const y = chartTop + normalizedTemp * (chartBottom - chartTop);
+
+      // Track where current day starts
+      if (hour.dayOffset === 0 && isFirstCurrentDayPoint) {
+        currentDayStartX = currentX;
+        isFirstCurrentDayPoint = false;
+      }
+
+      // Format time label
+      const hourNum = hour.hour!;
+      const displayHour =
+        hourNum === 0 ? 12 : hourNum > 12 ? hourNum - 12 : hourNum;
+      const ampm = hourNum < 12 ? 'a' : 'p';
+      const label = `${displayHour}${ampm}`;
+
+      // Format wind
+      const windDir = getWindDirection(hour.windDirection ?? 0);
+      const wind = `${hour.windSpeed ?? 0} ${windDir}`;
+
+      points.push({
+        x: currentX,
+        y,
+        temp: hour.temperature!,
+        label,
+        icon: hour.icon || '',
+        wind,
+        pop: hour.precipProbability ?? 0,
+        dayOffset: hour.dayOffset ?? 0,
+      });
+
+      if (i < extendedData.length - 1) {
+        currentX += pointSpacing;
+      }
+    }
+  }
+
+  // Build path from points only (skip separators in the line)
   const path = points
     .map((point, i) => `${i === 0 ? 'M' : 'L'} ${point.x} ${point.y}`)
     .join(' ');
 
-  return { path, points };
+  return {
+    path,
+    points,
+    separators,
+    width: currentX + paddingX,
+    minTemp,
+    maxTemp,
+    prevMidnightX,
+    nextMidnightX,
+    currentDayStartX,
+  };
 }
 
 const chartData = $derived(
   selectedDay
-    ? getTemperatureChartPath(selectedDay.hourlyData)
-    : { path: '', points: [] },
+    ? getTemperatureChartPath(extendedHourlyData)
+    : {
+        path: '',
+        points: [],
+        separators: [],
+        width: 600,
+        prevMidnightX: null,
+        nextMidnightX: null,
+        currentDayStartX: 0,
+      },
 );
 
-// Drag-to-scroll state (shared between tabs and hourly grid)
+// Drag-to-scroll state (shared between tabs, hourly grid, and chart)
 // biome-ignore lint/style/useConst: bind:this requires let, not const
 let tabsEl = $state<HTMLElement | null>(null);
 // biome-ignore lint/style/useConst: bind:this requires let, not const
 let hourlyGridEl = $state<HTMLElement | null>(null);
+// biome-ignore lint/style/useConst: bind:this requires let, not const
+let chartScrollEl = $state<HTMLElement | null>(null);
 let activeScrollEl = $state<HTMLElement | null>(null);
 let isDragging = $state(false);
 let startX = $state(0);
@@ -419,6 +638,116 @@ function handleTabsMouseLeave() {
 function handleTabsKeyDown(e: KeyboardEvent) {
   handleScrollKeyDown(e, tabsEl);
 }
+
+// Chart scroll handlers
+function handleChartMouseDown(e: MouseEvent) {
+  handleScrollMouseDown(e, chartScrollEl);
+}
+
+function handleChartMouseMove(e: MouseEvent) {
+  handleScrollMouseMove(e, chartScrollEl);
+}
+
+function handleChartMouseUp() {
+  handleScrollMouseUp(chartScrollEl);
+}
+
+function handleChartMouseLeave() {
+  handleScrollMouseLeave(chartScrollEl);
+}
+
+function handleChartKeyDown(e: KeyboardEvent) {
+  handleScrollKeyDown(e, chartScrollEl);
+}
+
+// Chart scroll position tracking for day switching
+let scrollDebounceTimer: ReturnType<typeof setTimeout> | null = null;
+let isScrollSwitching = $state(false); // Prevents recursive updates
+
+function handleChartScroll() {
+  if (isScrollSwitching || selectedDayIndex === null || !chartScrollEl) return;
+
+  if (scrollDebounceTimer) clearTimeout(scrollDebounceTimer);
+
+  scrollDebounceTimer = setTimeout(() => {
+    if (!chartScrollEl || selectedDayIndex === null) return;
+
+    const viewportCenter =
+      chartScrollEl.scrollLeft + chartScrollEl.offsetWidth / 2;
+    const { prevMidnightX, nextMidnightX } = chartData;
+
+    // Scrolled into previous day territory?
+    if (
+      prevMidnightX !== null &&
+      viewportCenter < prevMidnightX &&
+      selectedDayIndex > 0
+    ) {
+      isScrollSwitching = true;
+      const prevDay = dayForecasts[selectedDayIndex - 1];
+      if (prevDay) {
+        selectedDayIndex = selectedDayIndex - 1;
+        // After switching, scroll to show end of the new current day
+        // We need to wait for the chart to re-render
+        requestAnimationFrame(() => {
+          if (chartScrollEl) {
+            // Scroll to show current day data (near the next midnight separator)
+            const newChartData = getTemperatureChartPath(extendedHourlyData);
+            if (newChartData.nextMidnightX !== null) {
+              chartScrollEl.scrollLeft =
+                newChartData.nextMidnightX - chartScrollEl.offsetWidth / 2;
+            }
+          }
+          isScrollSwitching = false;
+        });
+      } else {
+        isScrollSwitching = false;
+      }
+      return;
+    }
+
+    // Scrolled into next day territory?
+    if (
+      nextMidnightX !== null &&
+      viewportCenter > nextMidnightX &&
+      selectedDayIndex < dayForecasts.length - 1
+    ) {
+      isScrollSwitching = true;
+      const nextDay = dayForecasts[selectedDayIndex + 1];
+      if (nextDay) {
+        selectedDayIndex = selectedDayIndex + 1;
+        // After switching, scroll to show start of the new current day
+        requestAnimationFrame(() => {
+          if (chartScrollEl) {
+            // Scroll to show current day data (near the prev midnight separator)
+            const newChartData = getTemperatureChartPath(extendedHourlyData);
+            if (newChartData.prevMidnightX !== null) {
+              chartScrollEl.scrollLeft =
+                newChartData.prevMidnightX - chartScrollEl.offsetWidth / 2 + 50;
+            } else {
+              chartScrollEl.scrollLeft = 0;
+            }
+          }
+          isScrollSwitching = false;
+        });
+      } else {
+        isScrollSwitching = false;
+      }
+      return;
+    }
+  }, 150); // 150ms debounce
+}
+
+// Scroll chart to current day start when day is selected via tab
+$effect(() => {
+  if (selectedDayIndex !== null && chartScrollEl && !isScrollSwitching) {
+    // Use a small delay to ensure chart has rendered
+    requestAnimationFrame(() => {
+      if (chartScrollEl && chartData.currentDayStartX) {
+        chartScrollEl.scrollLeft = Math.max(0, chartData.currentDayStartX - 30);
+      }
+    });
+  }
+});
 </script>
 
 <div class="weather-widget">
@@ -514,8 +843,47 @@ function handleTabsKeyDown(e: KeyboardEvent) {
               {/each}
             </div>
           {:else}
-            <div class="temperature-chart">
-              <svg viewBox="0 0 600 100" class="chart-svg" aria-label="Temperature graph">
+            <div
+              class="temperature-chart-scroll"
+              bind:this={chartScrollEl}
+              onmousedown={handleChartMouseDown}
+              onmousemove={handleChartMouseMove}
+              onmouseup={handleChartMouseUp}
+              onmouseleave={handleChartMouseLeave}
+              onkeydown={handleChartKeyDown}
+              onscroll={handleChartScroll}
+              role="region"
+              tabindex="0"
+              aria-label="Temperature chart, drag to scroll"
+            >
+              <svg
+                viewBox="0 0 {chartData.width} 160"
+                class="chart-svg"
+                width={chartData.width}
+                height="160"
+                aria-label="Temperature graph"
+              >
+                <!-- Midnight separators -->
+                {#each chartData.separators as separator}
+                  <line
+                    x1={separator.x}
+                    y1="10"
+                    x2={separator.x}
+                    y2="150"
+                    stroke="var(--color-ink-muted)"
+                    stroke-width="1"
+                    stroke-dasharray="4,4"
+                    opacity="0.5"
+                  />
+                  <text
+                    x={separator.x}
+                    y="158"
+                    text-anchor="middle"
+                    class="chart-separator-label"
+                  >
+                    {separator.label}
+                  </text>
+                {/each}
                 <!-- Temperature line -->
                 <path
                   d={chartData.path}
@@ -527,32 +895,62 @@ function handleTabsKeyDown(e: KeyboardEvent) {
                 />
                 <!-- Data points and labels -->
                 {#each chartData.points as point, i}
-                  <circle
-                    cx={point.x}
-                    cy={point.y}
-                    r="4"
-                    fill="var(--color-accent)"
-                  />
-                  <!-- Temperature labels (show every other for readability) -->
-                  {#if i % 2 === 0 || chartData.points.length <= 8}
+                  <g opacity={point.dayOffset === 0 ? 1 : 0.5}>
+                    <!-- Weather icon -->
                     <text
                       x={point.x}
-                      y={point.y - 10}
+                      y="18"
+                      text-anchor="middle"
+                      class="chart-icon"
+                    >
+                      {point.icon}
+                    </text>
+                    <!-- Temperature label -->
+                    <text
+                      x={point.x}
+                      y="36"
                       text-anchor="middle"
                       class="chart-temp-label"
                     >
                       {point.temp}°
                     </text>
-                  {/if}
-                  <!-- Time labels -->
-                  <text
-                    x={point.x}
-                    y="95"
-                    text-anchor="middle"
-                    class="chart-time-label"
-                  >
-                    {point.label}
-                  </text>
+                    <!-- Data point circle -->
+                    <circle
+                      cx={point.x}
+                      cy={point.y}
+                      r="4"
+                      fill="var(--color-accent)"
+                    />
+                    <!-- Time label -->
+                    <text
+                      x={point.x}
+                      y="125"
+                      text-anchor="middle"
+                      class="chart-time-label"
+                    >
+                      {point.label}
+                    </text>
+                    <!-- Wind info -->
+                    <text
+                      x={point.x}
+                      y="138"
+                      text-anchor="middle"
+                      class="chart-wind-label"
+                    >
+                      {point.wind}
+                    </text>
+                    <!-- POP (only show if > 0) -->
+                    {#if point.pop > 0}
+                      <text
+                        x={point.x}
+                        y="151"
+                        text-anchor="middle"
+                        class="chart-pop-label"
+                      >
+                        {point.pop}%
+                      </text>
+                    {/if}
+                  </g>
                 {/each}
               </svg>
             </div>
@@ -561,7 +959,7 @@ function handleTabsKeyDown(e: KeyboardEvent) {
 
         <!-- Events Column -->
         {#if selectedDayEvents.length > 0}
-          <div class="events-column">
+          <div class="events-column" transition:slide={{ duration: 200 }}>
             <div class="events-list">
               {#each selectedDayEvents as event}
                 <a href={getEventUrl(event)} class="event-card" onclick={(e) => handleEventClick(e, event)}>
@@ -861,14 +1259,33 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     color: var(--color-ink);
   }
 
-  /* Temperature Chart */
-  .temperature-chart {
-    padding: 20px 24px 56px;
+  /* Temperature Chart - Scrollable */
+  .temperature-chart-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    padding: 10px 0 20px;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .temperature-chart-scroll:active {
+    cursor: grabbing;
+  }
+
+  .temperature-chart-scroll::-webkit-scrollbar {
+    display: none;
   }
 
   .chart-svg {
-    width: 100%;
-    height: auto;
+    display: block;
+  }
+
+  .chart-icon {
+    font-size: 16px;
   }
 
   .chart-temp-label {
@@ -879,7 +1296,26 @@ function handleTabsKeyDown(e: KeyboardEvent) {
 
   .chart-time-label {
     font-size: 10px;
+    font-weight: 600;
+    fill: var(--color-ink);
+  }
+
+  .chart-wind-label {
+    font-size: 9px;
     fill: var(--color-ink-muted);
+  }
+
+  .chart-pop-label {
+    font-size: 9px;
+    fill: #5b8fd4;
+    font-weight: 600;
+  }
+
+  .chart-separator-label {
+    font-size: 8px;
+    fill: var(--color-ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   /* Hourly Grid */
@@ -1124,8 +1560,8 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     }
 
     /* Chart on mobile */
-    .temperature-chart {
-      padding: 12px 12px 48px;
+    .temperature-chart-scroll {
+      padding: 8px 0 16px;
     }
 
     /* Events on mobile */

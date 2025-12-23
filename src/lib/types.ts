@@ -77,6 +77,9 @@ export interface HourlyForecast {
   icon: string;
   temperature: number;
   feelsLike: number;
+  windSpeed?: number;
+  windDirection?: number;
+  precipProbability?: number;
 }
 
 export interface DayForecast {
