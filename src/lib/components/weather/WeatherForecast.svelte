@@ -49,7 +49,8 @@ function getTemperatureChartPath(periods: ForecastPeriod[]): {
   if (periods.length === 0)
     return { path: '', points: [], minTemp: 0, maxTemp: 0 };
 
-  const temps = periods.map((p) => p.temperature).filter((t) => t !== 0);
+  // Filter out null/undefined temps, but keep 0 (0°C is valid!)
+  const temps = periods.map((p) => p.temperature).filter((t) => t != null);
   if (temps.length === 0)
     return { path: '', points: [], minTemp: 0, maxTemp: 0 };
 
@@ -80,9 +81,11 @@ function getTemperatureChartPath(periods: ForecastPeriod[]): {
       label = period.name.replace(' for Bentley', '').split(' ')[0];
     }
 
+    // Only use fallback position for truly missing data (null/undefined)
+    const hasValidTemp = period.temperature != null;
     return {
       x,
-      y: period.temperature === 0 ? height / 2 : y,
+      y: hasValidTemp ? y : height / 2,
       temp: period.temperature,
       label,
     };
@@ -204,7 +207,7 @@ function getTemperatureChartPath(periods: ForecastPeriod[]): {
                         fill="var(--color-primary, #2563eb)"
                       />
                       <!-- Temperature labels -->
-                      {#if point.temp !== 0}
+                      {#if point.temp != null}
                         <text
                           x={point.x}
                           y={point.y - 8}
