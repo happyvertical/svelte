@@ -4,7 +4,13 @@
  * Editorial-style weather forecast with tab navigation and event indicators
  */
 
-import type { DayForecast, HourlyForecast, DayEvent, DayEventDetail, DayEventsData } from '../../types';
+import type {
+  DayEvent,
+  DayEventDetail,
+  DayEventsData,
+  DayForecast,
+  HourlyForecast,
+} from '../../types';
 
 interface ForecastPeriod {
   name: string;
@@ -34,7 +40,7 @@ interface Props {
 const { forecast, events, detailedEvents }: Props = $props();
 
 let selectedDayIndex = $state<number | null>(null);
-let weatherViewTab = $state<'hourly' | 'graph'>('graph');
+const weatherViewTab = $state<'hourly' | 'graph'>('graph');
 
 // Event icon mapping
 function getEventIcon(type: DayEvent['type']): string {
@@ -57,7 +63,7 @@ function getEventsForDate(dateOffset: number): DayEvent[] {
   const targetDate = getDateFromOffset(dateOffset);
   const targetDateStr = formatISODate(targetDate);
 
-  return events.filter(e => e.date === targetDateStr);
+  return events.filter((e) => e.date === targetDateStr);
 }
 
 function formatISODate(date: Date): string {
@@ -135,7 +141,18 @@ function getHourlyIcon(conditions: string): string {
 
 function getMockData(): DayForecast[] {
   const today = new Date();
-  const icons = ['\u2600\uFE0F', '\u26C5', '\u2601\uFE0F', '\u{1F327}\uFE0F', '\u26C5', '\u2600\uFE0F', '\u26C8\uFE0F', '\u2744\uFE0F', '\u{1F324}\uFE0F', '\u2601\uFE0F'];
+  const icons = [
+    '\u2600\uFE0F',
+    '\u26C5',
+    '\u2601\uFE0F',
+    '\u{1F327}\uFE0F',
+    '\u26C5',
+    '\u2600\uFE0F',
+    '\u26C8\uFE0F',
+    '\u2744\uFE0F',
+    '\u{1F324}\uFE0F',
+    '\u2601\uFE0F',
+  ];
 
   return Array.from({ length: 10 }, (_, index) => {
     const date = new Date(today);
@@ -190,7 +207,7 @@ const selectedDayEvents = $derived<DayEventDetail[]>(() => {
   const targetDate = getDateFromOffset(selectedDayIndex);
   const targetDateStr = formatISODate(targetDate);
 
-  const dayData = detailedEvents.find(d => d.date === targetDateStr);
+  const dayData = detailedEvents.find((d) => d.date === targetDateStr);
   return dayData?.events || [];
 });
 
@@ -199,8 +216,8 @@ function getEventUrl(event: DayEventDetail): string {
   if (event.type === 'game') {
     return `/sports/hockey/games/${event.slug}/`;
   }
-  if (event.type === 'meeting') {
-    return `/politics/meetings/${event.slug}/`;
+  if (event.type === 'meeting' && event.councilSlug) {
+    return `/meetings/${event.councilSlug}/${event.slug}/`;
   }
   return '#';
 }
@@ -216,7 +233,9 @@ function handleEventClick(event: MouseEvent, eventData: DayEventDetail) {
 
   // Dispatch event for parent to handle content fade
   if (typeof window !== 'undefined') {
-    window.dispatchEvent(new CustomEvent('townheader:navigate', { detail: { url } }));
+    window.dispatchEvent(
+      new CustomEvent('townheader:navigate', { detail: { url } }),
+    );
   }
 
   // Wait for animations, then navigate
@@ -249,7 +268,7 @@ function getTemperatureChartPath(hourlyData: HourlyForecast[]): {
 } {
   if (hourlyData.length === 0) return { path: '', points: [] };
 
-  const temps = hourlyData.map(h => h.temperature);
+  const temps = hourlyData.map((h) => h.temperature);
   const minTemp = Math.min(...temps);
   const maxTemp = Math.max(...temps);
   const range = maxTemp - minTemp || 10;
@@ -260,12 +279,17 @@ function getTemperatureChartPath(hourlyData: HourlyForecast[]): {
   const paddingY = 25;
 
   const points = hourlyData.map((hour, i) => {
-    const x = paddingX + (i / Math.max(hourlyData.length - 1, 1)) * (width - paddingX * 2);
-    const y = paddingY + ((maxTemp - hour.temperature) / range) * (height - paddingY * 2);
+    const x =
+      paddingX +
+      (i / Math.max(hourlyData.length - 1, 1)) * (width - paddingX * 2);
+    const y =
+      paddingY +
+      ((maxTemp - hour.temperature) / range) * (height - paddingY * 2);
 
     // Format time label (e.g., "09:00" -> "9a", "15:00" -> "3p")
     const hourNum = hour.hour;
-    const displayHour = hourNum === 0 ? 12 : hourNum > 12 ? hourNum - 12 : hourNum;
+    const displayHour =
+      hourNum === 0 ? 12 : hourNum > 12 ? hourNum - 12 : hourNum;
     const ampm = hourNum < 12 ? 'a' : 'p';
     const label = `${displayHour}${ampm}`;
 
@@ -280,7 +304,9 @@ function getTemperatureChartPath(hourlyData: HourlyForecast[]): {
 }
 
 const chartData = $derived(
-  selectedDay ? getTemperatureChartPath(selectedDay.hourlyData) : { path: '', points: [] }
+  selectedDay
+    ? getTemperatureChartPath(selectedDay.hourlyData)
+    : { path: '', points: [] },
 );
 
 // Drag-to-scroll state (shared between tabs and hourly grid)
@@ -707,12 +733,11 @@ function handleTabsKeyDown(e: KeyboardEvent) {
   }
 
   .high {
-    font-weight: 600;
-    color: var(--color-ink);
+    color: rgba(120, 50, 48, 0.85);
   }
 
   .low {
-    color: var(--color-ink-muted);
+    color: rgba(48, 72, 110, 0.85);
   }
 
   /* Event indicators */
@@ -1057,18 +1082,43 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     }
 
     .hourly-grid {
-      padding: 12px 0;
-      padding-left: 10px;
-      scroll-padding-left: 10px;
+      flex-direction: column;
+      overflow-x: visible;
+      padding: 12px 12px 48px;
+      gap: 8px;
     }
 
     .hourly-grid::after {
-      width: 10px;
+      display: none;
     }
 
     .hour-card {
-      min-width: 64px;
-      padding: 10px 12px;
+      flex-direction: row;
+      justify-content: space-between;
+      min-width: unset;
+      width: 100%;
+      padding: 10px 14px;
+    }
+
+    .hour-time {
+      order: 1;
+      min-width: 50px;
+    }
+
+    .hour-icon {
+      order: 2;
+    }
+
+    .hour-temp {
+      order: 3;
+      min-width: 45px;
+      text-align: right;
+    }
+
+    .hour-feels {
+      order: 4;
+      min-width: 70px;
+      text-align: right;
     }
 
     /* Chart on mobile */

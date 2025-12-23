@@ -102,17 +102,41 @@ export interface DayEventDetail {
   slug: string;
   name: string;
   type: 'game' | 'meeting' | 'event';
-  startDate: string;       // ISO datetime
-  startTime: string;       // "7:30 PM"
-  venue?: string;          // Place name
-  venueSlug?: string;      // For linking
+  startDate: string; // ISO datetime
+  startTime: string; // "7:30 PM"
+  venue?: string; // Place name
+  venueSlug?: string; // For linking
   // Game-specific
   homeTeam?: string;
   awayTeam?: string;
+  // Meeting-specific
+  councilSlug?: string; // For building meeting URLs
 }
 
 // Events grouped by date with full details
 export interface DayEventsData {
-  date: string;            // YYYY-MM-DD
+  date: string; // YYYY-MM-DD
   events: DayEventDetail[];
+}
+
+// Council/organization that holds meetings
+export interface Council {
+  id: string;
+  slug: string;
+  name: string;
+  timezone?: string;
+}
+
+// Meeting details for MeetingView
+export interface Meeting {
+  id: string;
+  slug: string;
+  name: string;
+  startDate: string; // ISO datetime
+  status?: string;
+  agendaUrl?: string;
+  minutesUrl?: string;
+  videoUrl?: string;
+  highlightsUrl?: string;
+  council?: Council;
 }
