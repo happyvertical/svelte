@@ -36,9 +36,22 @@ interface Props {
   forecast?: ForecastDay[] | null;
   events?: DayEvent[] | null;
   detailedEvents?: DayEventsData[] | null;
+  /** Callback when a day tab is selected */
+  onDaySelect?: (dayIndex: number, dayName: string) => void;
+  /** Callback when view is toggled between graph and hourly */
+  onViewToggle?: (viewType: 'graph' | 'hourly') => void;
+  /** Callback when panel is collapsed */
+  onCollapse?: (dayIndex: number) => void;
 }
 
-const { forecast, events, detailedEvents }: Props = $props();
+const {
+  forecast,
+  events,
+  detailedEvents,
+  onDaySelect,
+  onViewToggle,
+  onCollapse,
+}: Props = $props();
 
 let selectedDayIndex = $state<number | null>(null);
 // biome-ignore lint/style/useConst: $state requires let for reassignment
@@ -193,11 +206,24 @@ function getMockData(): DayForecast[] {
 }
 
 function handleTabClick(index: number) {
-  selectedDayIndex = selectedDayIndex === index ? null : index;
+  const wasSelected = selectedDayIndex === index;
+  selectedDayIndex = wasSelected ? null : index;
+
+  // Fire callback when selecting a day (not when deselecting)
+  if (!wasSelected && onDaySelect) {
+    const day = dayForecasts[index];
+    onDaySelect(index, day?.dayName || '');
+  }
 }
 
 function handleCollapse() {
+  const previousIndex = selectedDayIndex;
   selectedDayIndex = null;
+
+  // Fire callback with the day that was collapsed
+  if (previousIndex !== null && onCollapse) {
+    onCollapse(previousIndex);
+  }
 }
 
 const selectedDay = $derived(
@@ -805,14 +831,24 @@ $effect(() => {
               <button
                 class="panel-tab"
                 class:active={weatherViewTab === 'graph'}
-                onclick={() => weatherViewTab = 'graph'}
+                onclick={() => {
+                  if (weatherViewTab !== 'graph') {
+                    weatherViewTab = 'graph';
+                    onViewToggle?.('graph');
+                  }
+                }}
               >
                 Graph
               </button>
               <button
                 class="panel-tab"
                 class:active={weatherViewTab === 'hourly'}
-                onclick={() => weatherViewTab = 'hourly'}
+                onclick={() => {
+                  if (weatherViewTab !== 'hourly') {
+                    weatherViewTab = 'hourly';
+                    onViewToggle?.('hourly');
+                  }
+                }}
               >
                 Hourly
               </button>

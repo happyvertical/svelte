@@ -11,6 +11,8 @@ interface Props {
   events?: DayEventDetail[] | null;
   forecast?: DayForecast | null;
   calendarUrl?: string;
+  /** Callback when an event card is clicked */
+  onEventClick?: (eventType: string, eventName: string) => void;
 }
 
 const {
@@ -18,6 +20,7 @@ const {
   events = null,
   forecast = null,
   calendarUrl = '/events',
+  onEventClick,
 }: Props = $props();
 
 // Format full date
@@ -125,7 +128,7 @@ function getTypeLabel(type: string): string {
             {#each typeEvents as event}
               {@const url = getEventUrl(event)}
               {#if url}
-                <a href={url} class="event-card event-card--link">
+                <a href={url} class="event-card event-card--link" onclick={() => onEventClick?.(event.type, event.name)}>
                   <div class="event-time">{event.startTime}</div>
                   <div class="event-details">
                     <span class="event-name">{event.name}</span>
@@ -136,7 +139,7 @@ function getTypeLabel(type: string): string {
                   <span class="event-arrow">→</span>
                 </a>
               {:else}
-                <div class="event-card">
+                <div class="event-card" onclick={() => onEventClick?.(event.type, event.name)}>
                   <div class="event-time">{event.startTime}</div>
                   <div class="event-details">
                     <span class="event-name">{event.name}</span>
