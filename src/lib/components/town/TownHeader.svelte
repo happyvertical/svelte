@@ -202,8 +202,9 @@ const selectedFullDate = $derived(
 );
 
 // Get detailed events for the selected day
-const selectedDayEvents = $derived<DayEventDetail[]>(() => {
-  if (selectedDayIndex === null || !detailedEvents) return [];
+const selectedDayEvents = $derived.by(() => {
+  if (selectedDayIndex === null || !detailedEvents)
+    return [] as DayEventDetail[];
 
   const targetDate = getDateFromOffset(selectedDayIndex);
   const targetDateStr = formatISODate(targetDate);
@@ -559,10 +560,10 @@ function handleTabsKeyDown(e: KeyboardEvent) {
         </div>
 
         <!-- Events Column -->
-        {#if selectedDayEvents().length > 0}
+        {#if selectedDayEvents.length > 0}
           <div class="events-column">
             <div class="events-list">
-              {#each selectedDayEvents() as event}
+              {#each selectedDayEvents as event}
                 <a href={getEventUrl(event)} class="event-card" onclick={(e) => handleEventClick(e, event)}>
                   <span class="event-card-icon">{getDetailedEventIcon(event.type)}</span>
                   <div class="event-details">
