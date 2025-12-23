@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.9
+
+### Patch Changes
+
+- ### Bug Fixes
+
+  - treat 0°C as valid temperature in chart (#26) (weather)
+
 ## 0.18.8
 
 ### Patch Changes
