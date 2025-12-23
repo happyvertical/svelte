@@ -1,5 +1,17 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.11
+
+### Patch Changes
+
+- ### Features
+
+  - add analytics callback props to TownHeader, Calendar, DayView (#28) (components)
+
+  ### Other Changes
+
+  - chore: update vitest to v4 (#23) (deps)
+
 ## 0.18.10
 
 ### Patch Changes
