@@ -88,3 +88,31 @@ export interface DayForecast {
   low: number;
   hourlyData: HourlyForecast[];
 }
+
+// TownHeader types
+export interface DayEvent {
+  date: string; // YYYY-MM-DD
+  type: 'game' | 'meeting' | 'event';
+  count: number;
+}
+
+// Detailed event for TownHeader panel
+export interface DayEventDetail {
+  id: string;
+  slug: string;
+  name: string;
+  type: 'game' | 'meeting' | 'event';
+  startDate: string;       // ISO datetime
+  startTime: string;       // "7:30 PM"
+  venue?: string;          // Place name
+  venueSlug?: string;      // For linking
+  // Game-specific
+  homeTeam?: string;
+  awayTeam?: string;
+}
+
+// Events grouped by date with full details
+export interface DayEventsData {
+  date: string;            // YYYY-MM-DD
+  events: DayEventDetail[];
+}

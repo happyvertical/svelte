@@ -18,9 +18,11 @@ export { default as Badge } from './components/ui/Badge.svelte';
 export { default as Button } from './components/ui/Button.svelte';
 export { default as Card } from './components/ui/Card.svelte';
 export { default as Pagination } from './components/ui/Pagination.svelte';
-// Weather Components
+// Town Components
+export { default as TownHeader } from './components/town/TownHeader.svelte';
+// Weather Components (WeatherHeader aliased to TownHeader for backwards compatibility)
 export { default as WeatherForecast } from './components/weather/WeatherForecast.svelte';
-export { default as WeatherHeader } from './components/weather/WeatherHeader.svelte';
+export { default as WeatherHeader } from './components/town/TownHeader.svelte';
 export type {
   BadgeSize,
   BadgeVariant,
@@ -28,6 +30,9 @@ export type {
   ButtonVariant,
   CardPadding,
   CardVariant,
+  DayEvent,
+  DayEventDetail,
+  DayEventsData,
   DayForecast,
   ForecastDay,
   ForecastPeriod,

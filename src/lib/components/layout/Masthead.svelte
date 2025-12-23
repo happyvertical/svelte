@@ -5,6 +5,7 @@ import Container from './Container.svelte';
 interface Props {
   date?: string;
   location?: string;
+  locationHref?: string;
   nav?: Snippet;
 }
 
@@ -16,6 +17,7 @@ const {
     day: 'numeric',
   }),
   location = '',
+  locationHref = '/',
   nav,
 }: Props = $props();
 </script>
@@ -24,12 +26,12 @@ const {
   <Container>
     <div class="subheader">
       <div class="left">
-        <time>{date}</time>
+        {#if location}
+          <a href={locationHref} class="location">{location}</a>
+        {/if}
       </div>
       <div class="center">
-        {#if location}
-          <span class="location">{location}</span>
-        {/if}
+        <time>{date}</time>
       </div>
       <div class="right">
         {#if nav}
@@ -79,6 +81,12 @@ const {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: var(--font-size-xs);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .location:hover {
+    color: var(--color-primary-main);
   }
 
   .nav {
