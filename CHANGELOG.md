@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.13
+
+### Patch Changes
+
+- ### Bug Fixes
+
+  - remove mock data fallback, hide widget when no forecast (#32) (weather)
+
 ## 0.18.12
 
 ### Patch Changes
