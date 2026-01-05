@@ -47,7 +47,7 @@ const dayForecasts: DayForecast[] = $derived(
           hourlyData: transformHourlyData(day.periods, index),
         };
       })
-    : getMockData(),
+    : [],
 );
 
 function getDateFromOffset(offset: number): Date {
@@ -265,6 +265,7 @@ function handleTabsKeyDown(e: KeyboardEvent) {
 }
 </script>
 
+{#if dayForecasts.length > 0}
 <div class="weather-widget">
   <div
     class="tabs-wrapper"
@@ -337,6 +338,7 @@ function handleTabsKeyDown(e: KeyboardEvent) {
     </div>
   {/if}
 </div>
+{/if}
 
 <style>
   .weather-widget {
