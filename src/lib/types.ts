@@ -43,34 +43,7 @@ export interface CardProps
   footer?: Snippet;
 }
 
-// ArticleReferences types
-export interface Reference {
-  title: string;
-  url: string;
-  type?: 'agenda' | 'minutes' | 'video' | 'document' | 'external';
-  description?: string;
-}
-
-// WeatherForecast types
-export interface ForecastPeriod {
-  name: string;
-  conditions: string;
-  temperature: number;
-  windSpeed: number;
-  windDirection: number;
-  humidity: number;
-  precipProbability: number;
-}
-
-export interface ForecastDay {
-  day: string;
-  icon: string;
-  high: number;
-  low: number;
-  periods: ForecastPeriod[];
-}
-
-// WeatherHeader types
+// Calendar-related types (used by Calendar and DayView)
 export interface HourlyForecast {
   time: string;
   hour: number;
@@ -92,14 +65,12 @@ export interface DayForecast {
   hourlyData: HourlyForecast[];
 }
 
-// TownHeader types
 export interface DayEvent {
   date: string; // YYYY-MM-DD
   type: 'game' | 'meeting' | 'event';
   count: number;
 }
 
-// Detailed event for TownHeader panel
 export interface DayEventDetail {
   id: string;
   slug: string;
@@ -116,13 +87,12 @@ export interface DayEventDetail {
   councilSlug?: string; // For building meeting URLs
 }
 
-// Events grouped by date with full details
 export interface DayEventsData {
   date: string; // YYYY-MM-DD
   events: DayEventDetail[];
 }
 
-// Council/organization that holds meetings
+// Council/organization that holds meetings (used by MeetingView)
 export interface Council {
   id: string;
   slug: string;

@@ -29,6 +29,11 @@
       "types": "./dist/components/ui/Badge.svelte.d.ts",
       "svelte": "./dist/components/ui/Badge.svelte",
       "default": "./dist/components/ui/Badge.svelte"
+    },
+    "./admin": {
+      "types": "./dist/components/admin/index.d.ts",
+      "svelte": "./dist/components/admin/index.js",
+      "default": "./dist/components/admin/index.js"
     }
   },
   "repository": {
@@ -95,7 +100,13 @@
     "vitest": "^4.0.16"
   },
   "peerDependencies": {
-    "svelte": "^5.0.0"
+    "svelte": "^5.0.0",
+    "@happyvertical/smrt-agents": ">=0.17.0"
+  },
+  "peerDependenciesMeta": {
+    "@happyvertical/smrt-agents": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
