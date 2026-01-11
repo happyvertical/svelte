@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.15
+
+### Patch Changes
+
+- ### Features
+
+  - add AgentSettingsShell and admin panel components (#34) (admin)
+
 ## 0.18.14
 
 ### Patch Changes
