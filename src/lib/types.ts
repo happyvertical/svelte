@@ -43,6 +43,55 @@ export interface CardProps
   footer?: Snippet;
 }
 
+// Calendar-related types (used by Calendar and DayView)
+export interface HourlyForecast {
+  time: string;
+  hour: number;
+  icon: string;
+  temperature: number;
+  feelsLike: number;
+  windSpeed?: number;
+  windDirection?: number;
+  precipProbability?: number;
+}
+
+export interface DayForecast {
+  id: string;
+  dayName: string;
+  date: string;
+  icon: string;
+  high: number;
+  low: number;
+  hourlyData: HourlyForecast[];
+}
+
+export interface DayEvent {
+  date: string; // YYYY-MM-DD
+  type: 'game' | 'meeting' | 'event';
+  count: number;
+}
+
+export interface DayEventDetail {
+  id: string;
+  slug: string;
+  name: string;
+  type: 'game' | 'meeting' | 'event';
+  startDate: string; // ISO datetime
+  startTime: string; // "7:30 PM"
+  venue?: string; // Place name
+  venueSlug?: string; // For linking
+  // Game-specific
+  homeTeam?: string;
+  awayTeam?: string;
+  // Meeting-specific
+  councilSlug?: string; // For building meeting URLs
+}
+
+export interface DayEventsData {
+  date: string; // YYYY-MM-DD
+  events: DayEventDetail[];
+}
+
 // Council/organization that holds meetings (used by MeetingView)
 export interface Council {
   id: string;

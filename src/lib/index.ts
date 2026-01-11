@@ -33,4 +33,13 @@ export type {
   ButtonVariant,
   CardPadding,
   CardVariant,
+  // Meeting types
+  Council,
+  // Calendar types
+  DayEvent,
+  DayEventDetail,
+  DayEventsData,
+  DayForecast,
+  HourlyForecast,
+  Meeting,
 } from './types';
