@@ -11,7 +11,7 @@ interface Props {
   class?: string;
 }
 
-const {
+let {
   id,
   type = 'text',
   value = $bindable(''),
