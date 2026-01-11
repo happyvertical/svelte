@@ -11,7 +11,7 @@ interface Props {
   children: Snippet;
 }
 
-const {
+let {
   id,
   value = $bindable(''),
   disabled = false,

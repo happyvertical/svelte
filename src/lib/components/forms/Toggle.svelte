@@ -13,7 +13,7 @@ interface Props {
   children?: Snippet;
 }
 
-const {
+let {
   id,
   checked = $bindable(false),
   disabled = false,
