@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@happyvertical/smrt-agents':
-        specifier: '>=0.19.8'
-        version: 0.19.8(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(svelte@5.45.8)(typescript@5.9.3)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)
+        specifier: '>=0.19.10'
+        version: 0.19.10(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(svelte@5.45.8)(typescript@5.9.3)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)
       svelte:
         specifier: ^5.18.2
         version: 5.45.8
@@ -840,28 +840,28 @@ packages:
   '@happyvertical/logger@0.66.6':
     resolution: {integrity: sha512-62NYCGywtW66Tilga16BdBioEbcPcvrBXeRIio72aiTkSusf0q7UZijlIRSo1EOsA/J4QlVrXmNfoj2T6avbGw==, tarball: https://npm.pkg.github.com/download/@happyvertical/logger/0.66.6/5a4cf4293b99efecf5c83e8c19c3cd482c65acbe}
 
-  '@happyvertical/smrt-agents@0.19.8':
-    resolution: {integrity: sha512-LzL30Ojyq9peAv6j9uc7G8Gg9TY/y6ZioKLqyFTGIYO2jXZ/+Rdi1FjZPP8fcWIj+C6bWLu+xfPlQaM/2DaoTQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-agents/0.19.8/1bd302d4e4ce7092beb8c16547e799522699e220}
+  '@happyvertical/smrt-agents@0.19.10':
+    resolution: {integrity: sha512-1l2fBbr6Z1GWmwV8BH6hpSxGZAQlIfK0wLe+JZBlrRrih6KMylFL363KzMFMPa8XRZ4wGD9Xe+I75DyQ20vSnQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-agents/0.19.10/57f92b00b2c433a9d253dde04ee0d48b6b562a67}
     peerDependencies:
       svelte: ^5.0.0
 
-  '@happyvertical/smrt-config@0.19.8':
-    resolution: {integrity: sha512-d3LH8qgpuTwwtIK7p9AVfpRUVj16rcxP733tW/cw+FlfbySKzkXUX7Ui/x6iaUaKiWlINLTPPe/APBvwmAXs5w==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-config/0.19.8/22bc52107d5dba0e80861c20f4e82374f959c07f}
+  '@happyvertical/smrt-config@0.19.10':
+    resolution: {integrity: sha512-q7XUVUfnWCNGUxtsQoUutBlBmttfuC7xSpqNO96yssKXtezB4ISrvDRmYHzjofachxo2kaGs5Z5LaD/fgtV3CQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-config/0.19.10/23a5124a4f813fcc48b6875f03e3234b7ba94f89}
 
-  '@happyvertical/smrt-core@0.19.8':
-    resolution: {integrity: sha512-XdNVysvqyzxqAzqKv1gseUAkipTpAPwJj6vyevkTkZzE2jByXNAGfu5tReBSucSYce0anIWEt0L0KEdLNXYurQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-core/0.19.8/408d84279a7b5c05ca4a74bf0cc122b81f9c5f62}
+  '@happyvertical/smrt-core@0.19.10':
+    resolution: {integrity: sha512-zDrLp8b/HD5F1VDbRMo7x4k29d1q2Htcu/qD6l8Jmsvy7kJU4EtRIaEauw/SQaLjzQyjKA4hT3r3qJZL7bdy4Q==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-core/0.19.10/0d37d249e156a01c1e9c575d2b295a43b40598e9}
     hasBin: true
     peerDependencies:
       '@xenova/transformers': ^2.17.0
 
-  '@happyvertical/smrt-scanner@0.19.8':
-    resolution: {integrity: sha512-j6vBbEydvpJsQqj7tYwvKFrV2dYUbnjui2yTg6f11PekrBoMN7HMtX36BrBnPVAId+01gUJauSQakCFZm9HsNw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-scanner/0.19.8/9c9b9e9ba250aecc3898aada4a08e550b188b176}
+  '@happyvertical/smrt-scanner@0.19.10':
+    resolution: {integrity: sha512-w19c3riD/BdTDOPyMqpWFqr5siguHVNtU1RoW/lhoAua7nOHhSil3KkTvQ9q5xlDNi0amKmRllAo2eurrQcdNA==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-scanner/0.19.10/937cfa0269c490b0a974aab34cbe102cd3094865}
     hasBin: true
     peerDependencies:
-      '@happyvertical/smrt-core': 0.19.8
+      '@happyvertical/smrt-core': 0.19.10
 
-  '@happyvertical/smrt-types@0.19.8':
-    resolution: {integrity: sha512-GG9q6N1BslLYx7to85e5TJaBLNCxbOWr2cMYorpxKtiQ6qqbSU4r7PceL+9axaa55lKkI23ksTut0pmxcgD7mg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-types/0.19.8/353ed2e391d9aae5909b2c4071a0332f0cb9ccd9}
+  '@happyvertical/smrt-types@0.19.10':
+    resolution: {integrity: sha512-ItUB8Km7v1m9jaNhIfzYpPTE08AXk/l7jneLySZ2tEzCI1Dc4wQAcSvMek1l3z1eWAD1PEQR9aLh5fOktQiTwQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-types/0.19.10/4de54b2b566f3b6d6d0bb9888b0864b38216a523}
 
   '@happyvertical/sql@0.66.6':
     resolution: {integrity: sha512-o/zv9pzuy4pG75rg5K1t4L1T7M6GspC0iCfrp3sSjZ1TYjtLdZKmPuw22UV36F99C1jjWfEhbu/7cqIDV44geg==, tarball: https://npm.pkg.github.com/download/@happyvertical/sql/0.66.6/f903ec26ca99bec86f6e1dc5ab19d48c26b67336}
@@ -6145,12 +6145,12 @@ snapshots:
     dependencies:
       '@happyvertical/utils': 0.66.6
 
-  '@happyvertical/smrt-agents@0.19.8(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(svelte@5.45.8)(typescript@5.9.3)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-agents@0.19.10(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(svelte@5.45.8)(typescript@5.9.3)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/ai': 0.66.6(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/files': 0.66.6
-      '@happyvertical/smrt-config': 0.19.8(typescript@5.9.3)
-      '@happyvertical/smrt-core': 0.19.8(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-config': 0.19.10(typescript@5.9.3)
+      '@happyvertical/smrt-core': 0.19.10(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2(debug@4.4.3))(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/utils': 0.66.6
       svelte: 5.45.8
     transitivePeerDependencies:
@@ -6312,23 +6312,23 @@ snapshots:
       - youtubei.js
       - zod
 
-  '@happyvertical/smrt-config@0.19.8(typescript@5.9.3)':
+  '@happyvertical/smrt-config@0.19.10(typescript@5.9.3)':
     dependencies:
       cosmiconfig: 9.0.0(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
-  '@happyvertical/smrt-core@0.19.8(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-core@0.19.10(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2(debug@4.4.3))(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/ai': 0.66.6(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/files': 0.66.6
       '@happyvertical/logger': 0.66.6
-      '@happyvertical/smrt-config': 0.19.8(typescript@5.9.3)
-      '@happyvertical/smrt-scanner': 0.19.8(@happyvertical/smrt-core@0.19.8(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76))
-      '@happyvertical/smrt-types': 0.19.8
+      '@happyvertical/smrt-config': 0.19.10(typescript@5.9.3)
+      '@happyvertical/smrt-scanner': 0.19.10(@happyvertical/smrt-core@0.19.10(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2(debug@4.4.3))(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76))
+      '@happyvertical/smrt-types': 0.19.10
       '@happyvertical/sql': 0.66.6
       '@happyvertical/utils': 0.66.6
-      '@langchain/community': 0.3.59(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(axios@1.13.2)(cheerio@1.1.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)
+      '@langchain/community': 0.3.59(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(axios@1.13.2(debug@4.4.3))(cheerio@1.1.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)
       '@modelcontextprotocol/sdk': 1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76)
       '@xenova/transformers': 2.17.2
       cheerio: 1.1.2
@@ -6492,15 +6492,15 @@ snapshots:
       - youtubei.js
       - zod
 
-  '@happyvertical/smrt-scanner@0.19.8(@happyvertical/smrt-core@0.19.8(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76))':
+  '@happyvertical/smrt-scanner@0.19.10(@happyvertical/smrt-core@0.19.10(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2(debug@4.4.3))(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76))':
     dependencies:
-      '@happyvertical/smrt-core': 0.19.8(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-core': 0.19.10(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(axios@1.13.2(debug@4.4.3))(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)(zod@3.25.76)
       fast-glob: 3.3.3
       minimatch: 10.0.3
       oxc-parser: 0.52.0
       oxc-resolver: 4.2.0
 
-  '@happyvertical/smrt-types@0.19.8': {}
+  '@happyvertical/smrt-types@0.19.10': {}
 
   '@happyvertical/sql@0.66.6':
     dependencies:
@@ -6590,7 +6590,7 @@ snapshots:
 
   '@js-sdsl/ordered-map@4.4.2': {}
 
-  '@langchain/community@0.3.59(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(axios@1.13.2)(cheerio@1.1.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)':
+  '@langchain/community@0.3.59(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-runtime@3.962.0)(@aws-sdk/credential-provider-node@3.962.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(axios@1.13.2(debug@4.4.3))(cheerio@1.1.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.16.3)(playwright@1.57.0)(weaviate-client@3.10.0)(ws@8.18.3)':
     dependencies:
       '@browserbasehq/stagehand': 1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76)
       '@ibm-cloud/watsonx-ai': 1.7.6
@@ -6601,7 +6601,7 @@ snapshots:
       flat: 5.0.2
       ibm-cloud-sdk-core: 5.4.5
       js-yaml: 4.1.1
-      langchain: 0.3.37(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(axios@1.13.2)(cheerio@1.1.2)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(ws@8.18.3)
+      langchain: 0.3.37(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(axios@1.13.2(debug@4.4.3))(cheerio@1.1.2)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(ws@8.18.3)
       langsmith: 0.3.87(openai@6.16.0(ws@8.18.3)(zod@3.25.76))
       math-expression-evaluator: 2.0.7
       openai: 6.16.0(ws@8.18.3)(zod@3.25.76)
@@ -8984,7 +8984,7 @@ snapshots:
       isstream: 0.1.2
       jsonwebtoken: 9.0.3
       mime-types: 2.1.35
-      retry-axios: 2.6.0(axios@1.13.2)
+      retry-axios: 2.6.0(axios@1.13.2(debug@4.4.3))
       tough-cookie: 4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -9183,7 +9183,7 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  langchain@0.3.37(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(axios@1.13.2)(cheerio@1.1.2)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(ws@8.18.3):
+  langchain@0.3.37(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(axios@1.13.2(debug@4.4.3))(cheerio@1.1.2)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(ws@8.18.3):
     dependencies:
       '@langchain/core': 0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76))
       '@langchain/openai': 0.6.17(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(ws@8.18.3)
@@ -9951,7 +9951,7 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
-  retry-axios@2.6.0(axios@1.13.2):
+  retry-axios@2.6.0(axios@1.13.2(debug@4.4.3)):
     dependencies:
       axios: 1.13.2(debug@4.4.3)
 
