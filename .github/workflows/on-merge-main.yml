@@ -24,10 +24,10 @@ jobs:
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: '24'
           registry-url: 'https://npm.pkg.github.com'
@@ -57,7 +57,7 @@ jobs:
     steps:
       - name: Generate token from GitHub App
         id: generate_token
-        uses: tibdex/github-app-token@v2
+        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2
         with:
           app_id: ${{ secrets.HAVE_RELEASE_APP_ID }}
           private_key: ${{ secrets.HAVE_RELEASE_APP_PRIVATE_KEY }}
@@ -69,10 +69,10 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: '24'
           registry-url: 'https://npm.pkg.github.com'
