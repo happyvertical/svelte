@@ -1,6 +1,6 @@
 {
   "name": "@happyvertical/svelte",
-  "version": "0.18.30",
+  "version": "0.18.31",
   "description": "Svelte 5 component library for the HappyVertical ecosystem",
   "author": "Will Griffin <willgriffin@gmail.com>",
   "type": "module",
