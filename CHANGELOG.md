@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.32
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update all dependencies (#50) (deps)
+
 ## 0.18.31
 
 ### Patch Changes
