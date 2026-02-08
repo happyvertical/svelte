@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@happyvertical/smrt-agents':
-        specifier: '>=0.19.67'
-        version: 0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(svelte@5.49.1)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+        specifier: '>=0.19.72'
+        version: 0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(svelte@5.49.1)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
       svelte:
         specifier: ^5.49.1
         version: 5.49.1
@@ -833,16 +833,25 @@ packages:
   '@happyvertical/logger@0.66.11':
     resolution: {integrity: sha512-baYnkONQCTJr89W7vLUQCAoDxOUg5fgTHRXg0QYiBpGalOVCBCv7SYcdM+okTn2Bm3+XYDVR87C8BGshMB0cqQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/logger/0.66.11/80abf03facdfa1237ad21a09c9dae4ed418d606b}
 
-  '@happyvertical/smrt-agents@0.19.67':
-    resolution: {integrity: sha512-f7xfSQ6+AD1BgI+EbNOWoDZ7KgKnHshoweu7TCOvJ8U7NDqBozERBTBaxZrCLwtD52rB40YDWzmtCM/xG82X4A==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-agents/0.19.67/0f8a9d50280f6c622d754523623ce06d719d5906}
+  '@happyvertical/smrt-agents@0.19.72':
+    resolution: {integrity: sha512-FURkyRM7v639TKRvgYxBgUGeKVase1+PsNf2lNkiZchqm6Rm4Vkm5OsvE6xT27YyXzFsKnEORJReOZo7CfTm0Q==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-agents/0.19.72/417e79b4b1fac727e0cd0df06aeb03a08c0cc683}
     peerDependencies:
       svelte: ^5.0.0
 
   '@happyvertical/smrt-config@0.19.67':
     resolution: {integrity: sha512-MBYGmnV0FILhgOH00dcSoAlVCHA6q9E1A26wWuJ6sN74oKOSHj35W433k11IQExqSqW7E4WnzLlG+esr7mJf3g==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-config/0.19.67/de5802dd17cd7beaba48a9d91d8cc304073453b7}
 
+  '@happyvertical/smrt-config@0.19.72':
+    resolution: {integrity: sha512-iTfgDfJAOYCmsjN7OI11Ti3iVg7hm/RjMEwkAKgF3GYpvMeTZcz/e2p/ym5qWzN6ttKgjK1VErBKyI2AmFHZfw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-config/0.19.72/6863c65584b8163e78ce761268d2cff58b034716}
+
   '@happyvertical/smrt-core@0.19.67':
     resolution: {integrity: sha512-mbXxMSqo6Au95tKTqnoDc4RrTw4fzeh5KGEpH0eXh89NGcTz8+4InLCB5UAtoOpdL7g033qENmD+Hol/Ta+IfQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-core/0.19.67/60013fef76f289d07c912ab932a39cfb3b09982e}
+    hasBin: true
+    peerDependencies:
+      '@xenova/transformers': ^2.17.0
+
+  '@happyvertical/smrt-core@0.19.72':
+    resolution: {integrity: sha512-iORR10Es59FgvXmql7FXcCxh8/vQCLXEFr4JQNV0lsAV2TBk2jWHGDCppxpWq2DduXMKwR6Jt1xk8X3C7eFX0g==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-core/0.19.72/f81854f286c447e75f22306340df57092f54a7da}
     hasBin: true
     peerDependencies:
       '@xenova/transformers': ^2.17.0
@@ -856,13 +865,27 @@ packages:
     peerDependencies:
       '@happyvertical/smrt-core': 0.19.67
 
+  '@happyvertical/smrt-scanner@0.19.72':
+    resolution: {integrity: sha512-QkkJUGVVKX4bmNn9ESRy8OHe2oko7Y/Fr94fZ4lQzEPkoI2voTTXQ7zHZD+j3nGk78Jhfkx4KhVFvu6Ok93Cww==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-scanner/0.19.72/889dc58dc2104b7d9b448a9e2056ed8e060509cc}
+    hasBin: true
+    peerDependencies:
+      '@happyvertical/smrt-core': 0.19.72
+
   '@happyvertical/smrt-tenancy@0.19.67':
     resolution: {integrity: sha512-G66cuZiuavzbMYduxrzUywhrVOp0mYj00qlQ6jrO1bFOSo6xxxx4HuNRz+fifg7yImSkzs5XNyn5Xb/JWdimnw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-tenancy/0.19.67/367685149593013783802d53f0030418087e4b97}
     peerDependencies:
       '@happyvertical/smrt-users': 0.19.67
 
+  '@happyvertical/smrt-tenancy@0.19.72':
+    resolution: {integrity: sha512-BDwXJUReKLyVQXnjWXudavo/Fs3zSk7oefVof3CcTfAGN9lWl/xto5C9TqI+iwH4J8lgdnpHayzjVzpzV+Q22Q==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-tenancy/0.19.72/8ba0503391edfa5884431fa4b06b90d7bfe6a7ac}
+    peerDependencies:
+      '@happyvertical/smrt-users': 0.19.72
+
   '@happyvertical/smrt-types@0.19.67':
     resolution: {integrity: sha512-GrJfA6Q6LMkBf1hV1ZwBse7cfwkzyuqyBQ/WVT6ZH0RvWJTq5G2lSGJF0nVDyWSA1ojPBAgWhOsl1FtatkLktQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-types/0.19.67/a058dad19fb1829f64f9daace360a15738118e49}
+
+  '@happyvertical/smrt-types@0.19.72':
+    resolution: {integrity: sha512-dbYNvgt5jCIvxqmNmO2FS/M1Ezl8WGItc9JylCEjUej84MTW8yXSOTS5HnaD6c6Zrh8UpvbQZlZe3C53aXG9WA==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-types/0.19.72/a393c2720737d50b953223563566a2d27bc0f7d9}
 
   '@happyvertical/smrt-users@0.19.67':
     resolution: {integrity: sha512-6OIolLOEswDOjESy4znVynYW+UFTU0amWisu286dgJJ8kd+ajyuuZf8YJJN2NTJqjWxRKxZSUshhq6qFCH6L+w==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-users/0.19.67/45d5c32a1e8db12e3594b29ca0283a3420d83adf}
@@ -6180,13 +6203,13 @@ snapshots:
     dependencies:
       '@happyvertical/utils': 0.66.11
 
-  '@happyvertical/smrt-agents@0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(svelte@5.49.1)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-agents@0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(svelte@5.49.1)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/ai': 0.66.11(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/files': 0.66.11
-      '@happyvertical/smrt-config': 0.19.67(typescript@5.9.3)
-      '@happyvertical/smrt-core': 0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-config': 0.19.72(typescript@5.9.3)
+      '@happyvertical/smrt-core': 0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/utils': 0.66.11
       svelte: 5.49.1
     transitivePeerDependencies:
@@ -6334,6 +6357,12 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
+  '@happyvertical/smrt-config@0.19.72(typescript@5.9.3)':
+    dependencies:
+      cosmiconfig: 9.0.0(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
+
   '@happyvertical/smrt-core@0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/ai': 0.66.11(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
@@ -6343,6 +6372,161 @@ snapshots:
       '@happyvertical/smrt-config': 0.19.67(typescript@5.9.3)
       '@happyvertical/smrt-scanner': 0.19.67(@happyvertical/smrt-core@0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76))
       '@happyvertical/smrt-types': 0.19.67
+      '@happyvertical/sql': 0.67.8
+      '@happyvertical/utils': 0.66.11
+      '@langchain/community': 1.1.4(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(cheerio@1.1.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)
+      '@modelcontextprotocol/sdk': 1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76)
+      '@xenova/transformers': 2.17.2
+      cheerio: 1.1.2
+      fast-glob: 3.3.3
+      minimatch: 10.1.1
+      pluralize: 8.0.0
+      typescript: 5.9.3
+      yaml: 2.8.2
+    transitivePeerDependencies:
+      - '@arcjet/redact'
+      - '@aws-crypto/sha256-js'
+      - '@aws-sdk/client-dynamodb'
+      - '@aws-sdk/client-lambda'
+      - '@aws-sdk/client-s3'
+      - '@aws-sdk/client-sagemaker-runtime'
+      - '@aws-sdk/client-sfn'
+      - '@aws-sdk/credential-provider-node'
+      - '@aws-sdk/dsql-signer'
+      - '@azure/search-documents'
+      - '@azure/storage-blob'
+      - '@browserbasehq/sdk'
+      - '@browserbasehq/stagehand'
+      - '@cfworker/json-schema'
+      - '@clickhouse/client'
+      - '@datastax/astra-db-ts'
+      - '@elastic/elasticsearch'
+      - '@getmetal/metal-sdk'
+      - '@getzep/zep-cloud'
+      - '@getzep/zep-js'
+      - '@gomomento/sdk-core'
+      - '@google-cloud/storage'
+      - '@gradientai/nodejs-sdk'
+      - '@huggingface/inference'
+      - '@huggingface/transformers'
+      - '@ibm-cloud/watsonx-ai'
+      - '@lancedb/lancedb'
+      - '@langchain/core'
+      - '@layerup/layerup-security'
+      - '@libsql/client'
+      - '@mendable/firecrawl-js'
+      - '@mlc-ai/web-llm'
+      - '@mozilla/readability'
+      - '@neondatabase/serverless'
+      - '@notionhq/client'
+      - '@opensearch-project/opensearch'
+      - '@opentelemetry/api'
+      - '@opentelemetry/exporter-trace-otlp-proto'
+      - '@opentelemetry/sdk-trace-base'
+      - '@pinecone-database/pinecone'
+      - '@planetscale/database'
+      - '@premai/prem-sdk'
+      - '@qdrant/js-client-rest'
+      - '@raycast/api'
+      - '@rockset/client'
+      - '@smithy/eventstream-codec'
+      - '@smithy/protocol-http'
+      - '@smithy/signature-v4'
+      - '@smithy/util-utf8'
+      - '@spider-cloud/spider-client'
+      - '@supabase/supabase-js'
+      - '@tensorflow-models/universal-sentence-encoder'
+      - '@tensorflow/tfjs-core'
+      - '@upstash/ratelimit'
+      - '@upstash/redis'
+      - '@upstash/vector'
+      - '@vercel/kv'
+      - '@vercel/postgres'
+      - '@writerai/writer-sdk'
+      - '@xata.io/client'
+      - '@zilliz/milvus2-sdk-node'
+      - apify-client
+      - assemblyai
+      - aws-crt
+      - azion
+      - better-sqlite3
+      - bufferutil
+      - cassandra-driver
+      - cborg
+      - chromadb
+      - closevector-common
+      - closevector-node
+      - closevector-web
+      - cohere-ai
+      - convex
+      - crypto-js
+      - d3-dsv
+      - discord.js
+      - duck-duck-scrape
+      - encoding
+      - epub2
+      - faiss-node
+      - fast-xml-parser
+      - firebase-admin
+      - google-auth-library
+      - googleapis
+      - hnswlib-node
+      - hono
+      - html-to-text
+      - ibm-cloud-sdk-core
+      - ignore
+      - interface-datastore
+      - ioredis
+      - it-all
+      - jsdom
+      - jsonwebtoken
+      - lodash
+      - lunary
+      - mammoth
+      - mariadb
+      - mem0ai
+      - mongodb
+      - mysql2
+      - neo4j-driver
+      - node-llama-cpp
+      - notion-to-md
+      - officeparser
+      - openai
+      - pdf-parse
+      - peggy
+      - pg
+      - pg-copy-streams
+      - pg-native
+      - pickleparser
+      - playwright
+      - portkey-ai
+      - puppeteer
+      - pyodide
+      - redis
+      - replicate
+      - sonix-speech-recognition
+      - srt-parser-2
+      - supports-color
+      - typeorm
+      - typesense
+      - usearch
+      - utf-8-validate
+      - voy-search
+      - weaviate-client
+      - word-extractor
+      - ws
+      - youtubei.js
+      - zod
+
+  '@happyvertical/smrt-core@0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)':
+    dependencies:
+      '@happyvertical/ai': 0.66.11(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/files': 0.66.11
+      '@happyvertical/json': 0.67.8
+      '@happyvertical/logger': 0.66.11
+      '@happyvertical/smrt-config': 0.19.72(typescript@5.9.3)
+      '@happyvertical/smrt-scanner': 0.19.72(@happyvertical/smrt-core@0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76))
+      '@happyvertical/smrt-types': 0.19.72
       '@happyvertical/sql': 0.67.8
       '@happyvertical/utils': 0.66.11
       '@langchain/community': 1.1.4(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(cheerio@1.1.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)
@@ -6646,6 +6830,14 @@ snapshots:
       oxc-parser: 0.108.0
       oxc-resolver: 11.16.3
 
+  '@happyvertical/smrt-scanner@0.19.72(@happyvertical/smrt-core@0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76))':
+    dependencies:
+      '@happyvertical/smrt-core': 0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
+      fast-glob: 3.3.3
+      minimatch: 10.1.1
+      oxc-parser: 0.108.0
+      oxc-resolver: 11.16.3
+
   '@happyvertical/smrt-tenancy@0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/smrt-core': 0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
@@ -6788,7 +6980,151 @@ snapshots:
       - youtubei.js
       - zod
 
+  '@happyvertical/smrt-tenancy@0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)':
+    dependencies:
+      '@happyvertical/smrt-core': 0.19.72(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-users': 0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/sql': 0.67.8
+      '@happyvertical/utils': 0.66.11
+    transitivePeerDependencies:
+      - '@arcjet/redact'
+      - '@aws-crypto/sha256-js'
+      - '@aws-sdk/client-dynamodb'
+      - '@aws-sdk/client-lambda'
+      - '@aws-sdk/client-s3'
+      - '@aws-sdk/client-sagemaker-runtime'
+      - '@aws-sdk/client-sfn'
+      - '@aws-sdk/credential-provider-node'
+      - '@aws-sdk/dsql-signer'
+      - '@azure/search-documents'
+      - '@azure/storage-blob'
+      - '@browserbasehq/sdk'
+      - '@browserbasehq/stagehand'
+      - '@cfworker/json-schema'
+      - '@clickhouse/client'
+      - '@datastax/astra-db-ts'
+      - '@elastic/elasticsearch'
+      - '@getmetal/metal-sdk'
+      - '@getzep/zep-cloud'
+      - '@getzep/zep-js'
+      - '@gomomento/sdk-core'
+      - '@google-cloud/storage'
+      - '@gradientai/nodejs-sdk'
+      - '@huggingface/inference'
+      - '@huggingface/transformers'
+      - '@ibm-cloud/watsonx-ai'
+      - '@lancedb/lancedb'
+      - '@langchain/core'
+      - '@layerup/layerup-security'
+      - '@libsql/client'
+      - '@mendable/firecrawl-js'
+      - '@mlc-ai/web-llm'
+      - '@mozilla/readability'
+      - '@neondatabase/serverless'
+      - '@notionhq/client'
+      - '@opensearch-project/opensearch'
+      - '@opentelemetry/api'
+      - '@opentelemetry/exporter-trace-otlp-proto'
+      - '@opentelemetry/sdk-trace-base'
+      - '@pinecone-database/pinecone'
+      - '@planetscale/database'
+      - '@premai/prem-sdk'
+      - '@qdrant/js-client-rest'
+      - '@raycast/api'
+      - '@rockset/client'
+      - '@smithy/eventstream-codec'
+      - '@smithy/protocol-http'
+      - '@smithy/signature-v4'
+      - '@smithy/util-utf8'
+      - '@spider-cloud/spider-client'
+      - '@supabase/supabase-js'
+      - '@tensorflow-models/universal-sentence-encoder'
+      - '@tensorflow/tfjs-core'
+      - '@upstash/ratelimit'
+      - '@upstash/redis'
+      - '@upstash/vector'
+      - '@vercel/kv'
+      - '@vercel/postgres'
+      - '@writerai/writer-sdk'
+      - '@xata.io/client'
+      - '@xenova/transformers'
+      - '@zilliz/milvus2-sdk-node'
+      - apify-client
+      - assemblyai
+      - aws-crt
+      - azion
+      - better-sqlite3
+      - bufferutil
+      - cassandra-driver
+      - cborg
+      - chromadb
+      - closevector-common
+      - closevector-node
+      - closevector-web
+      - cohere-ai
+      - convex
+      - crypto-js
+      - d3-dsv
+      - discord.js
+      - duck-duck-scrape
+      - encoding
+      - epub2
+      - faiss-node
+      - fast-xml-parser
+      - firebase-admin
+      - google-auth-library
+      - googleapis
+      - hnswlib-node
+      - hono
+      - html-to-text
+      - ibm-cloud-sdk-core
+      - ignore
+      - interface-datastore
+      - ioredis
+      - it-all
+      - jsdom
+      - jsonwebtoken
+      - lodash
+      - lunary
+      - mammoth
+      - mariadb
+      - mem0ai
+      - mongodb
+      - mysql2
+      - neo4j-driver
+      - node-llama-cpp
+      - notion-to-md
+      - officeparser
+      - openai
+      - pdf-parse
+      - peggy
+      - pg
+      - pg-copy-streams
+      - pg-native
+      - pickleparser
+      - playwright
+      - portkey-ai
+      - puppeteer
+      - pyodide
+      - redis
+      - replicate
+      - sonix-speech-recognition
+      - srt-parser-2
+      - supports-color
+      - typeorm
+      - typesense
+      - usearch
+      - utf-8-validate
+      - voy-search
+      - weaviate-client
+      - word-extractor
+      - ws
+      - youtubei.js
+      - zod
+
   '@happyvertical/smrt-types@0.19.67': {}
+
+  '@happyvertical/smrt-types@0.19.72': {}
 
   '@happyvertical/smrt-users@0.19.67(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.969.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.19.67)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.2.5)(google-auth-library@10.5.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
