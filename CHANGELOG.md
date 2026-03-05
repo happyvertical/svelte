@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.49
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update @changesets/cli to ^2.30.0 (#70) (deps)
+
 ## 0.18.48
 
 ### Patch Changes
