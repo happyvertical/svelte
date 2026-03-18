@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@happyvertical/smrt-agents':
-        specifier: '>=0.20.56'
-        version: 0.20.56(bcd65fda465617c7262e51885e3c1c0b)
+        specifier: '>=0.21.1'
+        version: 0.21.1(bcd65fda465617c7262e51885e3c1c0b)
       svelte:
         specifier: ^5.53.12
         version: 5.53.12
@@ -851,29 +851,29 @@ packages:
     peerDependencies:
       '@sentry/node': '>=10.40.0'
 
-  '@happyvertical/smrt-agents@0.20.56':
-    resolution: {integrity: sha512-3ylIwtlSDYM7X7/F37kyg88C3h7e/KVxILPPGv4lnFzohO0wdAGFFQ4jaEmr5Bn368Wk+l8rfaOG+fzrSiHgVA==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-agents/0.20.56/9832f18f61b729d65d2dea72b1465ba350695157}
+  '@happyvertical/smrt-agents@0.21.1':
+    resolution: {integrity: sha512-q72r5eLCiPbQHgb2W0nQSBJJR+3T36WrJmUW9jHQ3pmjgxGtIC/qOHHNzHOlCtpJp3uecr6RxBahKOd7emoDVw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-agents/0.21.1/48b648e6a39a6086bea1d2496b04c593c230449b}
 
-  '@happyvertical/smrt-config@0.20.56':
-    resolution: {integrity: sha512-wv8uXAmaknv94DV0jOUR3PgZIvjuWnnBuwxTzSUdZxDb2Agg8oXggv3PmyvhTNN1qLLVrMV+5SKt6lwI8zLUCA==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-config/0.20.56/d2e47740bd0603c687cb76438603f51c63d117d1}
+  '@happyvertical/smrt-config@0.21.1':
+    resolution: {integrity: sha512-FYEWVgpFoCXvrEwRNwTvgH5BrY7aCQRC/QTzMncUmniHcw8XwluDNVCelIyyvDoNQUlKTDIHDG+1NhEgAEl2lg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-config/0.21.1/8240945d876f0432749e57258507b5d4b5acd1d1}
 
-  '@happyvertical/smrt-core@0.20.56':
-    resolution: {integrity: sha512-t9t6/+/RmssdEm0xA/E3LrII31kYk3+IR9w8duKCot1xvlh9p74ycGbcEk2qeWkJ3cUcJMKepj3Xoqc7mslI8A==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-core/0.20.56/88ab6a9ac273321b8e3211883d10fc094d85598f}
+  '@happyvertical/smrt-core@0.21.1':
+    resolution: {integrity: sha512-EukbMz1TWeHUPHq1+UiJgT+4t7uIp515IS8q/RRr/voPjUR1E5LYoe56vJyQtA8r3c0747xui0RnU1Q2VcEIYw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-core/0.21.1/c893a0a6e8f6c75c699d81a7b1c305b5f4248ffc}
     hasBin: true
     peerDependencies:
       '@xenova/transformers': ^2.17.0
 
-  '@happyvertical/smrt-scanner@0.20.56':
-    resolution: {integrity: sha512-EeCjMJxOCG1eiE6igu6r+I5SnBPGZ4Y4wiv7Gc3p/+kHkU5mYdVrPSG0pAq7Bl9Ncb4j4tZCiOQmoaWfg7XTYw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-scanner/0.20.56/3c2b6ef1e7458a005d53d62bf83911a53429ed5b}
+  '@happyvertical/smrt-scanner@0.21.1':
+    resolution: {integrity: sha512-JcAhwU9rJKavYhT3my6yOusZaCwRlC/i9vW9/aNKb7ZLC8cnSNWU/2IrRwTvkg19MHc/lqNT2CIWA7GDPfCBfw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-scanner/0.21.1/4e2fff0ea35c090bed71bf0020da027da596c705}
     hasBin: true
     peerDependencies:
-      '@happyvertical/smrt-core': 0.20.56
+      '@happyvertical/smrt-core': 0.21.1
 
-  '@happyvertical/smrt-tenancy@0.20.56':
-    resolution: {integrity: sha512-RWPKOwQ44jDmKihGArYPQ3BAw6DVXMmKQf9mCE4fwNHakbBhJXTmxLK3WqvQL12Nw54BWMDO7/Utd4Z26xVJaQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-tenancy/0.20.56/e72d62bb5171088e85975e54f46e4f4fcf31fec2}
+  '@happyvertical/smrt-tenancy@0.21.1':
+    resolution: {integrity: sha512-Km3+0GjbhgvOQJIdlSP3gfizrPmg+dzZ0m/G0xljaRRn+Ey9wxllV06uuWjILmoVW1zwyIBj9CZGFFKGOgPbsg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-tenancy/0.21.1/1142d713b367a71f760485501c2f80126d6cb63e}
 
-  '@happyvertical/smrt-types@0.20.56':
-    resolution: {integrity: sha512-2dNnz/Ess2eHN3x5Ih3e1tQ7tYaoiJyHd0+6T/9pbwPyBe9AdQ7gSS2U2fW6qurPIEUALRSJ77yi92V6LfM/1w==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-types/0.20.56/b929e5c5dbad0c49d3301b745d5b1487c2293424}
+  '@happyvertical/smrt-types@0.21.1':
+    resolution: {integrity: sha512-0lEfBws5oaNEq9yZ7Dg2kxV6gyLEfxEWsTEzZH8fQMHvPTvYP7nybtFxrvo+adWzqPYMb8VFvIoCj+HscEG6cA==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-types/0.21.1/8ef82c9b76d37a93424cc9e438aafcd8d5f13bea}
 
   '@happyvertical/sql@0.70.4':
     resolution: {integrity: sha512-01mn2+OgZcBvkYebXEpjrUKyzLuyhjqasJDYSwE19luYxJnlVwnf8JfwsEhCS/uA2nD2rTMkTv8xtCwCPkO0oQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/sql/0.70.4/b727383ccd8e0b6b170ff7faabf26d7a28573935}
@@ -6802,13 +6802,13 @@ snapshots:
       '@happyvertical/utils': 0.70.4
       '@sentry/node': 10.40.0
 
-  '@happyvertical/smrt-agents@0.20.56(bcd65fda465617c7262e51885e3c1c0b)':
+  '@happyvertical/smrt-agents@0.21.1(bcd65fda465617c7262e51885e3c1c0b)':
     dependencies:
       '@happyvertical/ai': 0.70.4(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/files': 0.70.4
-      '@happyvertical/smrt-config': 0.20.56(typescript@5.9.3)
-      '@happyvertical/smrt-core': 0.20.56(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.20.56(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-config': 0.21.1(typescript@5.9.3)
+      '@happyvertical/smrt-core': 0.21.1(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.21.1(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/utils': 0.70.4
     transitivePeerDependencies:
       - '@arcjet/redact'
@@ -6949,21 +6949,21 @@ snapshots:
       - youtubei.js
       - zod
 
-  '@happyvertical/smrt-config@0.20.56(typescript@5.9.3)':
+  '@happyvertical/smrt-config@0.21.1(typescript@5.9.3)':
     dependencies:
       cosmiconfig: 9.0.1(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
-  '@happyvertical/smrt-core@0.20.56(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-core@0.21.1(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/ai': 0.70.4(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/files': 0.70.4
       '@happyvertical/json': 0.70.4
       '@happyvertical/logger': 0.70.4(@sentry/node@10.40.0)
-      '@happyvertical/smrt-config': 0.20.56(typescript@5.9.3)
-      '@happyvertical/smrt-scanner': 0.20.56(@happyvertical/smrt-core@0.20.56(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76))
-      '@happyvertical/smrt-types': 0.20.56
+      '@happyvertical/smrt-config': 0.21.1(typescript@5.9.3)
+      '@happyvertical/smrt-scanner': 0.21.1(@happyvertical/smrt-core@0.21.1(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76))
+      '@happyvertical/smrt-types': 0.21.1
       '@happyvertical/sql': 0.70.4
       '@happyvertical/utils': 0.70.4
       '@langchain/community': 1.1.4(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(cheerio@1.1.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)
@@ -7111,17 +7111,17 @@ snapshots:
       - youtubei.js
       - zod
 
-  '@happyvertical/smrt-scanner@0.20.56(@happyvertical/smrt-core@0.20.56(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76))':
+  '@happyvertical/smrt-scanner@0.21.1(@happyvertical/smrt-core@0.21.1(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76))':
     dependencies:
-      '@happyvertical/smrt-core': 0.20.56(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-core': 0.21.1(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
       fast-glob: 3.3.3
       minimatch: 10.1.1
       oxc-parser: 0.108.0
       oxc-resolver: 11.16.3
 
-  '@happyvertical/smrt-tenancy@0.20.56(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-tenancy@0.21.1(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
-      '@happyvertical/smrt-core': 0.20.56(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-core': 0.21.1(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-provider-node@3.972.12)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@ibm-cloud/watsonx-ai@1.7.6)(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(openai@6.16.0(ws@8.18.3)(zod@3.25.76)))(@mlc-ai/web-llm@0.2.81)(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@sentry/node@10.40.0)(@smithy/util-utf8@2.3.0)(@xenova/transformers@2.17.2)(fast-xml-parser@5.3.6)(google-auth-library@10.5.0)(googleapis@144.0.0)(hono@4.11.3)(ibm-cloud-sdk-core@5.4.5)(ignore@5.3.2)(ioredis@5.9.3)(jsonwebtoken@9.0.3)(lodash@4.17.21)(openai@6.16.0(ws@8.18.3)(zod@3.25.76))(pg@8.18.0)(playwright@1.57.0)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/sql': 0.70.4
       '@happyvertical/utils': 0.70.4
     transitivePeerDependencies:
@@ -7261,7 +7261,7 @@ snapshots:
       - youtubei.js
       - zod
 
-  '@happyvertical/smrt-types@0.20.56': {}
+  '@happyvertical/smrt-types@0.21.1': {}
 
   '@happyvertical/sql@0.70.4':
     dependencies:
