@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.68
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update svelte to ^5.55.1 (#92) (deps)
+
 ## 0.18.67
 
 ### Patch Changes
