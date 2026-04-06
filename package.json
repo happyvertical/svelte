@@ -88,7 +88,7 @@
     "@sveltejs/package": "^2.5.7",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "@types/node": "^24.12.2",
-    "lefthook": "^2.1.4",
+    "lefthook": "^2.1.5",
     "mdsvex": "^0.12.7",
     "shiki": "^3.23.0",
     "storybook": "^8.6.18",
