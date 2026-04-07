@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.73
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update lefthook to ^2.1.5 (#97) (deps)
+
 ## 0.18.72
 
 ### Patch Changes
