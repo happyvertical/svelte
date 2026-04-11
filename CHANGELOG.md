@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.78
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update @happyvertical/smrt-agents to >=0.21.43 (#103) (deps)
+
 ## 0.18.77
 
 ### Patch Changes
