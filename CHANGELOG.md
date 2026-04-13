@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.80
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update pnpm/action-setup action to v6 (#104) (deps)
+
 ## 0.18.79
 
 ### Patch Changes
