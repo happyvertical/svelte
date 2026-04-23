@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.88
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update vitest to ^4.1.5 (#112) (deps)
+
 ## 0.18.87
 
 ### Patch Changes
