@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@happyvertical/smrt-agents':
-        specifier: '>=0.22.15'
-        version: 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.22.15)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+        specifier: '>=0.23.3'
+        version: 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.23.3)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
       svelte:
         specifier: ^5.55.5
         version: 5.55.5
@@ -869,85 +869,85 @@ packages:
       '@modelcontextprotocol/sdk':
         optional: true
 
-  '@happyvertical/ai@0.71.33':
-    resolution: {integrity: sha512-jr7nBfcBnGdv6+m/8C1igxQrU4D3quRGwVfEirDEISEvlLFA+oU0FTyXWngwyMNBx+0WoF8dwDDu9Rs04GQGuw==, tarball: https://npm.pkg.github.com/download/@happyvertical/ai/0.71.33/c40ed1426ae88ade8db15a5006ccc0688fd995bb}
+  '@happyvertical/ai@0.72.1':
+    resolution: {integrity: sha512-D8fTSJGR+rwZuq16plMEY/jSw7I7rr0VXwfTuQoHMaOOUHiAtlvs8rG3k4k0lNui8+9EhZ3Ip1UM2rGR/fhU2g==, tarball: https://npm.pkg.github.com/download/@happyvertical/ai/0.72.1/fbc4a6c652b34e938f86c1a90cb57c74aab0cc37}
     hasBin: true
 
-  '@happyvertical/files@0.71.33':
-    resolution: {integrity: sha512-sJsN635GROVaQbD5fYwhEV2/zEMAPFYB1zdgPYxxp9Xfw8zSewRNIcELo/Y48NzqC3fbH1pyQwEC2M0bUPJYjw==, tarball: https://npm.pkg.github.com/download/@happyvertical/files/0.71.33/afd69881f08db311e841c9ae66873b1f4ad5ee70}
+  '@happyvertical/files@0.72.1':
+    resolution: {integrity: sha512-l1xmyUtBlFuC4SqT4BC/aFPTbR+UbAgY0GOsiKboZIC5Bs/JdYg4RX4lNOfrFhhZYuEHWUolErXgTVs5IzmmHg==, tarball: https://npm.pkg.github.com/download/@happyvertical/files/0.72.1/f828f595985f58e0785db79c99383f2fd52f59ff}
     hasBin: true
 
-  '@happyvertical/json@0.71.33':
-    resolution: {integrity: sha512-eelNxiKRwwqVaf67GaUUcqZx3q0RPkHuhvlMsnT0dRRIWFq5dWfXy4rXACyKTDoifrJhmyNPzCnDxURsjeZk3Q==, tarball: https://npm.pkg.github.com/download/@happyvertical/json/0.71.33/1ec573ebc2517e6b77306d66c5ca72b2141cc818}
+  '@happyvertical/json@0.72.1':
+    resolution: {integrity: sha512-Kj747O9OdXjm0bKGkus/HQ2ouQgD/clc7aXHDpxEEam5f4HAPWgcP5RVwvrTghRIV3ULLbHdO4bpqsC9UIaotw==, tarball: https://npm.pkg.github.com/download/@happyvertical/json/0.72.1/556b01300221d46237324c7d7b918dd0b592a8a7}
 
-  '@happyvertical/logger@0.71.33':
-    resolution: {integrity: sha512-uKI3W3BmJ2FxKf5W2dT38tlba8aIPYGlojL8a5HjhTaXgrbo/n9R4rKy/emZTa5HUhKkqdaRYA4WGpcQBhJ3zQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/logger/0.71.33/8a9299ac58b951d0b4118971bb900e0dbf44d914}
+  '@happyvertical/logger@0.72.1':
+    resolution: {integrity: sha512-xhlpVp3qLCetQ8OyT3MRznmYndCcmgJDIPo5RXSEurXtGzPr/Bl1IN97OZVYV+rYn0HJrusQAo3BUN5H0ZVoNw==, tarball: https://npm.pkg.github.com/download/@happyvertical/logger/0.72.1/4c6aaec81d17fad0754172503b12198680ce4051}
     hasBin: true
     peerDependencies:
       '@sentry/node': '>=10.49.0'
 
-  '@happyvertical/secrets@0.71.33':
-    resolution: {integrity: sha512-GW23c4A2+Z07p2w1vAKoPBfMnECpiHyjldJO1LFrDeBfk0jtpWd1lCinelfHgmbv+MDxc/cE8ucIWLg5JwiRHg==, tarball: https://npm.pkg.github.com/download/@happyvertical/secrets/0.71.33/c539895b5430c429e5b1cadd145f951ff48ffdd5}
+  '@happyvertical/secrets@0.72.1':
+    resolution: {integrity: sha512-s+r/wSheQ48whtiT4C7A7I//sg8lUWg6F1tk2oGwMd8sP0jSKvBgK99v/BH5lxBo6F6PdlzXJLQVn4lR8EBGfg==, tarball: https://npm.pkg.github.com/download/@happyvertical/secrets/0.72.1/3bea94371b557da4de3a8319edaec785919f0a8a}
     hasBin: true
 
-  '@happyvertical/smrt-agents@0.22.15':
-    resolution: {integrity: sha512-oiM2HT1aelMXa7UAH578iku2swqUiDuFW5AzQ9zMQX8+X02MVFXMdwERdzya+gHXWo2s+Tu3F69/o9YEHXo5hw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-agents/0.22.15/9082fe04ca62853773179d1b2b5a63ea6f24d23c}
+  '@happyvertical/smrt-agents@0.23.3':
+    resolution: {integrity: sha512-cB29LsJ8bxvlfRpueCywsATumdNz2tsGQMHd7PqR/hJQ95v+AnGVrh6lafTfCO+ogImiKERLD4IsFH9SYb7E8g==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-agents/0.23.3/b1d163ef698bc8355e55521c093dc426f866ad87}
     peerDependencies:
       svelte: ^5.0.0
 
-  '@happyvertical/smrt-assets@0.22.15':
-    resolution: {integrity: sha512-of9DkEK2E5l9V6aSsFhiUp9GaFHmtcRf+28f4gz5mDiFRitZmQxLZzA5Z0q8J3kAQpvxOjPppEE1/IRnN3yu7Q==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-assets/0.22.15/62e537c8e5454be21711d2b6498b5dfe963dd2a8}
+  '@happyvertical/smrt-assets@0.23.3':
+    resolution: {integrity: sha512-wWL0auq+YcSXeA8tmqH4Bbjx87f5egzmh1MAcI48igieu8MyuOv0PSLX/JX4SSKKlGOPbVK4g5djGg/DyMcQtQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-assets/0.23.3/4db95cdfda9a88a5e92ecd919d7509beed85d2b0}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
 
-  '@happyvertical/smrt-config@0.22.15':
-    resolution: {integrity: sha512-kfxxuM8zAd4pv2NBRDxVwOmM20JAkaXtvXtJd2xjD/0VEgq6houYzWW5xqEnMYTJ/7kKaTtjpJ1eOgw41SSc4g==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-config/0.22.15/7b91ed08071a508f2edcfd9bb8bd39174d039f18}
+  '@happyvertical/smrt-config@0.23.3':
+    resolution: {integrity: sha512-f4lsoPuw4FSyT5EKI3FtrT1aFgxUasSjPqQwz7z3yFg8RPvxZJQgiZLkW1vf9WXg9AChcVWmczFyMuW8adtzhQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-config/0.23.3/94330d26db39d4e10828138cc1e56b9329bbeca0}
 
-  '@happyvertical/smrt-core@0.22.15':
-    resolution: {integrity: sha512-grxZOmjXev7r3ncDMTCHN8ESUyhbKi9FEGfL3ZjtahWFH0lP2b+JBu2Kt/UNN3vp8IFMnKRaW0E2JGxxZgwmtg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-core/0.22.15/5f6ee26bff89254ea18d78454296b477bc8f3b15}
+  '@happyvertical/smrt-core@0.23.3':
+    resolution: {integrity: sha512-/0Vp9Gczy7syYvRs2HqNsRVV5xWfQG9sQ92UwktbSePVzPVsVhkZxiVn7oMet9RRSsM9zezdoogeZefmPKSMLw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-core/0.23.3/6e3ebaf2884426eb89b380246b520b1536359602}
     hasBin: true
     peerDependencies:
       '@huggingface/transformers': '>=3.0.0 <4.0.0'
       '@xenova/transformers': ^2.17.0
 
-  '@happyvertical/smrt-profiles@0.22.15':
-    resolution: {integrity: sha512-Vt2Dm7j3IdlIIS6CjCsvpV8C8WleWfY+NDUnyD4Icap1sQ0a894lb4zH2CB0CvMMBB9RiBH3jsD92JG21K4yqw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-profiles/0.22.15/e3de87fcd7e5aa7a8eaae69e2a59d35dbf5e60f8}
+  '@happyvertical/smrt-profiles@0.23.3':
+    resolution: {integrity: sha512-96Kq47eaJmXoUbiDSlclSnL3xmPOIzfl1niP9d0FrsE70gXvILEJjtFglsAa84/703y2ACmvhiMOUhHe56IwPg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-profiles/0.23.3/0ff112c0a1d149d42e150229dbacf10a2cbd7ff0}
     peerDependencies:
-      '@happyvertical/smrt-tenancy': 0.22.15
+      '@happyvertical/smrt-tenancy': 0.23.3
 
-  '@happyvertical/smrt-scanner@0.22.15':
-    resolution: {integrity: sha512-yczLmUwprEqt1VmfoUyyZA/YuQ+M9GvSXbbETMWUl2BFiQZTyUEm9wzhkuQ/U4906T09fCpFDs/AMbacQuguHw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-scanner/0.22.15/448581666b7ed6b94871b57332ba9668af04fbbd}
+  '@happyvertical/smrt-scanner@0.23.3':
+    resolution: {integrity: sha512-7kbQ4Nl8tzWVAHVvNgB+oLI2GyH3RqmKApUn9g75fydLY7LEoj8Pw9aOYY4DEGvVGfBftcrqunLFxXxHUwA5kg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-scanner/0.23.3/ca7ca7f07e74c7b59c3def31282862c8f700eefe}
     hasBin: true
     peerDependencies:
-      '@happyvertical/smrt-core': 0.22.15
+      '@happyvertical/smrt-core': 0.23.3
 
-  '@happyvertical/smrt-secrets@0.22.15':
-    resolution: {integrity: sha512-e35DOsrg3FeJS5Jr0xzhHq8F1Y7ynfU75NKWeOTzxQJUZ/du9JOXTLYiHZ4KL+7dHqaG1AhSe8Kho7wW4ORPJw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-secrets/0.22.15/43474d054c22a8ea0b62adf65c1c2f3bcc14090f}
+  '@happyvertical/smrt-secrets@0.23.3':
+    resolution: {integrity: sha512-ML6h5UYiWId6fIwCL3P809RXcvhr0WZnTVwaRVEj6jhb9tvrBLyo5+KtpKcnUf5iiEHOgDUSsrQXFmjrtQElfw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-secrets/0.23.3/7f516d8075f6b7ad75ffb7ee39b9dedb9640420c}
 
-  '@happyvertical/smrt-tags@0.22.15':
-    resolution: {integrity: sha512-iPz8jphvHXOxDKNrfXaEM3k+2COB8VNj4ELGzJT/QZAzCDdwBdWuGO1dRb9Vzl11At8GWKTzYrhLfNWL2YjnZg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-tags/0.22.15/b5dce7ef0cfacce64a894fb4a9c07dcf8783eac6}
+  '@happyvertical/smrt-tags@0.23.3':
+    resolution: {integrity: sha512-uvFF9jxR7UFR50ofkNDrpZLrYQJG5nARzkRpGYzGz+uXKC7CF5UX3N83sIbKf/m+v8M61W5Oqu1VkjR/hxXmIg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-tags/0.23.3/8c2d7b6e3378f27443558649a4b26381bd2a1de4}
 
-  '@happyvertical/smrt-tenancy@0.22.15':
-    resolution: {integrity: sha512-4OFxmexDvLWcGZwo3hXo0BHV+8MRIP7iL64vZlZFVegCjzBiJbL5UjhIcmf0g0+NB8a6vigfLPEkYT+8FU3HTg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-tenancy/0.22.15/80e04c021e63ef13414eda757149b02eb400d53e}
+  '@happyvertical/smrt-tenancy@0.23.3':
+    resolution: {integrity: sha512-m/kf46TkNLsfo2e/CrPlb5lwippg+nt8cW8RcfwXMNuJN4C7ZzEMTg4lvHOEviq+9VIE8B9t6XN4SxKRFy0olw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-tenancy/0.23.3/c7fbb28ae7fca84614bd356dc455f7926042778d}
     peerDependencies:
-      '@happyvertical/smrt-users': 0.22.15
+      '@happyvertical/smrt-users': 0.23.3
       svelte: ^5.46.4
 
-  '@happyvertical/smrt-types@0.22.15':
-    resolution: {integrity: sha512-IbJjQcl2RuJ7huFE6h64Bf4bRRliMrYsiAOs80gc6aSQTVvmNS8AQW9sLS4lGmM+wyZI0ZE4iS4qyFSNlUc7Gg==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-types/0.22.15/3ecd6504c3bf15748828ace3de29a1cfb6b4b7dd}
+  '@happyvertical/smrt-types@0.23.3':
+    resolution: {integrity: sha512-s4tZPIVjreE8h+pT2/+4cQ4k1SX44vFXMU0eiGv+v52dN0c7GxI7gWK9GQ5/3TTSfEJvDg12gqCL6Tb/zRQuYQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-types/0.23.3/4b884f3945dbf655baaf3caa1d54fbd185687830}
 
-  '@happyvertical/smrt-users@0.22.15':
-    resolution: {integrity: sha512-lp/4u1nbj0s9M/kABB44/m2yCZs6POXIkBTMc+SvGrqi701L4aD4sJrYXRRZvpliWlDC0mxm0qkYsmAGJ0t0sQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-users/0.22.15/4503abdfbbf829c9e421df8ce2419090a5dd7012}
+  '@happyvertical/smrt-users@0.23.3':
+    resolution: {integrity: sha512-rmE+lEoKuvvb+neDZJ33/kdyXnzraUNHcwpLZoSY59Cvt/o0QruzFRTsQZV0UpRizBGdp4G6FHy+31kDdchXDw==, tarball: https://npm.pkg.github.com/download/@happyvertical/smrt-users/0.23.3/9c8d817793afb26bfd8171065a449c06de482d2c}
     peerDependencies:
-      '@happyvertical/smrt-profiles': 0.22.15
+      '@happyvertical/smrt-profiles': 0.23.3
       svelte: ^5.46.4
 
-  '@happyvertical/sql@0.71.33':
-    resolution: {integrity: sha512-yGvC1lbsOaXqI2vVV19fwIG+BdZbl49NjExoAJ6l8IXO89jGbneRsZ/An6fzDt+gC22WUP3nc2RTTbH7VVn0sQ==, tarball: https://npm.pkg.github.com/download/@happyvertical/sql/0.71.33/ba2bc798951ecd07d453a5aa9ccea437dd7e49a1}
+  '@happyvertical/sql@0.72.1':
+    resolution: {integrity: sha512-nv54Rcw/u4X7BUE3IA63o8wC6HV8Ol0CdWZ5hRS1FPkNr7ExFzqeYUtlRha07jCgnpR/IQOXl7KDuThTHC8Qtw==, tarball: https://npm.pkg.github.com/download/@happyvertical/sql/0.72.1/5c7290a3553229b4a5d57fa3e028f33d320c09cf}
     hasBin: true
 
-  '@happyvertical/utils@0.71.33':
-    resolution: {integrity: sha512-X6tvPTqUtznCmrDSExSWIQqWvEiLvTCCPqrIcW070VvVioFkWe9rCgtKZBb39lf1tPkRSdmkvKb2cNPUAMaw4Q==, tarball: https://npm.pkg.github.com/download/@happyvertical/utils/0.71.33/de27eb8d18c928081ba8535431d1a1f7334d5cd7}
+  '@happyvertical/utils@0.72.1':
+    resolution: {integrity: sha512-qNrCejxwoXHdQcI/hakjif+5C8NSG8vNA8FKj47azdJvgrq6E/21a/XGxftZ9K6kV3dWwePRuIUb8fRJCROXGA==, tarball: https://npm.pkg.github.com/download/@happyvertical/utils/0.72.1/a40d163ed9b4ea2fde8632ea49d2e5579405048f}
     hasBin: true
 
   '@hono/node-server@1.19.8':
@@ -4957,6 +4957,7 @@ packages:
 
   uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   v8-compile-cache@2.4.0:
@@ -6271,12 +6272,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@happyvertical/ai@0.71.33(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/ai@0.72.1(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@anthropic-ai/sdk': 0.90.0(zod@3.25.76)
       '@aws-sdk/client-bedrock-runtime': 3.1034.0
       '@google/genai': 1.50.1(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/utils': 0.72.1
       openai: 6.34.0(ws@8.18.3)(zod@3.25.76)
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
@@ -6287,10 +6288,10 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/files@0.71.33':
+  '@happyvertical/files@0.72.1':
     dependencies:
       '@aws-sdk/client-s3': 3.1037.0
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/utils': 0.72.1
       google-auth-library: 9.15.1
       googleapis: 144.0.0
     transitivePeerDependencies:
@@ -6298,33 +6299,33 @@ snapshots:
       - encoding
       - supports-color
 
-  '@happyvertical/json@0.71.33': {}
+  '@happyvertical/json@0.72.1': {}
 
-  '@happyvertical/logger@0.71.33(@sentry/node@10.40.0)':
+  '@happyvertical/logger@0.72.1(@sentry/node@10.40.0)':
     dependencies:
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/utils': 0.72.1
       '@sentry/node': 10.40.0
 
-  '@happyvertical/secrets@0.71.33':
+  '@happyvertical/secrets@0.72.1':
     dependencies:
-      '@happyvertical/sql': 0.71.33
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/sql': 0.72.1
+      '@happyvertical/utils': 0.72.1
     transitivePeerDependencies:
       - bufferutil
       - encoding
       - pg-native
       - utf-8-validate
 
-  '@happyvertical/smrt-agents@0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.22.15)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-agents@0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.23.3)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
-      '@happyvertical/ai': 0.71.33(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/files': 0.71.33
-      '@happyvertical/smrt-config': 0.22.15(typescript@5.9.3)
-      '@happyvertical/smrt-core': 0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-secrets': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-users': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/ai': 0.72.1(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/files': 0.72.1
+      '@happyvertical/smrt-config': 0.23.3(typescript@5.9.3)
+      '@happyvertical/smrt-core': 0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-secrets': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-users': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/utils': 0.72.1
       svelte: 5.55.5
     transitivePeerDependencies:
       - '@cfworker/json-schema'
@@ -6344,17 +6345,17 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-assets@0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-assets@0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
-      '@happyvertical/ai': 0.71.33(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/files': 0.71.33
-      '@happyvertical/logger': 0.71.33(@sentry/node@10.40.0)
-      '@happyvertical/smrt-core': 0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tags': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-types': 0.22.15
-      '@happyvertical/sql': 0.71.33
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/ai': 0.72.1(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/files': 0.72.1
+      '@happyvertical/logger': 0.72.1(@sentry/node@10.40.0)
+      '@happyvertical/smrt-core': 0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tags': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-types': 0.23.3
+      '@happyvertical/sql': 0.72.1
+      '@happyvertical/utils': 0.72.1
       svelte: 5.55.5
     transitivePeerDependencies:
       - '@cfworker/json-schema'
@@ -6373,23 +6374,23 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-config@0.22.15(typescript@5.9.3)':
+  '@happyvertical/smrt-config@0.23.3(typescript@5.9.3)':
     dependencies:
       cosmiconfig: 9.0.1(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
-  '@happyvertical/smrt-core@0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-core@0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
-      '@happyvertical/ai': 0.71.33(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/files': 0.71.33
-      '@happyvertical/json': 0.71.33
-      '@happyvertical/logger': 0.71.33(@sentry/node@10.40.0)
-      '@happyvertical/smrt-config': 0.22.15(typescript@5.9.3)
-      '@happyvertical/smrt-scanner': 0.22.15(@happyvertical/smrt-core@0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76))
-      '@happyvertical/smrt-types': 0.22.15
-      '@happyvertical/sql': 0.71.33
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/ai': 0.72.1(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/files': 0.72.1
+      '@happyvertical/json': 0.72.1
+      '@happyvertical/logger': 0.72.1(@sentry/node@10.40.0)
+      '@happyvertical/smrt-config': 0.23.3(typescript@5.9.3)
+      '@happyvertical/smrt-scanner': 0.23.3(@happyvertical/smrt-core@0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76))
+      '@happyvertical/smrt-types': 0.23.3
+      '@happyvertical/sql': 0.72.1
+      '@happyvertical/utils': 0.72.1
       '@huggingface/transformers': 3.8.1
       '@modelcontextprotocol/sdk': 1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76)
       '@xenova/transformers': 2.17.2
@@ -6413,16 +6414,16 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-profiles@0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-tenancy@0.22.15)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-profiles@0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-tenancy@0.23.3)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
-      '@happyvertical/ai': 0.71.33(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/files': 0.71.33
-      '@happyvertical/logger': 0.71.33(@sentry/node@10.40.0)
-      '@happyvertical/smrt-assets': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-core': 0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/sql': 0.71.33
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/ai': 0.72.1(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/files': 0.72.1
+      '@happyvertical/logger': 0.72.1(@sentry/node@10.40.0)
+      '@happyvertical/smrt-assets': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-core': 0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/sql': 0.72.1
+      '@happyvertical/utils': 0.72.1
       '@noble/curves': 1.9.7
       bech32: 2.0.0
     transitivePeerDependencies:
@@ -6443,21 +6444,21 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-scanner@0.22.15(@happyvertical/smrt-core@0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76))':
+  '@happyvertical/smrt-scanner@0.23.3(@happyvertical/smrt-core@0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76))':
     dependencies:
-      '@happyvertical/smrt-core': 0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-core': 0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
       fast-glob: 3.3.3
       minimatch: 10.1.1
       oxc-parser: 0.108.0
       oxc-resolver: 11.16.3
 
-  '@happyvertical/smrt-secrets@0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-secrets@0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
-      '@happyvertical/secrets': 0.71.33
-      '@happyvertical/smrt-core': 0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/sql': 0.71.33
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/secrets': 0.72.1
+      '@happyvertical/smrt-core': 0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/sql': 0.72.1
+      '@happyvertical/utils': 0.72.1
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - '@happyvertical/smrt-users'
@@ -6475,15 +6476,15 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-tags@0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-tags@0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
-      '@happyvertical/ai': 0.71.33(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/files': 0.71.33
-      '@happyvertical/logger': 0.71.33(@sentry/node@10.40.0)
-      '@happyvertical/smrt-core': 0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/sql': 0.71.33
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/ai': 0.72.1(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/files': 0.72.1
+      '@happyvertical/logger': 0.72.1(@sentry/node@10.40.0)
+      '@happyvertical/smrt-core': 0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/sql': 0.72.1
+      '@happyvertical/utils': 0.72.1
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - '@happyvertical/smrt-users'
@@ -6502,13 +6503,13 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-tenancy@0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-tenancy@0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
-      '@happyvertical/smrt-core': 0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-types': 0.22.15
-      '@happyvertical/smrt-users': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/sql': 0.71.33
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/smrt-core': 0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-types': 0.23.3
+      '@happyvertical/smrt-users': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/sql': 0.72.1
+      '@happyvertical/utils': 0.72.1
       svelte: 5.55.5
     transitivePeerDependencies:
       - '@cfworker/json-schema'
@@ -6525,15 +6526,15 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-types@0.22.15': {}
+  '@happyvertical/smrt-types@0.23.3': {}
 
-  '@happyvertical/smrt-users@0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-users@0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
-      '@happyvertical/smrt-config': 0.22.15(typescript@5.9.3)
-      '@happyvertical/smrt-core': 0.22.15(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-profiles': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-tenancy@0.22.15)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.22.15(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.22.15)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-types': 0.22.15
+      '@happyvertical/smrt-config': 0.23.3(typescript@5.9.3)
+      '@happyvertical/smrt-core': 0.23.3(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-profiles': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-tenancy@0.23.3)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.23.3(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.23.3)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-types': 0.23.3
       jose: 6.1.3
       svelte: 5.55.5
     transitivePeerDependencies:
@@ -6552,10 +6553,10 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/sql@0.71.33':
+  '@happyvertical/sql@0.72.1':
     dependencies:
       '@duckdb/node-api': 1.4.3-r.3
-      '@happyvertical/utils': 0.71.33
+      '@happyvertical/utils': 0.72.1
       '@libsql/client': 0.17.2
       pg: 8.20.0
       sqlite-vss: 0.1.2
@@ -6565,7 +6566,7 @@ snapshots:
       - pg-native
       - utf-8-validate
 
-  '@happyvertical/utils@0.71.33':
+  '@happyvertical/utils@0.72.1':
     dependencies:
       '@paralleldrive/cuid2': 3.3.0
       date-fns: 4.1.0
