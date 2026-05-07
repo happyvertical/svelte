@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.97
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update pnpm to v10.33.4 (#122) (deps)
+
 ## 0.18.96
 
 ### Patch Changes
