@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@happyvertical/smrt-agents':
         specifier: '>=0.24.12'
-        version: 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+        version: 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
       svelte:
-        specifier: ^5.55.5
-        version: 5.55.5
+        specifier: ^5.55.7
+        version: 5.55.7
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.4.15
@@ -41,25 +41,25 @@ importers:
         version: 8.6.14(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(storybook@8.6.18(prettier@2.8.8))
       '@storybook/svelte':
         specifier: ^8.6.18
-        version: 8.6.18(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.5)
+        version: 8.6.18(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.7)
       '@storybook/svelte-vite':
         specifier: ^8.6.18
-        version: 8.6.18(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(postcss@8.5.6)(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
+        version: 8.6.18(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(postcss@8.5.6)(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
       '@storybook/test':
         specifier: ^8.6.15
         version: 8.6.15(storybook@8.6.18(prettier@2.8.8))
       '@sveltejs/adapter-static':
         specifier: ^3.0.10
-        version: 3.0.10(@sveltejs/kit@2.59.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.5)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))
+        version: 3.0.10(@sveltejs/kit@2.60.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.7)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))
       '@sveltejs/kit':
-        specifier: ^2.59.1
-        version: 2.59.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.5)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
+        specifier: ^2.60.1
+        version: 2.60.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.7)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
       '@sveltejs/package':
         specifier: ^2.5.7
-        version: 2.5.7(svelte@5.55.5)(typescript@5.9.3)
+        version: 2.5.7(svelte@5.55.7)(typescript@5.9.3)
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.4
-        version: 6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
+        version: 6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
       '@types/node':
         specifier: ^24.12.4
         version: 24.12.4
@@ -68,7 +68,7 @@ importers:
         version: 2.1.6
       mdsvex:
         specifier: ^0.12.7
-        version: 0.12.7(svelte@5.55.5)
+        version: 0.12.7(svelte@5.55.7)
       shiki:
         specifier: ^3.23.0
         version: 3.23.0
@@ -77,7 +77,7 @@ importers:
         version: 8.6.18(prettier@2.8.8)
       svelte-check:
         specifier: ^4.4.8
-        version: 4.4.8(picomatch@4.0.3)(svelte@5.55.5)(typescript@5.9.3)
+        version: 4.4.8(picomatch@4.0.3)(svelte@5.55.7)(typescript@5.9.3)
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -2636,8 +2636,8 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
-  '@sveltejs/kit@2.59.1':
-    resolution: {integrity: sha512-d8OON70AphLdDesuTIl//M2O6fRTIicX8aYv8vhCiYEhTTI2OboKqey0Hu1A4VFhqwgqtq0vKDmPFGkw8kKmgw==}
+  '@sveltejs/kit@2.60.1':
+    resolution: {integrity: sha512-mQjlkNo+rJvpln7V2IGY2j99BqhcFbS4UN0AQNKNYfhBAFZTuCDAdW3a1sgf330mvtNvsBXn3HpAhcmvdJTcIQ==}
     engines: {node: '>=18.13'}
     hasBin: true
     peerDependencies:
@@ -3310,8 +3310,8 @@ packages:
   detect-node@2.1.0:
     resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==}
 
-  devalue@5.6.4:
-    resolution: {integrity: sha512-Gp6rDldRsFh/7XuouDbxMH3Mx8GMCcgzIb1pDTvNyn8pZGQ22u+Wa+lGV9dQCltFQ7uVw0MhRyb8XDskNFOReA==}
+  devalue@5.8.1:
+    resolution: {integrity: sha512-4CXDYRBGqN+57wVJkuXBYmpAVUSg3L6JAQa/DFqm238G73E1wuyc/JhGQJzN7vUf/CMphYau2zXbfWzDR5aTEw==}
 
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
@@ -5132,8 +5132,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.55.5:
-    resolution: {integrity: sha512-2uCs/LZ9us+AktdzYJM8OcxQ8qnPS1kpaO7syGT/MgO+6Qr1Ybl+TqPq+97u7PHqmmMlye5ZkoyXONy5mjjAbw==}
+  svelte@5.55.7:
+    resolution: {integrity: sha512-ymI5ykLPwIHW839E053FQbI1G+jnRFJEw3Kv5Y4njixVWywQBx+NUFpkkKyk5LIb36Fg9DVXSYpqiGekLD0hyw==}
     engines: {node: '>=18'}
 
   sveltedoc-parser@4.2.1:
@@ -6848,17 +6848,17 @@ snapshots:
       - pg-native
       - utf-8-validate
 
-  '@happyvertical/smrt-agents@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-agents@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/ai': 0.73.2(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/files': 0.73.2
       '@happyvertical/smrt-config': 0.24.12(typescript@5.9.3)
       '@happyvertical/smrt-core': 0.24.12(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-secrets': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-users': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-secrets': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-users': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/utils': 0.73.4
-      svelte: 5.55.5
+      svelte: 5.55.7
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - '@happyvertical/smrt-profiles'
@@ -6877,19 +6877,19 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-assets@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-assets@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/ai': 0.73.2(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/files': 0.73.2
       '@happyvertical/logger': 0.73.2(@sentry/node@10.40.0)
       '@happyvertical/smrt-core': 0.24.12(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-svelte': 0.24.12(@happyvertical/smrt-agents@0.24.12)(@happyvertical/smrt-jobs@0.24.12)(@happyvertical/smrt-profiles@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@mlc-ai/web-llm@0.2.83)(@remotion/whisper-web@4.0.459)(@xenova/transformers@2.17.2)(chrono-node@2.9.1)(svelte@5.55.5)
-      '@happyvertical/smrt-tags': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-svelte': 0.24.12(@happyvertical/smrt-agents@0.24.12)(@happyvertical/smrt-jobs@0.24.12)(@happyvertical/smrt-profiles@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@mlc-ai/web-llm@0.2.83)(@remotion/whisper-web@4.0.459)(@xenova/transformers@2.17.2)(chrono-node@2.9.1)(svelte@5.55.7)
+      '@happyvertical/smrt-tags': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/smrt-types': 0.24.12
       '@happyvertical/sql': 0.73.4
       '@happyvertical/utils': 0.73.4
-      svelte: 5.55.5
+      svelte: 5.55.7
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - '@happyvertical/smrt-users'
@@ -6947,7 +6947,7 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-jobs@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-jobs@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@aws-sdk/client-sqs': 3.1045.0
       '@google-cloud/tasks': 6.2.2
@@ -6955,14 +6955,14 @@ snapshots:
       '@happyvertical/logger': 0.73.2(@sentry/node@10.40.0)
       '@happyvertical/smrt-config': 0.24.12(typescript@5.9.3)
       '@happyvertical/smrt-core': 0.24.12(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-svelte': 0.24.12(@happyvertical/smrt-agents@0.24.12)(@happyvertical/smrt-jobs@0.24.12)(@happyvertical/smrt-profiles@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@mlc-ai/web-llm@0.2.83)(@remotion/whisper-web@4.0.459)(@xenova/transformers@2.17.2)(chrono-node@2.9.1)(svelte@5.55.5)
-      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-svelte': 0.24.12(@happyvertical/smrt-agents@0.24.12)(@happyvertical/smrt-jobs@0.24.12)(@happyvertical/smrt-profiles@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@mlc-ai/web-llm@0.2.83)(@remotion/whisper-web@4.0.459)(@xenova/transformers@2.17.2)(chrono-node@2.9.1)(svelte@5.55.7)
+      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/smrt-types': 0.24.12
       '@happyvertical/sql': 0.73.4
       '@happyvertical/utils': 0.73.4
       bull: 4.16.5
       bullmq: 5.76.7
-      svelte: 5.55.5
+      svelte: 5.55.7
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - '@happyvertical/smrt-users'
@@ -6980,15 +6980,15 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-profiles@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-tenancy@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-profiles@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-tenancy@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/ai': 0.73.2(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/files': 0.73.2
       '@happyvertical/logger': 0.73.2(@sentry/node@10.40.0)
-      '@happyvertical/smrt-assets': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-assets': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/smrt-core': 0.24.12(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-prompts': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-prompts': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/sql': 0.73.4
       '@happyvertical/utils': 0.73.4
       '@noble/curves': 1.9.7
@@ -7013,11 +7013,11 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-prompts@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-prompts@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/smrt-config': 0.24.12(typescript@5.9.3)
       '@happyvertical/smrt-core': 0.24.12(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/sql': 0.73.4
     transitivePeerDependencies:
       - '@cfworker/json-schema'
@@ -7045,11 +7045,11 @@ snapshots:
       oxc-parser: 0.108.0
       oxc-resolver: 11.16.3
 
-  '@happyvertical/smrt-secrets@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-secrets@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/secrets': 0.73.2
       '@happyvertical/smrt-core': 0.24.12(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/sql': 0.73.4
       '@happyvertical/utils': 0.73.4
     transitivePeerDependencies:
@@ -7069,27 +7069,27 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-svelte@0.24.12(@happyvertical/smrt-agents@0.24.12)(@happyvertical/smrt-jobs@0.24.12)(@happyvertical/smrt-profiles@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@mlc-ai/web-llm@0.2.83)(@remotion/whisper-web@4.0.459)(@xenova/transformers@2.17.2)(chrono-node@2.9.1)(svelte@5.55.5)':
+  '@happyvertical/smrt-svelte@0.24.12(@happyvertical/smrt-agents@0.24.12)(@happyvertical/smrt-jobs@0.24.12)(@happyvertical/smrt-profiles@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@mlc-ai/web-llm@0.2.83)(@remotion/whisper-web@4.0.459)(@xenova/transformers@2.17.2)(chrono-node@2.9.1)(svelte@5.55.7)':
     dependencies:
-      '@happyvertical/smrt-agents': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-jobs': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-profiles': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-tenancy@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-agents': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-jobs': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-profiles': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-tenancy@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/smrt-types': 0.24.12
-      '@happyvertical/smrt-users': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-users': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
       '@huggingface/transformers': 3.8.1
       '@mlc-ai/web-llm': 0.2.83
       '@remotion/whisper-web': 4.0.459
       '@xenova/transformers': 2.17.2
       chrono-node: 2.9.1
-      svelte: 5.55.5
+      svelte: 5.55.7
 
-  '@happyvertical/smrt-tags@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-tags@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/ai': 0.73.2(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/files': 0.73.2
       '@happyvertical/logger': 0.73.2(@sentry/node@10.40.0)
       '@happyvertical/smrt-core': 0.24.12(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/sql': 0.73.4
       '@happyvertical/utils': 0.73.4
     transitivePeerDependencies:
@@ -7110,14 +7110,14 @@ snapshots:
       - ws
       - zod
 
-  '@happyvertical/smrt-tenancy@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-tenancy@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/smrt-core': 0.24.12(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/smrt-types': 0.24.12
-      '@happyvertical/smrt-users': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-users': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/sql': 0.73.4
       '@happyvertical/utils': 0.73.4
-      svelte: 5.55.5
+      svelte: 5.55.7
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - '@huggingface/transformers'
@@ -7135,15 +7135,15 @@ snapshots:
 
   '@happyvertical/smrt-types@0.24.12': {}
 
-  '@happyvertical/smrt-users@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
+  '@happyvertical/smrt-users@0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-profiles@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@happyvertical/smrt-config': 0.24.12(typescript@5.9.3)
       '@happyvertical/smrt-core': 0.24.12(@cfworker/json-schema@4.1.1)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-profiles': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-tenancy@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
-      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.5)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-profiles': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-svelte@0.24.12)(@happyvertical/smrt-tenancy@0.24.12)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.3)(zod@3.25.76))(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(typescript@5.9.3)(ws@8.18.3)(zod@3.25.76)
+      '@happyvertical/smrt-tenancy': 0.24.12(@cfworker/json-schema@4.1.1)(@happyvertical/smrt-users@0.24.12)(@huggingface/transformers@3.8.1)(@sentry/node@10.40.0)(@xenova/transformers@2.17.2)(hono@4.11.3)(svelte@5.55.7)(ws@8.18.3)(zod@3.25.76)
       '@happyvertical/smrt-types': 0.24.12
       jose: 6.1.3
-      svelte: 5.55.5
+      svelte: 5.55.7
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - '@huggingface/transformers'
@@ -8661,16 +8661,16 @@ snapshots:
       react-dom: 19.2.1(react@19.2.1)
       storybook: 8.6.18(prettier@2.8.8)
 
-  '@storybook/svelte-vite@8.6.18(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(postcss@8.5.6)(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))':
+  '@storybook/svelte-vite@8.6.18(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(postcss@8.5.6)(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))':
     dependencies:
       '@storybook/builder-vite': 8.6.18(storybook@8.6.18(prettier@2.8.8))(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
-      '@storybook/svelte': 8.6.18(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.5)
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
+      '@storybook/svelte': 8.6.18(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.7)
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
       magic-string: 0.30.21
       storybook: 8.6.18(prettier@2.8.8)
-      svelte: 5.55.5
-      svelte-preprocess: 5.1.4(postcss@8.5.6)(svelte@5.55.5)(typescript@5.9.3)
-      svelte2tsx: 0.7.45(svelte@5.55.5)(typescript@5.9.3)
+      svelte: 5.55.7
+      svelte-preprocess: 5.1.4(postcss@8.5.6)(svelte@5.55.7)(typescript@5.9.3)
+      svelte2tsx: 0.7.45(svelte@5.55.7)(typescript@5.9.3)
       sveltedoc-parser: 4.2.1
       ts-dedent: 2.2.0
       typescript: 5.9.3
@@ -8687,7 +8687,7 @@ snapshots:
       - sugarss
       - supports-color
 
-  '@storybook/svelte@8.6.18(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.5)':
+  '@storybook/svelte@8.6.18(storybook@8.6.18(prettier@2.8.8))(svelte@5.55.7)':
     dependencies:
       '@storybook/components': 8.6.18(storybook@8.6.18(prettier@2.8.8))
       '@storybook/csf': 0.1.12
@@ -8696,7 +8696,7 @@ snapshots:
       '@storybook/preview-api': 8.6.18(storybook@8.6.18(prettier@2.8.8))
       '@storybook/theming': 8.6.18(storybook@8.6.18(prettier@2.8.8))
       storybook: 8.6.18(prettier@2.8.8)
-      svelte: 5.55.5
+      svelte: 5.55.7
       sveltedoc-parser: 4.2.1
       ts-dedent: 2.2.0
       type-fest: 2.19.0
@@ -8733,58 +8733,58 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/adapter-static@3.0.10(@sveltejs/kit@2.59.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.5)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))':
+  '@sveltejs/adapter-static@3.0.10(@sveltejs/kit@2.60.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.7)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))':
     dependencies:
-      '@sveltejs/kit': 2.59.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.5)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
+      '@sveltejs/kit': 2.60.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.7)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
 
-  '@sveltejs/kit@2.59.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.5)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))':
+  '@sveltejs/kit@2.60.1(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.7)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@sveltejs/acorn-typescript': 1.0.8(acorn@8.15.0)
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
       '@types/cookie': 0.6.0
       acorn: 8.15.0
       cookie: 0.6.0
-      devalue: 5.6.4
+      devalue: 5.8.1
       esm-env: 1.2.2
       kleur: 4.1.5
       magic-string: 0.30.21
       mrmime: 2.0.1
       set-cookie-parser: 3.0.1
       sirv: 3.0.2
-      svelte: 5.55.5
+      svelte: 5.55.7
       vite: 7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)
     optionalDependencies:
       '@opentelemetry/api': 1.9.0
       typescript: 5.9.3
 
-  '@sveltejs/package@2.5.7(svelte@5.55.5)(typescript@5.9.3)':
+  '@sveltejs/package@2.5.7(svelte@5.55.7)(typescript@5.9.3)':
     dependencies:
       chokidar: 5.0.0
       kleur: 4.1.5
       sade: 1.8.1
       semver: 7.8.0
-      svelte: 5.55.5
-      svelte2tsx: 0.7.45(svelte@5.55.5)(typescript@5.9.3)
+      svelte: 5.55.7
+      svelte2tsx: 0.7.45(svelte@5.55.7)(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
-  '@sveltejs/vite-plugin-svelte-inspector@5.0.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))':
+  '@sveltejs/vite-plugin-svelte-inspector@5.0.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
       debug: 4.4.3
-      svelte: 5.55.5
+      svelte: 5.55.7
       vite: 7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))':
+  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 5.0.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.5)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
+      '@sveltejs/vite-plugin-svelte-inspector': 5.0.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)))(svelte@5.55.7)(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.1
-      svelte: 5.55.5
+      svelte: 5.55.7
       vite: 7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2)
       vitefu: 1.1.1(vite@7.3.3(@types/node@24.12.4)(jiti@2.6.1)(tsx@4.22.0)(yaml@2.8.2))
     transitivePeerDependencies:
@@ -9440,7 +9440,7 @@ snapshots:
 
   detect-node@2.1.0: {}
 
-  devalue@5.6.4: {}
+  devalue@5.8.1: {}
 
   devlop@1.1.0:
     dependencies:
@@ -10548,13 +10548,13 @@ snapshots:
       unist-util-visit: 5.0.0
       vfile: 6.0.3
 
-  mdsvex@0.12.7(svelte@5.55.5):
+  mdsvex@0.12.7(svelte@5.55.7):
     dependencies:
       '@types/mdast': 4.0.4
       '@types/unist': 2.0.11
       prism-svelte: 0.4.7
       prismjs: 1.30.0
-      svelte: 5.55.5
+      svelte: 5.55.7
       unist-util-visit: 2.0.3
       vfile-message: 2.0.4
 
@@ -11532,38 +11532,38 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  svelte-check@4.4.8(picomatch@4.0.3)(svelte@5.55.5)(typescript@5.9.3):
+  svelte-check@4.4.8(picomatch@4.0.3)(svelte@5.55.7)(typescript@5.9.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       chokidar: 4.0.3
       fdir: 6.5.0(picomatch@4.0.3)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.55.5
+      svelte: 5.55.7
       typescript: 5.9.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte-preprocess@5.1.4(postcss@8.5.6)(svelte@5.55.5)(typescript@5.9.3):
+  svelte-preprocess@5.1.4(postcss@8.5.6)(svelte@5.55.7)(typescript@5.9.3):
     dependencies:
       '@types/pug': 2.0.10
       detect-indent: 6.1.0
       magic-string: 0.30.21
       sorcery: 0.11.1
       strip-indent: 3.0.0
-      svelte: 5.55.5
+      svelte: 5.55.7
     optionalDependencies:
       postcss: 8.5.6
       typescript: 5.9.3
 
-  svelte2tsx@0.7.45(svelte@5.55.5)(typescript@5.9.3):
+  svelte2tsx@0.7.45(svelte@5.55.7)(typescript@5.9.3):
     dependencies:
       dedent-js: 1.0.1
       scule: 1.3.0
-      svelte: 5.55.5
+      svelte: 5.55.7
       typescript: 5.9.3
 
-  svelte@5.55.5:
+  svelte@5.55.7:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -11574,7 +11574,7 @@ snapshots:
       aria-query: 5.3.1
       axobject-query: 4.1.0
       clsx: 2.1.1
-      devalue: 5.6.4
+      devalue: 5.8.1
       esm-env: 1.2.2
       esrap: 2.2.4
       is-reference: 3.0.3
