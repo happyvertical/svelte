@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.106
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update tsx to ^4.22.1 (#132) (deps)
+
 ## 0.18.105
 
 ### Patch Changes
