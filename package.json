@@ -84,7 +84,7 @@
     "@storybook/svelte-vite": "^8.6.18",
     "@storybook/test": "^8.6.15",
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "^2.60.1",
+    "@sveltejs/kit": "^2.61.1",
     "@sveltejs/package": "^2.5.7",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "@types/node": "^24.12.4",
