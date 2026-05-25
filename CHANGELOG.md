@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.112
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update @sveltejs/kit to ^2.61.1 (#138) (deps)
+
 ## 0.18.111
 
 ### Patch Changes
