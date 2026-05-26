@@ -101,7 +101,7 @@
   },
   "peerDependencies": {
     "svelte": "^5.55.9",
-    "@happyvertical/smrt-agents": ">=0.25.16"
+    "@happyvertical/smrt-agents": ">=0.25.17"
   },
   "peerDependenciesMeta": {
     "@happyvertical/smrt-agents": {
