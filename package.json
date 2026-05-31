@@ -69,7 +69,7 @@
     "changeset:publish": "changeset publish"
   },
   "dependencies": {
-    "svelte": "^5.55.9"
+    "svelte": "^5.56.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
@@ -88,7 +88,7 @@
     "@sveltejs/package": "^2.5.7",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "@types/node": "^24.12.4",
-    "lefthook": "^2.1.8",
+    "lefthook": "^2.1.9",
     "mdsvex": "^0.12.7",
     "shiki": "^3.23.0",
     "storybook": "^8.6.18",
@@ -100,7 +100,7 @@
     "vitest": "^4.1.7"
   },
   "peerDependencies": {
-    "svelte": "^5.55.9",
+    "svelte": "^5.56.0",
     "@happyvertical/smrt-agents": ">=0.26.4"
   },
   "peerDependenciesMeta": {
@@ -120,5 +120,5 @@
   "engines": {
     "node": ">=24.0.0"
   },
-  "packageManager": "pnpm@10.33.4"
+  "packageManager": "pnpm@10.34.1"
 }
