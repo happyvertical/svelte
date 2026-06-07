@@ -69,7 +69,7 @@
     "changeset:publish": "changeset publish"
   },
   "dependencies": {
-    "svelte": "^5.56.0"
+    "svelte": "^5.56.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
@@ -84,15 +84,15 @@
     "@storybook/svelte-vite": "^8.6.18",
     "@storybook/test": "^8.6.15",
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "^2.61.1",
-    "@sveltejs/package": "^2.5.7",
+    "@sveltejs/kit": "^2.63.0",
+    "@sveltejs/package": "^2.5.8",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
-    "@types/node": "^24.12.4",
+    "@types/node": "^24.13.1",
     "lefthook": "^2.1.9",
     "mdsvex": "^0.12.7",
     "shiki": "^3.23.0",
     "storybook": "^8.6.18",
-    "svelte-check": "^4.4.8",
+    "svelte-check": "^4.6.0",
     "tslib": "^2.8.1",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3",
@@ -100,7 +100,7 @@
     "vitest": "^4.1.8"
   },
   "peerDependencies": {
-    "svelte": "^5.56.0",
+    "svelte": "^5.56.2",
     "@happyvertical/smrt-agents": ">=0.26.4"
   },
   "peerDependenciesMeta": {
