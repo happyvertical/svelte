@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.128
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update actions/checkout action to v7 (#153) (deps)
+
 ## 0.18.127
 
 ### Patch Changes
