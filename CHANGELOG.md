@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.131
+
+### Patch Changes
+
+- ### Other Changes
+
+  - chore: update @biomejs/biome to ^2.5.1 (#157) (deps)
+
 ## 0.18.130
 
 ### Patch Changes
