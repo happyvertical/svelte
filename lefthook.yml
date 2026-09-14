@@ -9,13 +9,36 @@ pre-commit:
         - CI
   commands:
     format:
+      # Safe fixes and formatting only. Biome's --unsafe fixes may change
+      # runtime behavior, and `stage_fixed: true` would land such a rewrite in
+      # the commit with no prompt, no diff, and exit 0 — so the committed
+      # revision could differ from the reviewed one while every check stayed
+      # green (#165; the same hook shape caused real damage in
+      # happyvertical/smrt#2869). Unsafe fixes are now opt-in and reviewable
+      # via `pnpm format:unsafe`, which is scoped to staged files (`--staged`)
+      # so the remedy touches only what the author is committing; error-level
+      # lint is still enforced by the pre-push `biome ci` below and by CI.
+      # Do not re-add --unsafe here.
+      #
+      # One consequence is intended, not accidental: an error-severity rule
+      # whose only fix is unsafe now FAILS the commit instead of silently
+      # rewriting the file. Previously --unsafe deleted the statement and
+      # exited 0. Failing loudly is the point.
       glob: "*.{ts,js,tsx,jsx,svelte}"
-      run: npx biome check --write --unsafe {staged_files}
+      run: npx biome check --write {staged_files}
       stage_fixed: true
       fail_text: |
         ❌ Formatting/linting failed!
 
-        Could not fix issues in staged files. Please check the error above and fix manually.
+        Could not fix issues in staged files with safe fixes alone. Read
+        the rule named in the error above and fix it by hand.
+
+        If the diagnostic offers an "unsafe fix" and you have reviewed it, apply
+        it to your staged files only:
+          pnpm format:unsafe
+
+        Unsafe fixes can change runtime behavior (#165) — read the
+        resulting diff before staging it.
 
 # Check formatting before push
 pre-push:
