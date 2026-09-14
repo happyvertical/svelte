@@ -61,6 +61,7 @@
     "prepublishOnly": "npm run build",
     "format": "biome check --write .",
     "format-check": "biome ci --diagnostic-level=error .",
+    "format:unsafe": "biome check --write --unsafe --staged",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "typecheck": "tsc --noEmit",
