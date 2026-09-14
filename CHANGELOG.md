@@ -1,5 +1,13 @@
 # @happyvertical/smrt-svelte
 
+## 0.18.136
+
+### Patch Changes
+
+- ### Bug Fixes
+
+  - drop biome --unsafe from the pre-commit format hook (#166) (hooks)
+
 ## 0.18.135
 
 ### Patch Changes
